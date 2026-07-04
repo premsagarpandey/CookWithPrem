@@ -1,0 +1,6577 @@
+[
+  {
+    "id": "rec_1",
+    "slug": "paneer-butter-masala",
+    "title": "Paneer Butter Masala",
+    "description": "A rich, creamy, and mildly sweet restaurant-style North Indian paneer curry.",
+    "heroImage": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 15,
+    "totalTime": 35,
+    "difficulty": "Medium",
+    "servings": 4,
+    "calories": 380,
+    "cuisine": "North Indian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Paneer (Cottage Cheese)",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "name": "Butter",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Onions (chopped)",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "name": "Tomatoes (chopped)",
+        "quantity": "3",
+        "unit": "large"
+      },
+      {
+        "name": "Cashews",
+        "quantity": "10-12",
+        "unit": "pcs"
+      },
+      {
+        "name": "Ginger-Garlic Paste",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Heavy Cream",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Kasuri Methi",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Kadhai / Pan",
+      "Blender / Mixer",
+      "Spatula"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Prepare Gravy Base",
+        "description": "Sauté chopped onions, tomatoes, ginger, garlic, and cashews in a little butter until soft. Let it cool and blend into a smooth puree."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Cook the Puree",
+        "description": "Melt remaining butter in a kadhai. Add the blended puree and cook on medium flame until oil starts separating from the sides."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Add Spices & Cream",
+        "description": "Stir in red chili powder, salt, and heavy cream. Mix well and let it simmer for 2 minutes."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Add Paneer",
+        "description": "Gently add cubed paneer pieces. Simmer for 3-4 minutes. Sprinkle crushed kasuri methi on top. Serve hot."
+      }
+    ],
+    "nutrition": {
+      "calories": 380,
+      "protein": "14g",
+      "carbs": "12g",
+      "fat": "30g",
+      "fiber": "2g",
+      "sugar": "4g"
+    },
+    "faqs": [
+      {
+        "question": "Can I use tofu instead of paneer?",
+        "answer": "Yes, firm tofu can be used as a vegan alternative."
+      }
+    ],
+    "tags": [
+      "Paneer",
+      "Curry",
+      "Creamy",
+      "Popular"
+    ],
+    "averageRating": 5,
+    "totalRatings": 45,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_2",
+    "slug": "shahi-paneer",
+    "title": "Shahi Paneer",
+    "description": "Royal North Indian curry prepared with paneer in a thick, fragrant gravy of almonds, cashews, and yogurt.",
+    "heroImage": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 25,
+    "prepTime": 15,
+    "totalTime": 40,
+    "difficulty": "Medium",
+    "servings": 4,
+    "calories": 410,
+    "cuisine": "North Indian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Paneer",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "name": "Yogurt (whisked)",
+        "quantity": "0.25",
+        "unit": "cup"
+      },
+      {
+        "name": "Almonds & Cashews",
+        "quantity": "15",
+        "unit": "pcs"
+      },
+      {
+        "name": "Khoya / Mawa (optional)",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Cardamom & Saffron",
+        "quantity": "pinch",
+        "unit": ""
+      },
+      {
+        "name": "Onion Paste",
+        "quantity": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Cooking Pan",
+      "Blender"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Prepare White Paste",
+        "description": "Boil cashews, almonds, and onion paste together. Blend into a rich, fine paste."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Simmer Gravy",
+        "description": "Sauté the white paste in ghee. Lower heat, add whisked yogurt, cardamom powder, and saffron-infused milk. Stir constantly."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Add Paneer",
+        "description": "Gently add paneer cubes to the simmering gravy. Season with salt and a touch of sugar. Let it cook for 5 minutes on low heat."
+      }
+    ],
+    "nutrition": {
+      "calories": 410,
+      "protein": "13g",
+      "carbs": "14g",
+      "fat": "32g",
+      "fiber": "2g",
+      "sugar": "5g"
+    },
+    "faqs": [
+      {
+        "question": "Why cardamoms?",
+        "answer": "Cardamom gives the royal aromatic scent characteristic of Shahi Paneer."
+      }
+    ],
+    "tags": [
+      "Paneer",
+      "Royal",
+      "Rich",
+      "Indian Curry"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 28,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_3",
+    "slug": "kadai-paneer",
+    "title": "Kadai Paneer",
+    "description": "Spicy and vibrant paneer dish cooked with freshly ground kadai spices, onions, and bell peppers.",
+    "heroImage": "https://images.unsplash.com/photo-1625241007625-f0589be7e575?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 10,
+    "totalTime": 30,
+    "difficulty": "Medium",
+    "servings": 3,
+    "calories": 340,
+    "cuisine": "North Indian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Paneer",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Bell Peppers (cubed)",
+        "quantity": "1",
+        "unit": "large"
+      },
+      {
+        "name": "Onions (cubed & chopped)",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Coriander seeds & Red chilies",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Tomato Puree",
+        "quantity": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Kadai / Wok",
+      "Spice Grinder"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Make Kadai Masala",
+        "description": "Dry roast coriander seeds and dry red chilies. Grind coarsely to form fresh Kadai Masala."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Sauté Veggies",
+        "description": "Sauté cubed onions and bell peppers in a kadai with some oil until slightly tender. Set aside."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Assemble Dish",
+        "description": "In the same kadai, cook onion-tomato paste, add kadai masala, sautéed veggies, paneer cubes, and water. Simmer for 5 minutes."
+      }
+    ],
+    "nutrition": {
+      "calories": 340,
+      "protein": "12g",
+      "carbs": "10g",
+      "fat": "28g",
+      "fiber": "3g",
+      "sugar": "3g"
+    },
+    "faqs": [],
+    "tags": [
+      "Paneer",
+      "Spicy",
+      "Kadai",
+      "Semi-Dry"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 32,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_4",
+    "slug": "palak-paneer",
+    "title": "Palak Paneer",
+    "description": "Classic healthy paneer dish simmered in a smooth, spiced spinach gravy.",
+    "heroImage": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 10,
+    "totalTime": 30,
+    "difficulty": "Easy",
+    "servings": 4,
+    "calories": 290,
+    "cuisine": "North Indian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Fresh Spinach (Palak)",
+        "quantity": "300",
+        "unit": "g"
+      },
+      {
+        "name": "Paneer",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Green Chilies",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Ginger-Garlic Paste",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Cream",
+        "quantity": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Boiling Pot",
+      "Ice Bath bowl",
+      "Blender",
+      "Cooking Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Blanch Spinach",
+        "description": "Boil spinach for 2 minutes. Shock in ice water to maintain bright green color. Blend with green chilies."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Cook Gravy",
+        "description": "Sauté ginger-garlic paste and onions. Add the spinach puree, garam masala, and salt. Simmer on low heat."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Add Paneer & Cream",
+        "description": "Add paneer cubes (raw or pan-fried) and cook for 3 minutes. Finish with heavy cream."
+      }
+    ],
+    "nutrition": {
+      "calories": 290,
+      "protein": "15g",
+      "carbs": "8g",
+      "fat": "22g",
+      "fiber": "4g",
+      "sugar": "2g"
+    },
+    "faqs": [
+      {
+        "question": "Why shock spinach in ice water?",
+        "answer": "This preserves the natural bright green color of chlorophyll."
+      }
+    ],
+    "tags": [
+      "Palak",
+      "Paneer",
+      "Spinach",
+      "Healthy"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 50,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_5",
+    "slug": "matar-paneer",
+    "title": "Matar Paneer",
+    "description": "Simple home-style Punjabi curry made with green peas and paneer cubes in a spiced tomato gravy.",
+    "heroImage": "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 10,
+    "totalTime": 30,
+    "difficulty": "Easy",
+    "servings": 4,
+    "calories": 310,
+    "cuisine": "Punjabi",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Paneer",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Green Peas (Matar)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Onions & Tomatoes",
+        "quantity": "2",
+        "unit": "each"
+      },
+      {
+        "name": "Turmeric & Chili powder",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Pan",
+      "Spatula"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sauté Base",
+        "description": "Cook onions, ginger, and garlic paste, then add tomato puree and spices until oil separates."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Simmer Peas",
+        "description": "Add peas and a cup of water. Simmer until peas are soft and cooked."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Combine Paneer",
+        "description": "Add paneer cubes. Simmer for 4-5 minutes, garnish with coriander leaves, and serve warm."
+      }
+    ],
+    "nutrition": {
+      "calories": 310,
+      "protein": "12g",
+      "carbs": "16g",
+      "fat": "20g",
+      "fiber": "3g",
+      "sugar": "4g"
+    },
+    "faqs": [],
+    "tags": [
+      "Paneer",
+      "Peas",
+      "Everyday Curry"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 19,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_6",
+    "slug": "paneer-tikka",
+    "title": "Paneer Tikka",
+    "description": "Marinated paneer skewers baked or grilled with onions and bell peppers in a tandoori masala blend.",
+    "heroImage": "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 20,
+    "totalTime": 35,
+    "difficulty": "Medium",
+    "servings": 3,
+    "calories": 280,
+    "cuisine": "Tandoori",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Paneer (cubed)",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "name": "Thick Yogurt (Hung Curd)",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Besan (roasted gram flour)",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Kashmiri Red Chili Powder",
+        "quantity": "1.5",
+        "unit": "tsp"
+      },
+      {
+        "name": "Skewers",
+        "quantity": "4-5",
+        "unit": "pcs"
+      }
+    ],
+    "tools": [
+      "Skewers",
+      "Grill pan or Oven"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Marinate",
+        "description": "Mix yogurt, besan, chili powder, ginger-garlic paste, and lemon juice. Coat paneer, onions, and pepper cubes. Marinate for 20 minutes."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Skewer",
+        "description": "Thread marinated paneer and veggies alternately onto skewers."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Grill",
+        "description": "Grill on a hot pan or bake in oven at 200°C for 12-15 minutes until charred at edges. Serve with green chutney."
+      }
+    ],
+    "nutrition": {
+      "calories": 280,
+      "protein": "14g",
+      "carbs": "10g",
+      "fat": "21g",
+      "fiber": "2g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Paneer",
+      "Tikka",
+      "Grilled",
+      "Tandoori"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 44,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_7",
+    "slug": "chilli-paneer",
+    "title": "Chilli Paneer",
+    "description": "Popular Indo-Chinese appetizer made with crispy batter-coated paneer tossed in sweet, sour, and spicy chilli sauce.",
+    "heroImage": "https://images.unsplash.com/photo-1628294895550-c8005b65b161?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 15,
+    "totalTime": 30,
+    "difficulty": "Medium",
+    "servings": 3,
+    "calories": 350,
+    "cuisine": "Indo-Chinese",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Paneer",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Corn flour & Maida",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Soy Sauce & Chilli Sauce",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Capsicum & Spring Onions",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Wok / Frying Pan",
+      "Bowl"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Fry Paneer",
+        "description": "Coat paneer in cornflour-maida batter. Deep or shallow fry until crispy golden-brown."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Make Chilli Sauce",
+        "description": "Sauté garlic, green chilies, and onions. Add capsicum, soy sauce, chilli sauce, vinegar, and cornflour slurry."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Toss",
+        "description": "Add fried paneer cubes to the bubbling sauce and toss on high heat. Garnish with spring onions."
+      }
+    ],
+    "nutrition": {
+      "calories": 350,
+      "protein": "11g",
+      "carbs": "22g",
+      "fat": "24g",
+      "fiber": "1g",
+      "sugar": "3g"
+    },
+    "faqs": [],
+    "tags": [
+      "Paneer",
+      "Chilli",
+      "Indo-Chinese",
+      "Spicy Starter"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 37,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_8",
+    "slug": "malai-kofta",
+    "title": "Malai Kofta",
+    "description": "Crispy paneer-potato dumplings (koftas) served in a rich, creamy onion-tomato cashew gravy.",
+    "heroImage": "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 30,
+    "prepTime": 20,
+    "totalTime": 50,
+    "difficulty": "Hard",
+    "servings": 4,
+    "calories": 450,
+    "cuisine": "Mughlai",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Paneer & Boiled Potatoes",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "name": "Cashews & Raisins",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Cream",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Onion-Tomato Puree",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Cornstarch",
+        "quantity": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Deep Fryer / Kadai",
+      "Blender",
+      "Saucepan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Prepare Koftas",
+        "description": "Mash paneer and potatoes. Stuff with chopped cashews and raisins, shape into balls, coat with cornstarch, and deep fry until golden."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Prepare Rich Gravy",
+        "description": "Sauté spices and onion-tomato paste. Blend with soaked cashews. Simmer until smooth, then stir in cream."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Serve",
+        "description": "Place hot koftas in a serving dish, pour rich gravy on top just before serving, and garnish with fresh cream."
+      }
+    ],
+    "nutrition": {
+      "calories": 450,
+      "protein": "10g",
+      "carbs": "30g",
+      "fat": "34g",
+      "fiber": "3g",
+      "sugar": "6g"
+    },
+    "faqs": [
+      {
+        "question": "Why pour gravy just before serving?",
+        "answer": "Koftas are very delicate and will turn soggy or break if kept in the gravy for too long."
+      }
+    ],
+    "tags": [
+      "Mughlai",
+      "Kofta",
+      "Royal Curry",
+      "Creamy"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 26,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_9",
+    "slug": "dal-makhani",
+    "title": "Dal Makhani",
+    "description": "Slow-cooked black lentils and kidney beans simmered overnight with butter, cream, and rich spices.",
+    "heroImage": "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 40,
+    "prepTime": 20,
+    "totalTime": 60,
+    "difficulty": "Medium",
+    "servings": 6,
+    "calories": 320,
+    "cuisine": "Punjabi",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Whole Black Gram (Urad Dal)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Red Kidney Beans (Rajma)",
+        "quantity": "0.25",
+        "unit": "cup"
+      },
+      {
+        "name": "Butter & Cream",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Tomato Puree",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Kasuri Methi",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Pressure Cooker",
+      "Deep Pot",
+      "Stirring Ladle"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Boil Lentils",
+        "description": "Soak dal and kidney beans overnight. Pressure cook with salt and ginger-garlic paste until very soft."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Slow Cook",
+        "description": "Add tomato puree, chili powder, and lots of butter. Simmer on low heat for 30-40 minutes, mashing grains against the pot sides."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Finish with Cream",
+        "description": "Stir in fresh cream and kasuri methi. Let it simmer for 5 minutes and serve with Naan."
+      }
+    ],
+    "nutrition": {
+      "calories": 320,
+      "protein": "14g",
+      "carbs": "28g",
+      "fat": "18g",
+      "fiber": "8g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Dal",
+      "Makhani",
+      "Slow Cooked",
+      "Butter Dal"
+    ],
+    "averageRating": 5,
+    "totalRatings": 62,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_10",
+    "slug": "dal-tadka",
+    "title": "Restaurant Style Dal Tadka",
+    "description": "Yellow lentils cooked with turmeric and salt, then tempered with a spicy ghee-aromatic tadka.",
+    "heroImage": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 25,
+    "prepTime": 10,
+    "totalTime": 35,
+    "difficulty": "Easy",
+    "servings": 4,
+    "calories": 180,
+    "cuisine": "North Indian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Toor Dal (Yellow Lentils)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Onions (chopped)",
+        "quantity": "1",
+        "unit": "medium"
+      },
+      {
+        "name": "Tomatoes (chopped)",
+        "quantity": "1",
+        "unit": "medium"
+      },
+      {
+        "name": "Ghee",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Mustard & Cumin Seeds",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Pressure Cooker",
+      "Tadka Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Boil Lentils",
+        "description": "Pressure cook rinsed yellow lentils with water, salt, and turmeric for 3 whistles."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Prepare Masala",
+        "description": "Sauté onions, ginger, garlic, and tomatoes until soft. Mix in cooked dal."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Add Tadka",
+        "description": "In a tadka pan, heat ghee, splutter cumin/mustard seeds, add red dried chilies and chilli powder, and pour sizzling over the dal."
+      }
+    ],
+    "nutrition": {
+      "calories": 180,
+      "protein": "9g",
+      "carbs": "22g",
+      "fat": "6g",
+      "fiber": "4g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Dal",
+      "Yellow Lentils",
+      "Tadka",
+      "Comfort Food"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 39,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_11",
+    "slug": "aloo-gobi",
+    "title": "Aloo Gobi",
+    "description": "Classic dry Indian curry made with potatoes and cauliflower florets sautéed with spices.",
+    "heroImage": "https://images.unsplash.com/photo-1628294896516-344152572ee8?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 10,
+    "totalTime": 30,
+    "difficulty": "Easy",
+    "servings": 4,
+    "calories": 160,
+    "cuisine": "North Indian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Potatoes (Aloo)",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "name": "Cauliflower (Gobi) florets",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Turmeric & Coriander powder",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Ginger (shredded)",
+        "quantity": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Pan",
+      "Spatula"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sauté Spices",
+        "description": "Heat oil, add cumin seeds, chopped ginger, and turmeric powder."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Cook Veggies",
+        "description": "Add cut potatoes and cauliflower. Toss with salt, cover and cook on low heat until tender."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Garnish",
+        "description": "Uncover, sauté on high for 2 minutes for slight crispiness, add garam masala and coriander, then serve."
+      }
+    ],
+    "nutrition": {
+      "calories": 160,
+      "protein": "4g",
+      "carbs": "24g",
+      "fat": "6g",
+      "fiber": "4g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Aloo",
+      "Gobi",
+      "Dry Sabzi",
+      "Everyday"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 22,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_12",
+    "slug": "jeera-aloo",
+    "title": "Jeera Aloo",
+    "description": "Super simple and quick dry potato recipe tossed with cumin seeds and mild spices.",
+    "heroImage": "https://images.unsplash.com/photo-1619535860434-ba1d8fa12536?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 5,
+    "totalTime": 15,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 140,
+    "cuisine": "North Indian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Boiled Potatoes (cubed)",
+        "quantity": "3",
+        "unit": "medium"
+      },
+      {
+        "name": "Cumin Seeds (Jeera)",
+        "quantity": "1.5",
+        "unit": "tsp"
+      },
+      {
+        "name": "Turmeric & Amchur powder",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Temper Jeera",
+        "description": "Heat oil, add cumin seeds. Let them turn golden-brown and splutter."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Potatoes",
+        "description": "Add boiled potatoes, turmeric, salt, amchur (dry mango powder), and red chili powder. Toss well."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Cook & Serve",
+        "description": "Sauté on medium flame for 5 minutes until crispy. Serve hot with Puris or Parathas."
+      }
+    ],
+    "nutrition": {
+      "calories": 140,
+      "protein": "2g",
+      "carbs": "18g",
+      "fat": "7g",
+      "fiber": "2g",
+      "sugar": "0g"
+    },
+    "faqs": [],
+    "tags": [
+      "Aloo",
+      "Jeera",
+      "Quick Sabzi",
+      "Easy"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 18,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_13",
+    "slug": "dum-aloo",
+    "title": "Kashmiri Dum Aloo",
+    "description": "Baby potatoes deep-fried and slow-cooked in a spicy curd-based gravy infused with fennel and ginger.",
+    "heroImage": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 30,
+    "prepTime": 15,
+    "totalTime": 45,
+    "difficulty": "Medium",
+    "servings": 4,
+    "calories": 290,
+    "cuisine": "Kashmiri",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Baby Potatoes",
+        "quantity": "15",
+        "unit": "pcs"
+      },
+      {
+        "name": "Yogurt / Curd",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Kashmiri Chili Powder",
+        "quantity": "2",
+        "unit": "tsp"
+      },
+      {
+        "name": "Fennel & Ginger Powder",
+        "quantity": "1.5",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Deep Frying Pan",
+      "Pot with tight lid"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Fry Potatoes",
+        "description": "Boil baby potatoes until parboiled. Prick all over with a toothpick and deep fry until crispy golden."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Simmer Gravy",
+        "description": "Whisk curd with spices. Add to hot pan, stir constantly to prevent curdling. Add fried potatoes."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Dum Cook",
+        "description": "Seal the pot with dough or a tight lid. Simmer on low heat for 15 minutes to infuse flavors."
+      }
+    ],
+    "nutrition": {
+      "calories": 290,
+      "protein": "6g",
+      "carbs": "32g",
+      "fat": "16g",
+      "fiber": "3g",
+      "sugar": "4g"
+    },
+    "faqs": [],
+    "tags": [
+      "Kashmiri",
+      "Aloo",
+      "Dum Aloo",
+      "Spicy Curry"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 25,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_14",
+    "slug": "bhindi-masala",
+    "title": "Bhindi Masala",
+    "description": "Okra (ladyfinger) stir-fried with onions, tomatoes, and everyday spices.",
+    "heroImage": "https://images.unsplash.com/photo-1605660090571-0824b2eedc5d?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 10,
+    "totalTime": 25,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 120,
+    "cuisine": "North Indian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Okra (Bhindi) sliced",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "name": "Onions (sliced)",
+        "quantity": "1",
+        "unit": "large"
+      },
+      {
+        "name": "Tomatoes (chopped)",
+        "quantity": "1",
+        "unit": "medium"
+      },
+      {
+        "name": "Amchur Powder",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Pan",
+      "Spatula"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Dry Fry Bhindi",
+        "description": "Sauté sliced bhindi with 1 tsp oil on medium heat until non-sticky. Remove and set aside."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Cook Masala",
+        "description": "Sauté onions and ginger-garlic paste. Add tomatoes and dry spices. Cook until oil separates."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Combine",
+        "description": "Add cooked bhindi and amchur. Toss gently and cook for 5 minutes uncovered. Serve hot."
+      }
+    ],
+    "nutrition": {
+      "calories": 120,
+      "protein": "3g",
+      "carbs": "12g",
+      "fat": "7g",
+      "fiber": "3g",
+      "sugar": "2g"
+    },
+    "faqs": [
+      {
+        "question": "How to prevent bhindi from turning sticky?",
+        "answer": "Dry the washed bhindi completely before cutting, and never cover the pan while frying."
+      }
+    ],
+    "tags": [
+      "Bhindi",
+      "Okra",
+      "Dry Sabzi",
+      "Punjabi"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 31,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_15",
+    "slug": "baingan-bharta",
+    "title": "Baingan Bharta",
+    "description": "Smoky fire-roasted eggplant mashed and cooked with onions, tomatoes, ginger, and spices.",
+    "heroImage": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 15,
+    "totalTime": 35,
+    "difficulty": "Medium",
+    "servings": 4,
+    "calories": 130,
+    "cuisine": "Punjabi",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Large Eggplant (Baingan)",
+        "quantity": "1",
+        "unit": "pc"
+      },
+      {
+        "name": "Onions (chopped)",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "name": "Tomatoes (chopped)",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "name": "Green Chilies & Ginger",
+        "quantity": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Gas Burner",
+      "Foil",
+      "Frying Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Roast Eggplant",
+        "description": "Oil the eggplant and roast directly over a gas flame until skin is completely charred and inner pulp is soft."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Peel & Mash",
+        "description": "Let eggplant cool. Peel charred skin, wash lightly, and mash the pulp thoroughly."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Sauté",
+        "description": "Sauté onions, ginger, garlic, and tomatoes. Add mashed pulp and spices. Cook on medium-low for 10 minutes."
+      }
+    ],
+    "nutrition": {
+      "calories": 130,
+      "protein": "3g",
+      "carbs": "14g",
+      "fat": "8g",
+      "fiber": "4g",
+      "sugar": "4g"
+    },
+    "faqs": [],
+    "tags": [
+      "Baingan",
+      "Eggplant",
+      "Smoky",
+      "Bharta"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 27,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_16",
+    "slug": "mix-veg",
+    "title": "Mix Veg Sabzi",
+    "description": "Dry restaurant-style curry containing mixed vegetables like carrots, beans, peas, and cauliflower.",
+    "heroImage": "https://images.unsplash.com/photo-1533622597524-a1215e26c0a2?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 15,
+    "totalTime": 35,
+    "difficulty": "Easy",
+    "servings": 4,
+    "calories": 180,
+    "cuisine": "North Indian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Mixed Veggies (Carrot, Beans, Peas, Cauliflower)",
+        "quantity": "2.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Onion-Tomato Masala",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Paneer cubes (optional)",
+        "quantity": "50",
+        "unit": "g"
+      },
+      {
+        "name": "Garam Masala",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Frying Pan",
+      "Chopping board"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Parboil Veggies",
+        "description": "Parboil hard veggies like carrots, beans, and cauliflower in salted water. Drain."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Sauté Masala",
+        "description": "Cook cumin, onions, ginger-garlic paste, and tomato puree until rich and thick."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Combine & Steam",
+        "description": "Add veggies, spices, and paneer. Cover and steam for 8-10 minutes on low heat."
+      }
+    ],
+    "nutrition": {
+      "calories": 180,
+      "protein": "5g",
+      "carbs": "16g",
+      "fat": "11g",
+      "fiber": "5g",
+      "sugar": "3g"
+    },
+    "faqs": [],
+    "tags": [
+      "Mix Veg",
+      "Healthy",
+      "Everyday Curry"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 21,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_17",
+    "slug": "veg-kolhapuri",
+    "title": "Veg Kolhapuri",
+    "description": "Vibrant and super spicy mixed vegetable curry hailing from Kolhapur, Maharashtra.",
+    "heroImage": "https://images.unsplash.com/photo-1562059390-a761a0847685?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 25,
+    "prepTime": 15,
+    "totalTime": 40,
+    "difficulty": "Medium",
+    "servings": 4,
+    "calories": 240,
+    "cuisine": "Maharashtrian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Mixed Vegetables",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Dry Coconut & Sesame seeds",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Dry Red Kolhapuri Chilies",
+        "quantity": "4",
+        "unit": "pcs"
+      },
+      {
+        "name": "Tomato Puree",
+        "quantity": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Pan",
+      "Blender",
+      "Spatula"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Make Kolhapuri Masala",
+        "description": "Dry roast dry coconut, sesame seeds, poppy seeds, and red dry chilies. Grind into a fine spice paste."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Sauté Vegetables",
+        "description": "Sauté mixed veggies in oil until 80% cooked."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Cook Gravy",
+        "description": "Cook tomato puree, add Kolhapuri spice paste, veggies, water, and salt. Simmer for 8-10 minutes."
+      }
+    ],
+    "nutrition": {
+      "calories": 240,
+      "protein": "5g",
+      "carbs": "18g",
+      "fat": "16g",
+      "fiber": "4g",
+      "sugar": "2g"
+    },
+    "faqs": [
+      {
+        "question": "Is it very spicy?",
+        "answer": "Yes, authentic Veg Kolhapuri is known for its high spice level. Reduce red chilies if needed."
+      }
+    ],
+    "tags": [
+      "Spicy",
+      "Kolhapuri",
+      "Maharashtrian",
+      "Hot Curry"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 30,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_18",
+    "slug": "veg-jalfrezi",
+    "title": "Veg Jalfrezi",
+    "description": "Semi-dry tangy curry containing stir-fried veggies cooked in tomato paste and vinegar.",
+    "heroImage": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 10,
+    "totalTime": 25,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 190,
+    "cuisine": "Indo-British",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Bell Peppers, Carrots, Beans (sliced)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Tomato Paste & Ketchup",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Vinegar",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Ginger-Garlic Paste",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Wok / Frying Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sauté Aromatics",
+        "description": "Sauté ginger-garlic paste and cumin seeds in oil on high heat."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Stir Fry Veggies",
+        "description": "Add sliced vegetables. Stir fry for 4 minutes on high heat to keep them crispy."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Sauce & Toss",
+        "description": "Add tomato paste, ketchup, red pepper flakes, salt, and vinegar. Toss well and cook dry for 2 minutes."
+      }
+    ],
+    "nutrition": {
+      "calories": 190,
+      "protein": "4g",
+      "carbs": "16g",
+      "fat": "12g",
+      "fiber": "3g",
+      "sugar": "4g"
+    },
+    "faqs": [],
+    "tags": [
+      "Jalfrezi",
+      "Stir-Fried",
+      "Tangy",
+      "Crispy Veg"
+    ],
+    "averageRating": 4.6,
+    "totalRatings": 18,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_19",
+    "slug": "lauki-ki-sabzi",
+    "title": "Lauki Ki Sabzi",
+    "description": "Simple, light, and healthy everyday bottle gourd curry cooked with minimal spices.",
+    "heroImage": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 10,
+    "totalTime": 25,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 90,
+    "cuisine": "North Indian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Bottle Gourd (Lauki/Ghia) diced",
+        "quantity": "1",
+        "unit": "medium"
+      },
+      {
+        "name": "Tomatoes (chopped)",
+        "quantity": "1",
+        "unit": "medium"
+      },
+      {
+        "name": "Cumin & Turmeric",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Pressure Cooker or Pot"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sauté Spices",
+        "description": "Heat oil or ghee, add cumin seeds, green chili, and ginger. Sauté chopped tomato."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Pressure Cook",
+        "description": "Add diced lauki, salt, and turmeric. Cover cooker and cook for 2 whistles (no water needed as lauki releases water)."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Mash & Serve",
+        "description": "Open cover, mash some lauki pieces lightly with a ladle for a thicker consistency, simmer for 1 minute, and serve."
+      }
+    ],
+    "nutrition": {
+      "calories": 90,
+      "protein": "2g",
+      "carbs": "8g",
+      "fat": "5g",
+      "fiber": "2g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Lauki",
+      "Gourd",
+      "Healthy",
+      "Light Sabzi"
+    ],
+    "averageRating": 4.5,
+    "totalRatings": 12,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_20",
+    "slug": "tinda-sabzi",
+    "title": "Tinda Masala Sabzi",
+    "description": "Apple gourd (tinda) cooked in a homestyle onion-tomato gravy with basic spices.",
+    "heroImage": "https://images.unsplash.com/photo-1543353071-10c8ba85a904?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 18,
+    "prepTime": 10,
+    "totalTime": 28,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 110,
+    "cuisine": "North Indian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Apple Gourd (Tinda) chopped",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "name": "Onions & Tomatoes",
+        "quantity": "1",
+        "unit": "each"
+      },
+      {
+        "name": "Garam Masala & Turmeric",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Kadhai / Pot"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sauté Base",
+        "description": "Sauté chopped onions and tomatoes with cumin seeds until soft."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Tinda",
+        "description": "Add peeled and chopped tinda pieces, salt, turmeric, and coriander powder. Mix well."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Simmer",
+        "description": "Add 1/4 cup water, cover the pot, and cook on low heat for 12-15 minutes until soft. Garnish with coriander leaves."
+      }
+    ],
+    "nutrition": {
+      "calories": 110,
+      "protein": "2g",
+      "carbs": "10g",
+      "fat": "6g",
+      "fiber": "3g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Tinda",
+      "Gourd",
+      "Homestyle",
+      "Indian Sabzi"
+    ],
+    "averageRating": 4.4,
+    "totalRatings": 10,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_21",
+    "slug": "veg-biryani",
+    "title": "Hyderabadi Veg Biryani",
+    "description": "Aromatic basmati rice cooked layered with spiced mixed vegetables, saffron, and fresh herbs in dum style.",
+    "heroImage": "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 35,
+    "prepTime": 20,
+    "totalTime": 55,
+    "difficulty": "Hard",
+    "servings": 4,
+    "calories": 380,
+    "cuisine": "Hyderabadi",
+    "category": "Rice Dishes",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Basmati Rice",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Mixed Vegetables (beans, carrots, potato)",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Fried Onions (Birista)",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Biryani Masala & Yogurt",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Saffron milk",
+        "quantity": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Heavy-bottomed Layering Pot",
+      "Rice Strainer"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Boil Rice",
+        "description": "Boil basmati rice with whole spices (bay leaf, cloves, cardamom) until 70% cooked. Drain and set aside."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Prepare Vegetable Gravy",
+        "description": "Marinate veggies in yogurt, biryani masala, mint, coriander, and salt. Cook in a pot until tender."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Layer & Dum Cook",
+        "description": "In a heavy pot, layer cooked veggies, followed by the 70% cooked rice. Sprinkle fried onions, mint, and saffron milk. Seal with foil, cover, and dum cook on low flame for 20 minutes."
+      }
+    ],
+    "nutrition": {
+      "calories": 380,
+      "protein": "8g",
+      "carbs": "62g",
+      "fat": "11g",
+      "fiber": "4g",
+      "sugar": "3g"
+    },
+    "faqs": [
+      {
+        "question": "How to make perfect birista (fried onions)?",
+        "answer": "Slice onions thin and fry them in hot oil on medium flame until golden brown and crispy."
+      }
+    ],
+    "tags": [
+      "Biryani",
+      "Dum Biryani",
+      "Aromatic Rice",
+      "Festive"
+    ],
+    "averageRating": 5,
+    "totalRatings": 48,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_22",
+    "slug": "veg-pulao",
+    "title": "Veg Pulao",
+    "description": "One-pot spiced pilaf cooked with long grain rice, mixed vegetables, and simple spices.",
+    "heroImage": "https://images.unsplash.com/photo-1536304997881-a372c179924b?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 10,
+    "totalTime": 30,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 260,
+    "cuisine": "North Indian",
+    "category": "Rice Dishes",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Basmati Rice",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Mixed Vegetables",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Whole Spices (Cinnamon, Cardamom)",
+        "quantity": "few",
+        "unit": ""
+      },
+      {
+        "name": "Onion (sliced)",
+        "quantity": "1",
+        "unit": "medium"
+      }
+    ],
+    "tools": [
+      "Pressure Cooker or Cooking Pot"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sauté Aromatics",
+        "description": "Sauté sliced onions and whole spices in ghee or oil until golden."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Rice & Veggies",
+        "description": "Add mixed vegetables, soaked basmati rice, salt, and 2 cups of water. Stir gently."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Cook",
+        "description": "If using a pressure cooker, cook for 2 whistles. If using a pot, cover and cook on low heat until water is absorbed."
+      }
+    ],
+    "nutrition": {
+      "calories": 260,
+      "protein": "5g",
+      "carbs": "48g",
+      "fat": "5g",
+      "fiber": "3g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Pulao",
+      "One-Pot",
+      "Everyday Rice",
+      "Easy Lunch"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 29,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_23",
+    "slug": "jeera-rice",
+    "title": "Jeera Rice",
+    "description": "Fluffy basmati rice tempered with cumin seeds and aromatic whole spices.",
+    "heroImage": "https://images.unsplash.com/photo-1626132647523-66f5bf380027?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 10,
+    "totalTime": 25,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 220,
+    "cuisine": "North Indian",
+    "category": "Rice Dishes",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Basmati Rice",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Cumin Seeds (Jeera)",
+        "quantity": "1.5",
+        "unit": "tsp"
+      },
+      {
+        "name": "Ghee",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Water",
+        "quantity": "2",
+        "unit": "cups"
+      }
+    ],
+    "tools": [
+      "Cooking Pot"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Soak Rice",
+        "description": "Rinse and soak Basmati rice in water for 20 minutes. Drain."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Temper Jeera",
+        "description": "Heat ghee in a pot, add cumin seeds, cardamoms, and cloves. Cook until cumin splutters."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Cook Rice",
+        "description": "Add rice, sauté gently for 1 minute, add water and salt. Cover and simmer on low for 12 minutes."
+      }
+    ],
+    "nutrition": {
+      "calories": 220,
+      "protein": "4g",
+      "carbs": "40g",
+      "fat": "5g",
+      "fiber": "1g",
+      "sugar": "0g"
+    },
+    "faqs": [],
+    "tags": [
+      "Jeera Rice",
+      "Basmati",
+      "Cumin",
+      "Simple Side"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 33,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_24",
+    "slug": "fried-rice",
+    "title": "Veg Fried Rice",
+    "description": "Indo-Chinese recipe of stir-fried pre-cooked rice with chopped vegetables and soy sauce.",
+    "heroImage": "https://images.unsplash.com/photo-1596560548464-f040c5f87484?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 15,
+    "totalTime": 25,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 270,
+    "cuisine": "Indo-Chinese",
+    "category": "Rice Dishes",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Cooked Rice (chilled)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Mixed vegetables finely chopped (carrot, beans)",
+        "quantity": "0.75",
+        "unit": "cup"
+      },
+      {
+        "name": "Soy Sauce",
+        "quantity": "1.5",
+        "unit": "tsp"
+      },
+      {
+        "name": "Garlic (finely chopped)",
+        "quantity": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Wok / Large Frying Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sauté Aromatics",
+        "description": "Sauté chopped garlic and spring onions in oil on very high heat for 30 seconds."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Stir Fry Veggies",
+        "description": "Add chopped vegetables and cook on high heat for 2 minutes until slightly cooked but still crispy."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Add Rice & Sauce",
+        "description": "Add cold pre-cooked rice, soy sauce, vinegar, black pepper, and salt. Toss vigorously on high heat for 2 minutes."
+      }
+    ],
+    "nutrition": {
+      "calories": 270,
+      "protein": "5g",
+      "carbs": "45g",
+      "fat": "8g",
+      "fiber": "2g",
+      "sugar": "1g"
+    },
+    "faqs": [
+      {
+        "question": "Why use cold rice?",
+        "answer": "Cold, slightly dry rice grains don't clump or break apart when stir-fried."
+      }
+    ],
+    "tags": [
+      "Fried Rice",
+      "Chinese",
+      "Indo-Chinese",
+      "Quick Rice"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 25,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_25",
+    "slug": "lemon-rice",
+    "title": "South Indian Lemon Rice",
+    "description": "Tangy and nutty rice tempered with mustard seeds, curry leaves, peanuts, and fresh lemon juice.",
+    "heroImage": "https://images.unsplash.com/photo-1582515073490-39981397c445?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 5,
+    "totalTime": 15,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 210,
+    "cuisine": "South Indian",
+    "category": "Rice Dishes",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Cooked Rice",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Lemon Juice",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Peanuts (Moongfali)",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Mustard seeds & Curry leaves",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Turmeric Powder",
+        "quantity": "0.5",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Frying Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Fry Peanuts",
+        "description": "Heat oil, fry peanuts until golden-brown. Set aside."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Make Tempering",
+        "description": "In the same oil, add mustard seeds, urad dal, dried red chilies, turmeric, curry leaves, and green chili. Sauté briefly."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Mix Rice & Lemon",
+        "description": "Turn off heat. Add cooked rice, fried peanuts, lemon juice, and salt. Mix thoroughly."
+      }
+    ],
+    "nutrition": {
+      "calories": 210,
+      "protein": "4g",
+      "carbs": "38g",
+      "fat": "5g",
+      "fiber": "2g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Lemon Rice",
+      "South Indian",
+      "Tangy Rice",
+      "Lunchbox"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 18,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_26",
+    "slug": "curd-rice",
+    "title": "Curd Rice",
+    "description": "Classic soothing South Indian recipe of soft cooked rice mashed with yogurt and seasoned with spices.",
+    "heroImage": "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 5,
+    "prepTime": 5,
+    "totalTime": 10,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 190,
+    "cuisine": "South Indian",
+    "category": "Rice Dishes",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Overcooked Rice (soft)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Yogurt / Curd (whisked)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Mustard seeds & Curry leaves",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Ginger & Green chilies (chopped)",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Mixing Bowl",
+      "Small pan for tempering"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Mash Rice",
+        "description": "Mash hot overcooked rice slightly with a spoon. Let it cool."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Yogurt",
+        "description": "Add whisked yogurt, a splash of milk (optional, to prevent souring), and salt to the cooled rice. Mix well."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Tempering",
+        "description": "Heat oil, add mustard seeds, urad dal, ginger, green chilies, and curry leaves. Pour over curd rice. Mix and serve chilled."
+      }
+    ],
+    "nutrition": {
+      "calories": 190,
+      "protein": "6g",
+      "carbs": "32g",
+      "fat": "4g",
+      "fiber": "1g",
+      "sugar": "3g"
+    },
+    "faqs": [
+      {
+        "question": "Why add milk?",
+        "answer": "Milk cuts down the acidity of yogurt, keeping the curd rice fresh and non-sour for longer."
+      }
+    ],
+    "tags": [
+      "Curd Rice",
+      "Cooling",
+      "South Indian",
+      "Comfort"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 27,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_27",
+    "slug": "coconut-rice",
+    "title": "Coconut Rice",
+    "description": "South Indian style rice dish prepared by cooking basmati rice with freshly grated coconut and tempered spices.",
+    "heroImage": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 12,
+    "prepTime": 5,
+    "totalTime": 17,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 250,
+    "cuisine": "South Indian",
+    "category": "Rice Dishes",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Basmati Rice (cooked)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Grated Coconut (fresh)",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Mustard seeds & Red chilies",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Cashews",
+        "quantity": "8-10",
+        "unit": "pcs"
+      }
+    ],
+    "tools": [
+      "Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Temper Cashews & Spices",
+        "description": "Heat coconut oil, splutter mustard seeds, sauté urad dal, red chilies, curry leaves, and cashews until golden."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Roast Coconut",
+        "description": "Add grated coconut and sauté on low heat for 2 minutes until fragrant but without changing color."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Add Rice",
+        "description": "Add cooked rice and salt. Mix gently and heat through for 2 minutes."
+      }
+    ],
+    "nutrition": {
+      "calories": 250,
+      "protein": "4g",
+      "carbs": "35g",
+      "fat": "11g",
+      "fiber": "2g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Coconut Rice",
+      "South Indian",
+      "Mild",
+      "Coconut Oil"
+    ],
+    "averageRating": 4.6,
+    "totalRatings": 13,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_28",
+    "slug": "tomato-rice",
+    "title": "Tomato Rice (Thakkali Sadam)",
+    "description": "Spicy and tangy South Indian style tomato pilaf seasoned with garlic and whole spices.",
+    "heroImage": "https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 10,
+    "totalTime": 30,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 230,
+    "cuisine": "South Indian",
+    "category": "Rice Dishes",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Rice (cooked or raw)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Tomatoes (chopped)",
+        "quantity": "3",
+        "unit": "large"
+      },
+      {
+        "name": "Onion (chopped)",
+        "quantity": "1",
+        "unit": "medium"
+      },
+      {
+        "name": "Sambar Powder & Turmeric",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Pot / Kadai"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sauté Veggies",
+        "description": "Sauté onions, ginger, and garlic paste in oil. Add chopped tomatoes, sambar powder, and turmeric. Cook until tomatoes are mushy."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Cook Tomatoes",
+        "description": "Let the tomato mixture cook until oil starts separating from the sides."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Combine Rice",
+        "description": "Mix in the cooked rice and salt gently. Cover and cook on low heat for 3-4 minutes to blend flavors."
+      }
+    ],
+    "nutrition": {
+      "calories": 230,
+      "protein": "4g",
+      "carbs": "42g",
+      "fat": "6g",
+      "fiber": "2g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Tomato Rice",
+      "South Indian",
+      "Tangy Rice",
+      "Quick Meal"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 19,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_29",
+    "slug": "khichdi",
+    "title": "Moong Dal Khichdi",
+    "description": "Comforting, wholesome one-pot meal prepared with rice, split green gram (moong dal), and mild spices.",
+    "heroImage": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 5,
+    "totalTime": 20,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 180,
+    "cuisine": "Indian",
+    "category": "Rice Dishes",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Rice",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Moong Dal (Yellow split lentils)",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Ghee",
+        "quantity": "1.5",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Cumin seeds & Turmeric",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Pressure Cooker"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Rinse & Mix",
+        "description": "Rinse rice and moong dal together. Soak in water for 15 minutes."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Sauté",
+        "description": "Heat ghee in a pressure cooker. Add cumin seeds, hing (asafoetida), and turmeric. Sauté briefly."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Cook",
+        "description": "Add rice, dal, salt, and 3.5 cups of water. Pressure cook for 3-4 whistles until very soft and mushy. Serve with ghee."
+      }
+    ],
+    "nutrition": {
+      "calories": 180,
+      "protein": "7g",
+      "carbs": "30g",
+      "fat": "4g",
+      "fiber": "3g",
+      "sugar": "0g"
+    },
+    "faqs": [
+      {
+        "question": "Is khichdi good during illness?",
+        "answer": "Yes, it is extremely easy to digest, nutritious, and comforting."
+      }
+    ],
+    "tags": [
+      "Khichdi",
+      "Comfort Food",
+      "One-Pot",
+      "Healthy"
+    ],
+    "averageRating": 5,
+    "totalRatings": 35,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_30",
+    "slug": "masala-rice",
+    "title": "Masala Rice",
+    "description": "A spicy, delicious way to use leftover rice by stir-frying it with onions, tomatoes, and garam masala.",
+    "heroImage": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 5,
+    "totalTime": 15,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 230,
+    "cuisine": "North Indian",
+    "category": "Rice Dishes",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Leftover Cooked Rice",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Onions & Tomatoes",
+        "quantity": "1",
+        "unit": "each"
+      },
+      {
+        "name": "Garam Masala & Pav Bhaji Masala",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Lemon juice",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sauté Onion-Tomato",
+        "description": "Sauté cumin, chopped onions, and ginger paste, then add tomatoes and cook until soft."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Masalas",
+        "description": "Add red chili powder, turmeric, salt, garam masala, and pav bhaji masala. Cook for 1 minute."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Toss Rice",
+        "description": "Add leftover rice. Mix gently to coat, cook for 3 minutes, add lemon juice, and serve."
+      }
+    ],
+    "nutrition": {
+      "calories": 230,
+      "protein": "4g",
+      "carbs": "42g",
+      "fat": "5g",
+      "fiber": "2g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Leftover Rice",
+      "Masala Rice",
+      "Spicy",
+      "Quick Dinner"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 15,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_31",
+    "slug": "poha",
+    "title": "Indori Kanda Poha",
+    "description": "Fluffy flattened rice roasted with mustard seeds, green chilies, onions, potatoes, and peanuts.",
+    "heroImage": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 10,
+    "totalTime": 20,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 180,
+    "cuisine": "Maharashtrian / MP",
+    "category": "Breakfast",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Poha (thick flattened rice)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Onions (chopped)",
+        "quantity": "1",
+        "unit": "large"
+      },
+      {
+        "name": "Peanuts (Moongfali)",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Turmeric & Mustard seeds",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Colander / Sieve",
+      "Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Rinse Poha",
+        "description": "Rinse poha in a colander under running water. Drain completely. Sprinkle salt, turmeric, and 1 tsp sugar. Toss lightly and set aside."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Fry Aromatics",
+        "description": "Heat oil, fry peanuts until crunchy. Add mustard seeds, green chilies, curry leaves, and chopped onions. Sauté until onions are translucent."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Steam Poha",
+        "description": "Add poha to the pan. Toss gently, cover, and steam on very low heat for 3-4 minutes. Serve with lemon and sev."
+      }
+    ],
+    "nutrition": {
+      "calories": 180,
+      "protein": "4g",
+      "carbs": "32g",
+      "fat": "5g",
+      "fiber": "2g",
+      "sugar": "3g"
+    },
+    "faqs": [
+      {
+        "question": "Why is my poha mushy?",
+        "answer": "You might have soaked the poha too long. Rinsing quickly is enough to soften it."
+      }
+    ],
+    "tags": [
+      "Poha",
+      "Breakfast",
+      "Light Breakfast",
+      "Indore Style"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 34,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_32",
+    "slug": "upma",
+    "title": "Suji Upma",
+    "description": "Savory South Indian breakfast pudding made from roasted semolina cooked with vegetables and spices.",
+    "heroImage": "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 5,
+    "totalTime": 20,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 170,
+    "cuisine": "South Indian",
+    "category": "Breakfast",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Suji (Semolina)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Mustard seeds & Curry leaves",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Onions & Mixed vegetables (chopped)",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Ghee / Oil",
+        "quantity": "1.5",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Heavy Pan",
+      "Stirring spoon"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Roast Suji",
+        "description": "Dry roast semolina on low flame until it turns slightly fragrant. Set aside."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Sauté Aromatics",
+        "description": "Heat oil, add mustard seeds, urad dal, cashew pieces, ginger, green chili, and curry leaves. Sauté onions and veggies."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Boil & Pour suji",
+        "description": "Add 2.5 cups of water and salt. Bring to a boil. Pour in the roasted semolina slowly, stirring continuously to avoid lumps. Simmer covered for 3 minutes until thick."
+      }
+    ],
+    "nutrition": {
+      "calories": 170,
+      "protein": "4g",
+      "carbs": "30g",
+      "fat": "4g",
+      "fiber": "2g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Upma",
+      "Suji",
+      "South Indian",
+      "Quick Breakfast"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 23,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_33",
+    "slug": "aloo-paratha",
+    "title": "Punjabi Aloo Paratha",
+    "description": "Whole wheat flatbread stuffed with a spicy, delicious mashed potato filling.",
+    "heroImage": "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 15,
+    "totalTime": 30,
+    "difficulty": "Medium",
+    "servings": 2,
+    "calories": 280,
+    "cuisine": "Punjabi",
+    "category": "Breakfast",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Whole Wheat Flour (Atta)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Boiled Potatoes (mashed)",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "name": "Coriander & Green chilies (chopped)",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Garam Masala & Amchur",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Tawa (Griddle)",
+      "Rolling Pin",
+      "Rolling Board"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Knead Dough",
+        "description": "Knead wheat flour with water and salt into a soft, smooth dough. Rest for 10 minutes."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Prepare Stuffing",
+        "description": "Mix mashed potatoes with green chilies, coriander, red chili powder, garam masala, amchur, and salt."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Roll & Roast",
+        "description": "Pinch a dough ball, flatten slightly, place stuffing in center, pinch borders to seal. Roll gently. Roast on a hot tawa using ghee until golden brown spots appear on both sides."
+      }
+    ],
+    "nutrition": {
+      "calories": 280,
+      "protein": "6g",
+      "carbs": "48g",
+      "fat": "9g",
+      "fiber": "4g",
+      "sugar": "1g"
+    },
+    "faqs": [
+      {
+        "question": "How to prevent paratha from breaking?",
+        "answer": "Make sure the potato stuffing is fully cool and completely lump-free."
+      }
+    ],
+    "tags": [
+      "Paratha",
+      "Aloo",
+      "Punjabi",
+      "Stuffed Flatbread"
+    ],
+    "averageRating": 5,
+    "totalRatings": 52,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_34",
+    "slug": "paneer-paratha",
+    "title": "Paneer Paratha",
+    "description": "Delectable whole wheat flatbread stuffed with spiced grated paneer and herbs.",
+    "heroImage": "https://images.unsplash.com/photo-1594911774802-8822a707caff?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 15,
+    "totalTime": 30,
+    "difficulty": "Medium",
+    "servings": 2,
+    "calories": 310,
+    "cuisine": "Punjabi",
+    "category": "Breakfast",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Atta (Wheat Flour)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Grated Paneer",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Kashmiri Chili Powder",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Kasuri Methi & Coriander",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Tawa",
+      "Rolling Pin"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Knead Dough",
+        "description": "Knead dough as usual and divide into medium balls."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Prepare Paneer Filling",
+        "description": "Combine grated paneer, red chili powder, chopped green chilies, coriander, kasuri methi, and salt."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Stuff & Cook",
+        "description": "Roll dough, stuff with paneer filling, seal and roll. Cook on hot tawa applying ghee until crisp."
+      }
+    ],
+    "nutrition": {
+      "calories": 310,
+      "protein": "12g",
+      "carbs": "40g",
+      "fat": "12g",
+      "fiber": "3g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Paratha",
+      "Paneer",
+      "Stuffed Flatbread",
+      "Healthy Breakfast"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 28,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_35",
+    "slug": "gobhi-paratha",
+    "title": "Gobhi Paratha",
+    "description": "Punjabi breakfast flatbread stuffed with finely grated spiced cauliflower.",
+    "heroImage": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 20,
+    "totalTime": 35,
+    "difficulty": "Medium",
+    "servings": 2,
+    "calories": 260,
+    "cuisine": "Punjabi",
+    "category": "Breakfast",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Atta",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Grated Cauliflower (Gobhi)",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Ginger & Green chilies (chopped)",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Ajwain (Carom seeds)",
+        "quantity": "0.5",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Grater",
+      "Tawa",
+      "Rolling Pin"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Squeeze Gobhi",
+        "description": "Grate cauliflower. Mix with a little salt, let stand for 5 minutes, then squeeze tightly in a cloth to remove excess moisture."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Spices",
+        "description": "Mix dry cauliflower with carom seeds, ginger, green chilies, chili powder, and coriander."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Stuff & Fry",
+        "description": "Stuff into wheat dough, roll carefully, and fry on griddle with butter or ghee until golden brown."
+      }
+    ],
+    "nutrition": {
+      "calories": 260,
+      "protein": "6g",
+      "carbs": "42g",
+      "fat": "8g",
+      "fiber": "4g",
+      "sugar": "1g"
+    },
+    "faqs": [
+      {
+        "question": "Why squeeze gobhi?",
+        "answer": "Cauliflower releases moisture, which will make the dough soggy and tear the paratha during rolling."
+      }
+    ],
+    "tags": [
+      "Gobhi",
+      "Cauliflower",
+      "Paratha",
+      "Punjabi Style"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 24,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_36",
+    "slug": "mooli-paratha",
+    "title": "Mooli Paratha",
+    "description": "Nutritious whole wheat paratha stuffed with grated spiced white radish.",
+    "heroImage": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 20,
+    "totalTime": 35,
+    "difficulty": "Medium",
+    "servings": 2,
+    "calories": 240,
+    "cuisine": "North Indian",
+    "category": "Breakfast",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Atta",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Grated White Radish (Mooli)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Ginger paste & Coriander",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Carom seeds (Ajwain)",
+        "quantity": "0.5",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Tawa",
+      "Rolling Pin"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Squeeze Mooli",
+        "description": "Grate radish. Squeeze dry using your hands or a thin muslin cloth to extract all radish juice."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Mix Stuffing",
+        "description": "Mix the dry radish with ginger, chopped green chilies, ajwain, coriander, and salt."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Grill Paratha",
+        "description": "Stuff inside dough, roll, and cook on hot griddle applying ghee until brown patches form."
+      }
+    ],
+    "nutrition": {
+      "calories": 240,
+      "protein": "5g",
+      "carbs": "38g",
+      "fat": "8g",
+      "fiber": "4g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Mooli",
+      "Radish",
+      "Paratha",
+      "Winter Special"
+    ],
+    "averageRating": 4.5,
+    "totalRatings": 15,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_37",
+    "slug": "besan-chilla",
+    "title": "Besan Chilla",
+    "description": "Quick savory gram flour pancakes loaded with chopped onions, tomatoes, and spices.",
+    "heroImage": "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 5,
+    "totalTime": 15,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 150,
+    "cuisine": "North Indian",
+    "category": "Breakfast",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Besan (Gram flour)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Onions & Tomatoes (finely chopped)",
+        "quantity": "0.25",
+        "unit": "cup"
+      },
+      {
+        "name": "Ajwain & Turmeric",
+        "quantity": "0.5",
+        "unit": "tsp"
+      },
+      {
+        "name": "Water",
+        "quantity": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Non-stick pan / Tawa",
+      "Mixing Bowl",
+      "Ladle"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Make Batter",
+        "description": "Whisk besan, water, salt, turmeric, and ajwain in a bowl into a thin, lump-free batter."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Veggies",
+        "description": "Stir chopped onions, tomatoes, green chili, and coriander into the batter."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Pour & Cook",
+        "description": "Pour a ladle of batter onto a hot greased tawa. Spread into a circle. Cook with oil on medium flame until edges release, flip, and cook other side."
+      }
+    ],
+    "nutrition": {
+      "calories": 150,
+      "protein": "6g",
+      "carbs": "20g",
+      "fat": "5g",
+      "fiber": "3g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Chilla",
+      "Besan",
+      "Pancake",
+      "Gluten-Free"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 26,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_38",
+    "slug": "moong-dal-chilla",
+    "title": "Moong Dal Chilla",
+    "description": "Healthy and protein-rich breakfast pancakes made with soaked green or yellow moong dal.",
+    "heroImage": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 12,
+    "prepTime": 10,
+    "totalTime": 22,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 160,
+    "cuisine": "Indian",
+    "category": "Breakfast",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Yellow Moong Dal (soaked 3 hours)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Ginger & Green chili",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Hing (Asafoetida)",
+        "quantity": "pinch",
+        "unit": ""
+      },
+      {
+        "name": "Grated Paneer (for stuffing)",
+        "quantity": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Blender",
+      "Tawa / Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Blend Dal",
+        "description": "Blend soaked moong dal with ginger, green chili, and a splash of water into a smooth paste. Stir in salt and hing."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Spread",
+        "description": "Spread a ladle of batter on a hot pan into a thin crepe. Drizzle oil."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Stuff & Roll",
+        "description": "Cook until crisp, sprinkle grated paneer and coriander in the middle, fold, and serve."
+      }
+    ],
+    "nutrition": {
+      "calories": 160,
+      "protein": "9g",
+      "carbs": "22g",
+      "fat": "4g",
+      "fiber": "3g",
+      "sugar": "0g"
+    },
+    "faqs": [
+      {
+        "question": "Do I need to ferment the batter?",
+        "answer": "No, moong dal chilla is an instant recipe and requires zero fermentation."
+      }
+    ],
+    "tags": [
+      "Moong Dal",
+      "Protein Rich",
+      "Chilla",
+      "Healthy Pancake"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 31,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_39",
+    "slug": "idli",
+    "title": "Soft Steamed Idli",
+    "description": "Fluffy and spongy South Indian steamed rice cakes made from fermented rice-lentil batter.",
+    "heroImage": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 12,
+    "prepTime": 5,
+    "totalTime": 17,
+    "difficulty": "Medium",
+    "servings": 3,
+    "calories": 120,
+    "cuisine": "South Indian",
+    "category": "Breakfast",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Idli Batter (Fermented)",
+        "quantity": "3",
+        "unit": "cups"
+      },
+      {
+        "name": "Water (for steaming)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Oil (for greasing)",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Idli Stand / Steamer",
+      "Pressure Cooker or Steamer Pot"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Grease Moulds",
+        "description": "Grease idli plates with sesame or coconut oil."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Pour Batter",
+        "description": "Gently stir the fermented batter. Spoon it into the greased moulds."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Steam",
+        "description": "Steam in cooker without weight or steamer for 10-12 minutes on medium flame. Let cool slightly, scoop out, and serve."
+      }
+    ],
+    "nutrition": {
+      "calories": 120,
+      "protein": "4g",
+      "carbs": "26g",
+      "fat": "0g",
+      "fiber": "1g",
+      "sugar": "0g"
+    },
+    "faqs": [
+      {
+        "question": "Why are my idlis hard?",
+        "answer": "Hard idlis can be caused by insufficient batter fermentation or incorrect rice-to-dal ratio."
+      }
+    ],
+    "tags": [
+      "Idli",
+      "Steamed",
+      "South Indian",
+      "Fermented"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 40,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_40",
+    "slug": "dosa",
+    "title": "Crispy Masala Dosa",
+    "description": "Thin, crispy fermented rice and lentil crepe stuffed with a dry spiced potato bhaji.",
+    "heroImage": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 10,
+    "totalTime": 20,
+    "difficulty": "Medium",
+    "servings": 3,
+    "calories": 290,
+    "cuisine": "South Indian",
+    "category": "Breakfast",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Dosa Batter (Fermented)",
+        "quantity": "3",
+        "unit": "cups"
+      },
+      {
+        "name": "Potato Bhaji (filling)",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Butter or Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Flat non-stick tawa",
+      "Ladle",
+      "Spatula"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Prepare Griddle",
+        "description": "Heat flat griddle. Splash water to cool it slightly, wipe with a damp cloth."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Spread Crepe",
+        "description": "Pour a ladle of batter in center. Spread in a circular motion to make it thin and even. Drizzle butter."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Stuff & Fold",
+        "description": "Cook on medium flame until edges lift and base turns brown. Place potato bhaji in center, fold into a cylinder, and serve."
+      }
+    ],
+    "nutrition": {
+      "calories": 290,
+      "protein": "6g",
+      "carbs": "45g",
+      "fat": "9g",
+      "fiber": "2g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Dosa",
+      "South Indian",
+      "Crepe",
+      "Crispy Dosa"
+    ],
+    "averageRating": 5,
+    "totalRatings": 49,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_41",
+    "slug": "samosa",
+    "title": "Punjabi Samosa",
+    "description": "Crispy fried pastry triangles filled with dry spiced potatoes and green peas.",
+    "heroImage": "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 20,
+    "totalTime": 40,
+    "difficulty": "Hard",
+    "servings": 4,
+    "calories": 260,
+    "cuisine": "Indian",
+    "category": "Snacks",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Maida (All-purpose flour)",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Boiled Potatoes & Peas",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Ajwain (Carom seeds) & Ghee",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Garam Masala & Coriander seeds",
+        "quantity": "1.5",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Deep Frying Pot",
+      "Rolling Pin",
+      "Mixing bowl"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Make Dough",
+        "description": "Knead maida, ghee, ajwain, salt, and water into a stiff dough. Cover and rest for 15 minutes."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Make Stuffing",
+        "description": "Sauté ginger, spices, potatoes, and peas in oil until dry. Let stuffing cool."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Shape & Fry",
+        "description": "Roll dough, cut into halves. Shape each half into a cone, fill with stuffing, seal the edge with water. Deep fry on low heat until crisp golden."
+      }
+    ],
+    "nutrition": {
+      "calories": 260,
+      "protein": "4g",
+      "carbs": "32g",
+      "fat": "13g",
+      "fiber": "2g",
+      "sugar": "1g"
+    },
+    "faqs": [
+      {
+        "question": "Why are there bubbles on my samosa skin?",
+        "answer": "Frying samosas in oil that is too hot causes bubbles. Always fry on low heat."
+      }
+    ],
+    "tags": [
+      "Samosa",
+      "Snacks",
+      "Street Food",
+      "Fried Pastry"
+    ],
+    "averageRating": 5,
+    "totalRatings": 56,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_42",
+    "slug": "kachori",
+    "title": "Khasta Kachori",
+    "description": "Crispy, flaky fried pastry stuffed with a spiced lentil or moong dal filling.",
+    "heroImage": "https://images.unsplash.com/photo-1623653387945-2fd25214f8fc?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 25,
+    "prepTime": 20,
+    "totalTime": 45,
+    "difficulty": "Hard",
+    "servings": 4,
+    "calories": 290,
+    "cuisine": "North Indian",
+    "category": "Snacks",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Maida",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Moong Dal (soaked & coarsely ground)",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Fennel & Coriander powder",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Ghee",
+        "quantity": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Pan for stuffing",
+      "Frying Pot",
+      "Rolling Pin"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Make Stuffing",
+        "description": "Sauté coarsely ground moong dal with oil, fennel seeds, coriander powder, cumin, hing, and chili powder until dry."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Knead Pastry",
+        "description": "Knead maida with ghee, salt, and water into a soft dough."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Assemble & Fry",
+        "description": "Stuff pastry dough balls with dal mixture. Flatten slightly with palms. Deep fry slowly on low-medium flame until puffed and golden."
+      }
+    ],
+    "nutrition": {
+      "calories": 290,
+      "protein": "5g",
+      "carbs": "36g",
+      "fat": "14g",
+      "fiber": "2g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Kachori",
+      "Crispy",
+      "Street Snack",
+      "Khasta"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 22,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_43",
+    "slug": "bread-pakora",
+    "title": "Bread Pakora",
+    "description": "Popular street food made with bread slices stuffed with potato filling, dipped in chickpea batter, and deep fried.",
+    "heroImage": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 12,
+    "prepTime": 10,
+    "totalTime": 22,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 240,
+    "cuisine": "North Indian",
+    "category": "Snacks",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Bread slices",
+        "quantity": "6",
+        "unit": "pcs"
+      },
+      {
+        "name": "Aloo Masala (stuffing)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Besan (Gram flour)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Ajwain & Turmeric",
+        "quantity": "0.5",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Deep frying pan",
+      "Whisk bowl"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Prepare Sandwiches",
+        "description": "Spread potato masala on a bread slice, cover with another, cut diagonally into two triangles."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Make Batter",
+        "description": "Whisk besan, water, salt, ajwain, and turmeric into a medium-thick batter."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Dip & Fry",
+        "description": "Dip bread triangle in besan batter, coating all sides. Slide into hot oil, deep fry until golden-crisp."
+      }
+    ],
+    "nutrition": {
+      "calories": 240,
+      "protein": "6g",
+      "carbs": "30g",
+      "fat": "10g",
+      "fiber": "3g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Bread Pakora",
+      "Fried Snack",
+      "Tea Time Snack",
+      "Fast Food"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 35,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_44",
+    "slug": "onion-pakoda",
+    "title": "Crispy Onion Pakoda",
+    "description": "Classic Indian tea-time fritters made with sliced onions, gram flour, and green herbs.",
+    "heroImage": "https://images.unsplash.com/photo-1601702534365-f716c14e8615?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 5,
+    "totalTime": 15,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 190,
+    "cuisine": "Indian",
+    "category": "Snacks",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Onions (sliced thin)",
+        "quantity": "3",
+        "unit": "medium"
+      },
+      {
+        "name": "Besan",
+        "quantity": "0.75",
+        "unit": "cup"
+      },
+      {
+        "name": "Rice Flour (for crunch)",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Green chilies & Coriander",
+        "quantity": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Mixing Bowl",
+      "Frying Pot"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Macerate Onions",
+        "description": "Mix sliced onions with salt, let rest for 5 minutes. Onions will release moisture."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Flours",
+        "description": "Add besan, rice flour, green chilies, coriander, ginger, and chili powder. Mix with hands without adding water."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Fry Fritters",
+        "description": "Drop small portions of the sticky onion mixture into hot oil. Fry until crispy golden brown."
+      }
+    ],
+    "nutrition": {
+      "calories": 190,
+      "protein": "5g",
+      "carbs": "22g",
+      "fat": "9g",
+      "fiber": "2g",
+      "sugar": "1g"
+    },
+    "faqs": [
+      {
+        "question": "Do I need water?",
+        "answer": "No, onion juice is usually enough to bind the flour, rendering pakodas extra crispy."
+      }
+    ],
+    "tags": [
+      "Pakoda",
+      "Onion",
+      "Fritters",
+      "Rainy Day Snack"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 41,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_45",
+    "slug": "aloo-tikki",
+    "title": "Aloo Tikki",
+    "description": "Crispy spiced potato patties served with curd, sweet tamarind chutney, and green herb chutney.",
+    "heroImage": "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 10,
+    "totalTime": 25,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 180,
+    "cuisine": "North Indian Street Food",
+    "category": "Snacks",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Boiled Potatoes (mashed)",
+        "quantity": "3",
+        "unit": "large"
+      },
+      {
+        "name": "Breadcrumbs or Cornflour",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Chaat Masala & Chilli flakes",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Oil (for shallow frying)",
+        "quantity": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Shallow Fry Pan",
+      "Bowl"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Form Patties",
+        "description": "Mix mashed potatoes, cornflour, salt, green chili, and chaat masala. Shape into round flat discs."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Shallow Fry",
+        "description": "Shallow fry patties on a griddle with oil on medium flame until outer crust is crispy golden."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Garnish",
+        "description": "Serve hot, topped with sweet yogurt, tamarind chutney, mint chutney, and sev."
+      }
+    ],
+    "nutrition": {
+      "calories": 180,
+      "protein": "3g",
+      "carbs": "28g",
+      "fat": "6g",
+      "fiber": "2g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Aloo Tikki",
+      "Chaat",
+      "Potato Patty",
+      "Street Food"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 29,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_46",
+    "slug": "veg-cutlet",
+    "title": "Crispy Veg Cutlet",
+    "description": "Deep-fried or pan-fried crispy patties containing mashed mixed vegetables coated in breadcrumbs.",
+    "heroImage": "https://images.unsplash.com/photo-1512152272829-e3139592d56f?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 15,
+    "totalTime": 30,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 200,
+    "cuisine": "Indian Starter",
+    "category": "Snacks",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Mixed boiled vegetables (carrot, peas, potato)",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Breadcrumbs",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Maida (for slurry)",
+        "quantity": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Frying Pan",
+      "Plate"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Form Cutlets",
+        "description": "Mash veggies with ginger, chilies, spice powder, and 2 tbsp breadcrumbs. Shape into ovals."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Coat",
+        "description": "Dip each patty in thin maida-water slurry, then roll in breadcrumbs to coat completely."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Fry",
+        "description": "Shallow or deep fry in hot oil until outer shell is completely golden and crispy."
+      }
+    ],
+    "nutrition": {
+      "calories": 200,
+      "protein": "4g",
+      "carbs": "28g",
+      "fat": "8g",
+      "fiber": "4g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Cutlet",
+      "Veg Patty",
+      "Starter",
+      "Crispy"
+    ],
+    "averageRating": 4.6,
+    "totalRatings": 17,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_47",
+    "slug": "spring-roll",
+    "title": "Veg Spring Roll",
+    "description": "Crispy fried wrappers stuffed with seasoned stir-fried vegetables and noodles.",
+    "heroImage": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 20,
+    "totalTime": 35,
+    "difficulty": "Medium",
+    "servings": 3,
+    "calories": 220,
+    "cuisine": "Indo-Chinese",
+    "category": "Snacks",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Spring Roll Wrappers",
+        "quantity": "6",
+        "unit": "sheets"
+      },
+      {
+        "name": "Stir-fried vegetables (shredded cabbage, carrots)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Soy sauce & Vinegar",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Deep Fry Pan",
+      "Frying Tongs"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Stir Fry Stuffing",
+        "description": "Stir fry cabbage, carrots, bell peppers, soy sauce, and black pepper on high heat for 2 minutes. Let cool."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Roll Wrappers",
+        "description": "Place stuffing on wrapper. Fold sides and roll tightly. Seal the end with a maida-water paste."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Deep Fry",
+        "description": "Deep fry in hot oil until crispy and golden-yellow. Slice diagonally and serve with sweet chili sauce."
+      }
+    ],
+    "nutrition": {
+      "calories": 220,
+      "protein": "4g",
+      "carbs": "26g",
+      "fat": "11g",
+      "fiber": "2g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Spring Roll",
+      "Chinese",
+      "Fried",
+      "Starter"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 18,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_48",
+    "slug": "veg-momos",
+    "title": "Veg Steamed Momos",
+    "description": "Popular Tibetan dumplings stuffed with sautéed finely chopped cabbage and onions, steamed to perfection.",
+    "heroImage": "https://images.unsplash.com/photo-1625220194771-7ebded050686?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 12,
+    "prepTime": 25,
+    "totalTime": 37,
+    "difficulty": "Hard",
+    "servings": 3,
+    "calories": 150,
+    "cuisine": "Tibetan / Indo-Chinese",
+    "category": "Snacks",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Maida (for wrapper)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Cabbage & Carrot (finely grated)",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Garlic (finely chopped)",
+        "quantity": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Momo Steamer / Pot",
+      "Rolling Pin"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sauté Stuffing",
+        "description": "Sauté garlic, grated cabbage, carrots, and onions in oil with soy sauce and black pepper. Dry fully."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Shape Dumplings",
+        "description": "Roll small dough circles, thin at edges. Place stuffing in middle, pleat, and seal to form momos."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Steam",
+        "description": "Steam momos in a preheated steamer for 10-12 minutes until dough turns translucent. Serve with red spicy momo chutney."
+      }
+    ],
+    "nutrition": {
+      "calories": 150,
+      "protein": "4g",
+      "carbs": "28g",
+      "fat": "2g",
+      "fiber": "2g",
+      "sugar": "1g"
+    },
+    "faqs": [
+      {
+        "question": "How do I know momos are cooked?",
+        "answer": "The outer dough will become non-sticky and slightly translucent when cooked."
+      }
+    ],
+    "tags": [
+      "Momos",
+      "Steamed",
+      "Dumplings",
+      "Chutney Special"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 39,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_49",
+    "slug": "dahi-vada",
+    "title": "Dahi Vada",
+    "description": "Soft lentil fritters soaked in sweet creamy yogurt and drizzled with dry roasted cumin, red chili, and sweet chutneys.",
+    "heroImage": "https://images.unsplash.com/photo-1478144592103-25e218a04891?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 20,
+    "totalTime": 35,
+    "difficulty": "Hard",
+    "servings": 4,
+    "calories": 230,
+    "cuisine": "Indian",
+    "category": "Snacks",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Urad Dal (soaked 4 hours)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Yogurt (sweetened)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Tamarind & Mint Chutneys",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Roasted Cumin Powder & Black Salt",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Blender",
+      "Frying Pan",
+      "Warm water bowl"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Grind & Fry Vadas",
+        "description": "Grind urad dal into a thick batter. Whisk vigorously to trap air. Deep fry scoops of batter into round vadas."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Soak in Water",
+        "description": "Drop fried vadas into warm water, let soak for 15 minutes. Squeeze gently between palms to remove water."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Serve with Dahi",
+        "description": "Place vadas in a dish, cover with chilled sweet yogurt, drizzle chutneys, sprinkle cumin powder, black salt, and red chili powder."
+      }
+    ],
+    "nutrition": {
+      "calories": 230,
+      "protein": "8g",
+      "carbs": "30g",
+      "fat": "8g",
+      "fiber": "3g",
+      "sugar": "8g"
+    },
+    "faqs": [],
+    "tags": [
+      "Dahi Vada",
+      "Yogurt",
+      "Festive",
+      "Lentil Fritters"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 31,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_50",
+    "slug": "pav-bhaji",
+    "title": "Mumbai Pav Bhaji",
+    "description": "Thick vegetable curry (bhaji) cooked with a special spice blend and served with soft butter-toasted buns (pav).",
+    "heroImage": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 25,
+    "prepTime": 15,
+    "totalTime": 40,
+    "difficulty": "Medium",
+    "servings": 3,
+    "calories": 340,
+    "cuisine": "Mumbai Street Food",
+    "category": "Snacks",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Potatoes, Cauliflower, Peas (boiled & mashed)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Onions & Tomatoes (chopped)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Pav Bhaji Masala & Butter",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Pav (buns)",
+        "quantity": "6",
+        "unit": "pcs"
+      }
+    ],
+    "tools": [
+      "Flat Tawa / Large Pan",
+      "Potato Masher"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Boil & Mash Veggies",
+        "description": "Pressure cook potatoes, peas, and cauliflower. Mash completely."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Prepare Bhaji",
+        "description": "Sauté onions, capsicum, and tomato. Add Pav Bhaji Masala, mashed veggies, butter, red color (optional), and water. Simmer and mash on a flat tawa for 10 minutes."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Toast Pav",
+        "description": "Slice pav. Toast on griddle with lots of butter, coriander, and a pinch of pav bhaji masala. Serve hot with bhaji, lemon, and onions."
+      }
+    ],
+    "nutrition": {
+      "calories": 340,
+      "protein": "7g",
+      "carbs": "48g",
+      "fat": "14g",
+      "fiber": "5g",
+      "sugar": "3g"
+    },
+    "faqs": [],
+    "tags": [
+      "Pav Bhaji",
+      "Mumbai Style",
+      "Butter Rich",
+      "Street Food"
+    ],
+    "averageRating": 5,
+    "totalRatings": 49,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_51",
+    "slug": "veg-noodles",
+    "title": "Street Style Veg Noodles",
+    "description": "Stir-fried noodles tossed with cabbage, carrots, bell peppers, soy sauce, and white pepper.",
+    "heroImage": "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 10,
+    "totalTime": 20,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 260,
+    "cuisine": "Indo-Chinese",
+    "category": "Indo-Chinese",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Noodles",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "name": "Soy Sauce & Vinegar",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Sliced Cabbage & Carrots",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Wok",
+      "Colander"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Boil Noodles",
+        "description": "Boil noodles in salted water until al dente. Drain and toss with 1 tsp oil."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Stir Fry",
+        "description": "Stir fry chopped garlic, sliced onions, cabbage, bell peppers on high heat for 2 minutes."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Combine",
+        "description": "Add noodles, soy sauce, green chili sauce, vinegar, black pepper, and salt. Toss on high heat for 2 minutes."
+      }
+    ],
+    "nutrition": {
+      "calories": 260,
+      "protein": "5g",
+      "carbs": "42g",
+      "fat": "8g",
+      "fiber": "2g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Noodles",
+      "Chinese",
+      "Street Style",
+      "Quick"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 18,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_52",
+    "slug": "hakka-noodles",
+    "title": "Veg Hakka Noodles",
+    "description": "Chinese-style thin noodles tossed with crunchy sliced vegetables and mild seasoning.",
+    "heroImage": "https://images.unsplash.com/photo-1621972750749-0fbb1abb7736?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 10,
+    "totalTime": 20,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 280,
+    "cuisine": "Indo-Chinese",
+    "category": "Indo-Chinese",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Hakka Noodles",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "name": "Cabbage, Bell Pepper, Carrot",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Soy Sauce",
+        "quantity": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Wok",
+      "Tongs"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Boil Noodles",
+        "description": "Cook Hakka noodles, drain and cool."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Stir Fry",
+        "description": "Stir fry julienned vegetables in a smoking hot wok with garlic and oil for 2 minutes."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Sauce & Toss",
+        "description": "Add noodles, soy sauce, vinegar, and white pepper. Toss quickly and serve hot."
+      }
+    ],
+    "nutrition": {
+      "calories": 280,
+      "protein": "5g",
+      "carbs": "44g",
+      "fat": "10g",
+      "fiber": "3g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Hakka Noodles",
+      "Chinese",
+      "Wok Tossed"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 26,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_53",
+    "slug": "schezwan-noodles",
+    "title": "Schezwan Noodles",
+    "description": "Fiery, spicy stir-fried noodles tossed with red Schezwan sauce, garlic, and crisp veggies.",
+    "heroImage": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 12,
+    "prepTime": 10,
+    "totalTime": 22,
+    "difficulty": "Medium",
+    "servings": 2,
+    "calories": 310,
+    "cuisine": "Indo-Chinese",
+    "category": "Indo-Chinese",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Noodles (boiled)",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "name": "Schezwan Sauce (spicy)",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Garlic (chopped)",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Sliced Bell Peppers & Spring Onions",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Wok"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sauté Aromatics",
+        "description": "Sauté chopped garlic and spring onion whites in oil on high heat."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Schezwan Sauce",
+        "description": "Stir in Schezwan sauce, then toss in bell peppers and cook for 1 minute."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Mix Noodles",
+        "description": "Add boiled noodles, toss vigorously to combine, and top with spring onion greens."
+      }
+    ],
+    "nutrition": {
+      "calories": 310,
+      "protein": "5g",
+      "carbs": "48g",
+      "fat": "11g",
+      "fiber": "2g",
+      "sugar": "3g"
+    },
+    "faqs": [],
+    "tags": [
+      "Schezwan",
+      "Noodles",
+      "Spicy Chinese",
+      "Hot"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 22,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_54",
+    "slug": "veg-manchurian",
+    "title": "Veg Manchurian Gravy",
+    "description": "Fried vegetable balls tossed in a tangy, sweet, and savory Manchurian sauce made with soy sauce and garlic.",
+    "heroImage": "https://images.unsplash.com/photo-1617196034183-421b4917c92d?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 15,
+    "totalTime": 35,
+    "difficulty": "Medium",
+    "servings": 3,
+    "calories": 320,
+    "cuisine": "Indo-Chinese",
+    "category": "Indo-Chinese",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Grated Cabbage & Carrot",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Corn flour & Maida",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Soy Sauce, Chili Sauce, Ketchup",
+        "quantity": "1.5",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Garlic & Ginger (chopped)",
+        "quantity": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Deep Fry Pot",
+      "Wok",
+      "Bowl"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Form Manchurian Balls",
+        "description": "Mix grated vegetables, flour, cornstarch, salt, and pepper. Shape into small balls and deep fry until crispy brown."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Make Manchurian Sauce",
+        "description": "Sauté garlic, ginger, and green chilies. Add onions, soy sauce, chili sauce, ketchup, vinegar, and cornflour-water slurry to thicken."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Assemble",
+        "description": "Add fried veggie balls to the bubbling gravy. Cook for 2 minutes and serve hot with fried rice."
+      }
+    ],
+    "nutrition": {
+      "calories": 320,
+      "protein": "6g",
+      "carbs": "28g",
+      "fat": "20g",
+      "fiber": "3g",
+      "sugar": "4g"
+    },
+    "faqs": [],
+    "tags": [
+      "Manchurian",
+      "Indo-Chinese",
+      "Gravy",
+      "Starter"
+    ],
+    "averageRating": 5,
+    "totalRatings": 32,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_55",
+    "slug": "chilli-potato",
+    "title": "Chilli Potato",
+    "description": "Crispy fried potato fingers tossed in a spicy, sweet, and sour chili sauce.",
+    "heroImage": "https://images.unsplash.com/photo-1518219908412-a29a1bb7b86e?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 15,
+    "totalTime": 30,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 290,
+    "cuisine": "Indo-Chinese",
+    "category": "Indo-Chinese",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Potatoes (cut into fingers)",
+        "quantity": "3",
+        "unit": "medium"
+      },
+      {
+        "name": "Cornstarch",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Soy Sauce & Red Chilli Sauce",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Capsicum & Onion (sliced)",
+        "quantity": "1.5",
+        "unit": "cups"
+      }
+    ],
+    "tools": [
+      "Frying Pan",
+      "Wok"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Fry Potatoes",
+        "description": "Coat potato fingers with dry cornstarch. Deep fry in hot oil until very crispy."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Prepare Spicy Base",
+        "description": "Sauté garlic, ginger, sliced onions, and capsicum. Pour soy sauce, chili sauce, and salt."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Toss",
+        "description": "Toss fried crispy potatoes in the prepared sauce on high heat. Serve immediately."
+      }
+    ],
+    "nutrition": {
+      "calories": 290,
+      "protein": "3g",
+      "carbs": "38g",
+      "fat": "14g",
+      "fiber": "3g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Potato",
+      "Chilli",
+      "Crispy",
+      "Indo-Chinese"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 19,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_56",
+    "slug": "honey-chilli-potato",
+    "title": "Honey Chilli Potato",
+    "description": "Sweet and spicy appetizer made with crispy fried potato fingers glazed with honey and sesame seeds.",
+    "heroImage": "https://images.unsplash.com/photo-1613292443284-8d10ef9383fe?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 15,
+    "totalTime": 30,
+    "difficulty": "Medium",
+    "servings": 3,
+    "calories": 320,
+    "cuisine": "Indo-Chinese",
+    "category": "Indo-Chinese",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Potatoes (cut into fingers)",
+        "quantity": "3",
+        "unit": "medium"
+      },
+      {
+        "name": "Honey",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Red Chili Sauce",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Toasted Sesame Seeds",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Wok",
+      "Fryer"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Fry Potatoes",
+        "description": "Coat potato fingers in cornstarch batter and deep fry until crunchy."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Make Honey Sauce",
+        "description": "Sauté garlic, add chili sauce, soy sauce, and a little water. Turn off heat, then stir in honey."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Glaze",
+        "description": "Toss fried potatoes in the sweet sauce, sprinkle toasted sesame seeds, and serve hot."
+      }
+    ],
+    "nutrition": {
+      "calories": 320,
+      "protein": "3g",
+      "carbs": "44g",
+      "fat": "15g",
+      "fiber": "3g",
+      "sugar": "12g"
+    },
+    "faqs": [
+      {
+        "question": "Why turn off heat before adding honey?",
+        "answer": "Heating honey at high temperatures can degrade its flavor and quality."
+      }
+    ],
+    "tags": [
+      "Honey Chilli",
+      "Potato",
+      "Sweet & Spicy",
+      "Sesame"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 28,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_57",
+    "slug": "veg-fried-rice-chinese",
+    "title": "Classic Veg Fried Rice",
+    "description": "A simple Indo-Chinese fried rice stir-fried with vegetables, soy sauce, and white pepper powder.",
+    "heroImage": "https://images.unsplash.com/photo-1603569283847-f43b2cfefe2c?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 10,
+    "totalTime": 20,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 260,
+    "cuisine": "Indo-Chinese",
+    "category": "Indo-Chinese",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Pre-cooked Basmati Rice (chilled)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Finely chopped carrots & beans",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Soy Sauce & White Pepper",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Wok",
+      "Spatula"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Stir Fry Veggies",
+        "description": "Sauté garlic and spring onions in sesame oil on high heat. Add carrots and beans. Stir fry for 2 minutes."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Rice",
+        "description": "Add chilled cooked rice, salt, soy sauce, and white pepper."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Toss",
+        "description": "Toss on high heat for 1 minute until fragrant. Garnish with spring onions."
+      }
+    ],
+    "nutrition": {
+      "calories": 260,
+      "protein": "4g",
+      "carbs": "44g",
+      "fat": "7g",
+      "fiber": "2g",
+      "sugar": "1g"
+    },
+    "faqs": [],
+    "tags": [
+      "Fried Rice",
+      "Chinese",
+      "Quick dinner"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 16,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_58",
+    "slug": "gobi-manchurian",
+    "title": "Gobi Manchurian",
+    "description": "Crispy cauliflower florets fried and tossed in a tangy, spicy Manchurian sauce.",
+    "heroImage": "https://images.unsplash.com/photo-1541832676-9b763b0239ab?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 18,
+    "prepTime": 15,
+    "totalTime": 33,
+    "difficulty": "Medium",
+    "servings": 3,
+    "calories": 290,
+    "cuisine": "Indo-Chinese",
+    "category": "Indo-Chinese",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Cauliflower (Gobi) florets",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Corn flour & Maida",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Garlic, Ginger & Green chilies",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Soy sauce & Chilli sauce",
+        "quantity": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Deep Fry Pot",
+      "Wok"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Fry Gobi",
+        "description": "Coat gobi florets in cornflour-maida batter. Deep fry until crispy golden."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Make Sauce",
+        "description": "Sauté garlic, ginger, and onions. Add soy sauce, chili sauce, ketchup, vinegar, and a small cornflour slurry to make a glaze."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Toss",
+        "description": "Add fried gobi and toss quickly on high heat so the florets stay crunchy."
+      }
+    ],
+    "nutrition": {
+      "calories": 290,
+      "protein": "5g",
+      "carbs": "30g",
+      "fat": "16g",
+      "fiber": "3g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Gobi",
+      "Manchurian",
+      "Indo-Chinese",
+      "Crispy Starter"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 26,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_59",
+    "slug": "crispy-corn",
+    "title": "Crispy Corn",
+    "description": "Fried sweet corn kernels tossed with onions, green chilies, and tangy chaat spices.",
+    "heroImage": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 10,
+    "totalTime": 20,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 210,
+    "cuisine": "Indo-Chinese / Barbeque",
+    "category": "Indo-Chinese",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Sweet Corn (boiled)",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Cornstarch & Rice flour",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Chaat Masala & Lime juice",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Onions & Coriander (chopped)",
+        "quantity": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Frying Pot",
+      "Mixing Bowl"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Coat Corn",
+        "description": "Dry boiled sweet corn completely. Coat with cornstarch, rice flour, salt, and pepper."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Deep Fry",
+        "description": "Deep fry corn in hot oil until they turn crispy golden and float. Drain."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Season",
+        "description": "Toss fried corn with chopped onions, green chilies, chaat masala, and fresh lemon juice. Serve hot."
+      }
+    ],
+    "nutrition": {
+      "calories": 210,
+      "protein": "4g",
+      "carbs": "32g",
+      "fat": "8g",
+      "fiber": "3g",
+      "sugar": "4g"
+    },
+    "faqs": [
+      {
+        "question": "Why do corn kernels pop during frying?",
+        "answer": "Moisture inside kernels causes them to pop. Ensure corn is well dried and coated."
+      }
+    ],
+    "tags": [
+      "Crispy Corn",
+      "Sweet Corn",
+      "Snack",
+      "Spicy Fritters"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 21,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_60",
+    "slug": "veg-spring-rolls-chinese",
+    "title": "Indo-Chinese Spring Rolls",
+    "description": "Crispy golden spring rolls stuffed with sautéed cabbage, spring onions, and bean sprouts.",
+    "heroImage": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 15,
+    "totalTime": 30,
+    "difficulty": "Medium",
+    "servings": 3,
+    "calories": 210,
+    "cuisine": "Chinese",
+    "category": "Indo-Chinese",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Spring Roll Wrappers",
+        "quantity": "6",
+        "unit": "sheets"
+      },
+      {
+        "name": "Shredded Cabbage, Carrots & Capsicum",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Garlic, Soy Sauce, Vinegar",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Wok",
+      "Fryer"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Cook Stuffing",
+        "description": "Sauté garlic and julienned veggies in oil, add soy sauce, vinegar, and pepper. Do not overcook."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Fill & Seal",
+        "description": "Place stuffing in wrappers, roll tight, seal with cornflour paste."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Fry Crisp",
+        "description": "Deep fry until golden brown and super crispy. Serve with chili sauce."
+      }
+    ],
+    "nutrition": {
+      "calories": 210,
+      "protein": "3g",
+      "carbs": "24g",
+      "fat": "11g",
+      "fiber": "2g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Spring Rolls",
+      "Chinese",
+      "Snacks",
+      "Fried"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 13,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_61",
+    "slug": "gulab-jamun",
+    "title": "Gulab Jamun",
+    "description": "Classic Indian sweet dumpling made from milk solids (khoya) fried and soaked in cardamom sugar syrup.",
+    "heroImage": "https://images.unsplash.com/photo-1608756687911-a1510f6e6f6a?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 15,
+    "totalTime": 35,
+    "difficulty": "Hard",
+    "servings": 6,
+    "calories": 280,
+    "cuisine": "Indian Sweets",
+    "category": "Desserts",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Khoya / Mawa (soft)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Maida (all-purpose flour)",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Baking Powder",
+        "quantity": "pinch",
+        "unit": ""
+      },
+      {
+        "name": "Sugar",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Water & Cardamom",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Deep frying pan",
+      "Saucepan for syrup"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Make Sugar Syrup",
+        "description": "Boil sugar, water, and cardamoms together for 5 minutes until sticky but not forming threads. Keep warm."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Form Dough Balls",
+        "description": "Mash khoya and maida into a soft dough without cracks. Shape into smooth small round balls."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Fry & Soak",
+        "description": "Deep fry balls in ghee or oil on very low flame until deep golden-brown. Drain and soak in warm syrup for 2 hours."
+      }
+    ],
+    "nutrition": {
+      "calories": 280,
+      "protein": "4g",
+      "carbs": "52g",
+      "fat": "7g",
+      "fiber": "0g",
+      "sugar": "45g"
+    },
+    "faqs": [
+      {
+        "question": "Why did my gulab jamuns break during frying?",
+        "answer": "If the dough is too dry or has cracks, they will disintegrate. Add a few drops of milk to smooth the dough."
+      }
+    ],
+    "tags": [
+      "Gulab Jamun",
+      "Indian Sweets",
+      "Syrupy",
+      "Festival Sweet"
+    ],
+    "averageRating": 5,
+    "totalRatings": 54,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_62",
+    "slug": "rasmalai",
+    "title": "Rasmalai",
+    "description": "Soft paneer discs (chenna) soaked in sweet thickened milk flavored with cardamom, saffron, and pistachios.",
+    "heroImage": "https://images.unsplash.com/photo-1634031634756-cd2e05b2f829?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 40,
+    "prepTime": 20,
+    "totalTime": 60,
+    "difficulty": "Hard",
+    "servings": 5,
+    "calories": 290,
+    "cuisine": "Bengali",
+    "category": "Desserts",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Milk (for chenna & rabri)",
+        "quantity": "1.5",
+        "unit": "liters"
+      },
+      {
+        "name": "Lemon Juice (to curdle milk)",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Saffron & Cardamom",
+        "quantity": "pinch",
+        "unit": ""
+      }
+    ],
+    "tools": [
+      "Boiling Pot",
+      "Cheesecloth",
+      "Whisk"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Make Chenna",
+        "description": "Curdle boiling milk with lemon juice. Strain in cheesecloth, wash, and squeeze water. Knead chenna until smooth, shape into small flat discs."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Boil in Syrup",
+        "description": "Cook chenna discs in boiling light sugar syrup for 15 minutes. They will double in size."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Soak in Rabri",
+        "description": "Prepare rabri by reducing milk to half with saffron and sugar. Squeeze syrup from chenna discs and transfer into warm rabri. Chill and serve."
+      }
+    ],
+    "nutrition": {
+      "calories": 290,
+      "protein": "8g",
+      "carbs": "42g",
+      "fat": "10g",
+      "fiber": "0g",
+      "sugar": "32g"
+    },
+    "faqs": [],
+    "tags": [
+      "Rasmalai",
+      "Bengali Sweet",
+      "Saffron",
+      "Creamy Dessert"
+    ],
+    "averageRating": 5,
+    "totalRatings": 39,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_63",
+    "slug": "rasgulla",
+    "title": "Bengali Rasgulla",
+    "description": "Spongy and soft cottage cheese balls boiled in a light sugar syrup.",
+    "heroImage": "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 25,
+    "prepTime": 15,
+    "totalTime": 40,
+    "difficulty": "Hard",
+    "servings": 4,
+    "calories": 190,
+    "cuisine": "Bengali",
+    "category": "Desserts",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Cow Milk",
+        "quantity": "1",
+        "unit": "liter"
+      },
+      {
+        "name": "Lemon Juice",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Water",
+        "quantity": "4",
+        "unit": "cups"
+      }
+    ],
+    "tools": [
+      "Cooking Pot",
+      "Muslin cloth"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Extract Chenna",
+        "description": "Curdle boiling milk with lemon juice. Strain and hang chenna in cloth for 45 minutes to drain water."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Knead Chenna",
+        "description": "Knead chenna for 10 minutes until it releases grease. Roll into smooth small balls."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Boil in Syrup",
+        "description": "Boil sugar and water. Add chenna balls, cover tightly, and boil on high flame for 15 minutes. Let cool."
+      }
+    ],
+    "nutrition": {
+      "calories": 190,
+      "protein": "6g",
+      "carbs": "38g",
+      "fat": "2g",
+      "fiber": "0g",
+      "sugar": "34g"
+    },
+    "faqs": [],
+    "tags": [
+      "Rasgulla",
+      "Bengali",
+      "Spongy",
+      "Syrup Sweet"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 21,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_64",
+    "slug": "gajar-ka-halwa",
+    "title": "Gajar Ka Halwa",
+    "description": "Traditional Punjabi dessert made with red carrots cooked in milk, sugar, ghee, and khoya.",
+    "heroImage": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 35,
+    "prepTime": 15,
+    "totalTime": 50,
+    "difficulty": "Medium",
+    "servings": 4,
+    "calories": 310,
+    "cuisine": "North Indian",
+    "category": "Desserts",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Red Carrots (grated)",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "name": "Milk",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Ghee & Cardamom",
+        "quantity": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Heavy-bottomed Kadai",
+      "Grater"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Simmer Carrots",
+        "description": "Cook grated carrots and milk in a heavy kadhai until all the milk evaporates."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Sugar & Ghee",
+        "description": "Add sugar and ghee. Stir constantly and cook for 10 minutes until mixture shines."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Garnish",
+        "description": "Mix in cardamom powder, chopped almonds, and cashews. Serve hot."
+      }
+    ],
+    "nutrition": {
+      "calories": 310,
+      "protein": "5g",
+      "carbs": "44g",
+      "fat": "13g",
+      "fiber": "2g",
+      "sugar": "32g"
+    },
+    "faqs": [
+      {
+        "question": "Can I use condensed milk?",
+        "answer": "Yes, you can substitute milk and sugar with condensed milk for a quicker halwa."
+      }
+    ],
+    "tags": [
+      "Gajar",
+      "Carrots",
+      "Halwa",
+      "Winter Dessert"
+    ],
+    "averageRating": 5,
+    "totalRatings": 44,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_65",
+    "slug": "suji-halwa",
+    "title": "Suji Ka Halwa",
+    "description": "Quick semolina sweet pudding prepared with roasted suji, ghee, sugar, and nuts.",
+    "heroImage": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 5,
+    "totalTime": 20,
+    "difficulty": "Easy",
+    "servings": 4,
+    "calories": 250,
+    "cuisine": "Indian Sweets",
+    "category": "Desserts",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Suji (Semolina)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Ghee",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Sugar & Water",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Almonds & Cashews (sliced)",
+        "quantity": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Saucepan",
+      "Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Boil Sugar Water",
+        "description": "Boil water and sugar in a pot until sugar dissolves. Keep hot."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Roast Suji",
+        "description": "Melt ghee in a pan, roast suji on low heat until golden brown and fragrant."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Combine",
+        "description": "Pour sugar water into roasted suji slowly, stirring continuously to prevent lumps. Cook until thick."
+      }
+    ],
+    "nutrition": {
+      "calories": 250,
+      "protein": "4g",
+      "carbs": "45g",
+      "fat": "12g",
+      "fiber": "1g",
+      "sugar": "30g"
+    },
+    "faqs": [],
+    "tags": [
+      "Suji",
+      "Semolina",
+      "Halwa",
+      "Quick Sweet"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 25,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_66",
+    "slug": "kheer",
+    "title": "Traditional Rice Kheer",
+    "description": "Creamy cardamom-spiced Indian rice pudding made by slow-cooking basmati rice with full cream milk.",
+    "heroImage": "https://images.unsplash.com/photo-1485962398696-8d8262410300?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 30,
+    "prepTime": 5,
+    "totalTime": 35,
+    "difficulty": "Easy",
+    "servings": 4,
+    "calories": 210,
+    "cuisine": "North Indian",
+    "category": "Desserts",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Full Cream Milk",
+        "quantity": "1",
+        "unit": "liter"
+      },
+      {
+        "name": "Basmati Rice (soaked)",
+        "quantity": "0.25",
+        "unit": "cup"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Cardamom & Saffron",
+        "quantity": "pinch",
+        "unit": ""
+      }
+    ],
+    "tools": [
+      "Heavy Pot",
+      "Spatula"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Boil Milk & Rice",
+        "description": "Bring milk to a boil. Add soaked rice, simmer on low heat."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Slow Cook",
+        "description": "Cook for 25 minutes, stirring frequently, until rice is soft and milk becomes creamy."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Sweeten & Spice",
+        "description": "Add sugar, cardamom powder, and saffron. Cook for 5 minutes. Serve warm or cold."
+      }
+    ],
+    "nutrition": {
+      "calories": 210,
+      "protein": "6g",
+      "carbs": "32g",
+      "fat": "7g",
+      "fiber": "1g",
+      "sugar": "24g"
+    },
+    "faqs": [],
+    "tags": [
+      "Kheer",
+      "Rice Pudding",
+      "Payasam",
+      "Creamy"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 32,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_67",
+    "slug": "rice-kheer",
+    "title": "Chawal Ki Kheer",
+    "description": "Rich, delicious, slow-cooked rice pudding served cold and garnished with almonds and pistachios.",
+    "heroImage": "https://images.unsplash.com/photo-1552590635-27c2c2128b83?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 30,
+    "prepTime": 5,
+    "totalTime": 35,
+    "difficulty": "Easy",
+    "servings": 4,
+    "calories": 210,
+    "cuisine": "Indian",
+    "category": "Desserts",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Milk",
+        "quantity": "1",
+        "unit": "liter"
+      },
+      {
+        "name": "Basmati Rice",
+        "quantity": "0.25",
+        "unit": "cup"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Pot"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Boil",
+        "description": "Boil rice and milk together on low flame."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Thicken",
+        "description": "Stir constantly until rice grains mash easily and milk thickens."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Sweeten",
+        "description": "Add sugar and dry nuts. Mix well and chill before serving."
+      }
+    ],
+    "nutrition": {
+      "calories": 210,
+      "protein": "6g",
+      "carbs": "32g",
+      "fat": "7g",
+      "fiber": "1g",
+      "sugar": "24g"
+    },
+    "faqs": [],
+    "tags": [
+      "Rice Kheer",
+      "Chawal Kheer",
+      "Cold Sweet"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 12,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_68",
+    "slug": "jalebi",
+    "title": "Instant Jalebi",
+    "description": "Crispy, juicy sweet spirals made of fermented flour batter deep-fried and dipped in sugar syrup.",
+    "heroImage": "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 10,
+    "totalTime": 25,
+    "difficulty": "Hard",
+    "servings": 4,
+    "calories": 290,
+    "cuisine": "North Indian",
+    "category": "Desserts",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Maida",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Yogurt",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Baking Soda",
+        "quantity": "0.5",
+        "unit": "tsp"
+      },
+      {
+        "name": "Sugar Syrup",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Squeeze bottle or Piping bag",
+      "Flat Frying Pan",
+      "Tongs"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Make Batter",
+        "description": "Mix maida, yogurt, baking soda, and water into a smooth batter. It should be thick but pourable."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Pipe spirals",
+        "description": "Pour batter in squeeze bottle. Squeeze spirals into flat hot oil/ghee."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Soak",
+        "description": "Fry until crisp on both sides, then slide immediately into warm sugar syrup. Soak for 2 minutes."
+      }
+    ],
+    "nutrition": {
+      "calories": 290,
+      "protein": "3g",
+      "carbs": "56g",
+      "fat": "7g",
+      "fiber": "0g",
+      "sugar": "48g"
+    },
+    "faqs": [],
+    "tags": [
+      "Jalebi",
+      "Crispy",
+      "Sweet Spirals",
+      "Street Food"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 33,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_69",
+    "slug": "rabri",
+    "title": "Lachha Rabri",
+    "description": "Sweet condensed-milk dish made by boiling milk on low heat until it becomes rich and cream-layered.",
+    "heroImage": "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 45,
+    "prepTime": 5,
+    "totalTime": 50,
+    "difficulty": "Hard",
+    "servings": 3,
+    "calories": 260,
+    "cuisine": "North Indian",
+    "category": "Desserts",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Full-cream Milk",
+        "quantity": "1.5",
+        "unit": "liters"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Kevra Water & Cardamom",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Broad Kadai",
+      "Spatula"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Gather Malai",
+        "description": "Bring milk to a boil in a broad pan. Keep collecting the cream (malai) layers to the sides of the pan."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Reduce Milk",
+        "description": "Continue reducing milk on low heat until it reaches 1/3 of its volume."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Combine & Sweeten",
+        "description": "Scrape all cream layers from the sides back into the milk, add sugar and cardamom. Cool and serve."
+      }
+    ],
+    "nutrition": {
+      "calories": 260,
+      "protein": "9g",
+      "carbs": "24g",
+      "fat": "14g",
+      "fiber": "0g",
+      "sugar": "20g"
+    },
+    "faqs": [],
+    "tags": [
+      "Rabri",
+      "Thick Milk",
+      "Lachha",
+      "Mithai"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 18,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_70",
+    "slug": "moong-dal-halwa",
+    "title": "Moong Dal Halwa",
+    "description": "Rich traditional Rajasthani sweet made of split yellow lentils, ghee, sugar, and cardamoms.",
+    "heroImage": "https://images.unsplash.com/photo-1547825407-2d060104b7c8?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 40,
+    "prepTime": 15,
+    "totalTime": 55,
+    "difficulty": "Hard",
+    "servings": 4,
+    "calories": 350,
+    "cuisine": "Rajasthani",
+    "category": "Desserts",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Moong Dal (soaked & ground)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Ghee",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Sugar & Milk",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "tools": [
+      "Heavy-bottomed Pan",
+      "Stirring spoon"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Roast ground dal",
+        "description": "Melt ghee, add coarsely ground moong dal. Sauté on low flame, stirring constantly, until it turns golden-brown."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Milk & Sugar",
+        "description": "Pour in hot milk and sugar syrup. Stir constantly to avoid lumps."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Simmer",
+        "description": "Simmer until the ghee separates from the sides of the halwa. Garnish with dry nuts."
+      }
+    ],
+    "nutrition": {
+      "calories": 350,
+      "protein": "6g",
+      "carbs": "42g",
+      "fat": "18g",
+      "fiber": "2g",
+      "sugar": "32g"
+    },
+    "faqs": [
+      {
+        "question": "Why does it require so much stirring?",
+        "answer": "Moong dal tends to stick to the pan easily, so continuous stirring on low heat is essential."
+      }
+    ],
+    "tags": [
+      "Moong Dal",
+      "Halwa",
+      "Rajasthani Sweet",
+      "Rich Dessert"
+    ],
+    "averageRating": 5,
+    "totalRatings": 22,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_71",
+    "slug": "mango-shake",
+    "title": "Mango Shake",
+    "description": "Thick, creamy, and sweet mango milkshake blended with ripe mango pulp and chilled milk.",
+    "heroImage": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 5,
+    "prepTime": 5,
+    "totalTime": 10,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 180,
+    "cuisine": "Indian Beverages",
+    "category": "Beverages",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Ripe Mangoes (chopped)",
+        "quantity": "2",
+        "unit": "large"
+      },
+      {
+        "name": "Chilled Milk",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Sugar / Honey",
+        "quantity": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Blender",
+      "Serving Glasses"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Blend Mango",
+        "description": "Blend mango pulp and sugar into a smooth paste."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Milk",
+        "description": "Add chilled milk and ice cubes, blend again for 1 minute until smooth."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Serve",
+        "description": "Pour into glasses, garnish with chopped nuts and mango chunks."
+      }
+    ],
+    "nutrition": {
+      "calories": 180,
+      "protein": "4g",
+      "carbs": "32g",
+      "fat": "4g",
+      "fiber": "1g",
+      "sugar": "28g"
+    },
+    "faqs": [],
+    "tags": [
+      "Mango Shake",
+      "Summer Drink",
+      "Cold Drink",
+      "Milkshake"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 30,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_72",
+    "slug": "banana-shake",
+    "title": "Banana Milkshake",
+    "description": "Creamy and energizing milkshake blended with ripe bananas, chilled milk, and honey.",
+    "heroImage": "https://images.unsplash.com/photo-1550558639-6f6fca292200?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 5,
+    "prepTime": 5,
+    "totalTime": 10,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 220,
+    "cuisine": "Beverages",
+    "category": "Beverages",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Ripe Bananas",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Milk (chilled)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Honey",
+        "quantity": "1.5",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Blender"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Blend Bananas",
+        "description": "Slice bananas and blend with honey and half cup of milk until smooth."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Blend Shake",
+        "description": "Add remaining milk and blend for 30 seconds."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Pour",
+        "description": "Pour into glasses, top with a pinch of cardamom powder or cinnamon."
+      }
+    ],
+    "nutrition": {
+      "calories": 220,
+      "protein": "6g",
+      "carbs": "36g",
+      "fat": "6g",
+      "fiber": "2g",
+      "sugar": "24g"
+    },
+    "faqs": [],
+    "tags": [
+      "Banana",
+      "Shake",
+      "Energizing",
+      "Smoothie"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 15,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_73",
+    "slug": "cold-coffee",
+    "title": "Cafe Style Cold Coffee",
+    "description": "Rich, creamy, and chocolaty cold coffee blended to frothy perfection.",
+    "heroImage": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 5,
+    "prepTime": 5,
+    "totalTime": 10,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 210,
+    "cuisine": "Beverages",
+    "category": "Beverages",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Chilled Milk",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Instant Coffee Powder",
+        "quantity": "1.5",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Blender"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Dissolve Coffee",
+        "description": "Dissolve coffee and sugar in 2 tbsp warm water."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Blend",
+        "description": "Add coffee mixture, chilled milk, and ice cubes to a blender. Blend on high speed for 1 minute until frothy."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Serve",
+        "description": "Pour into chocolate-drizzled glasses, spoon foam on top."
+      }
+    ],
+    "nutrition": {
+      "calories": 210,
+      "protein": "6g",
+      "carbs": "28g",
+      "fat": "8g",
+      "fiber": "0g",
+      "sugar": "25g"
+    },
+    "faqs": [],
+    "tags": [
+      "Cold Coffee",
+      "Coffee",
+      "Frappe",
+      "Frothy"
+    ],
+    "averageRating": 5,
+    "totalRatings": 28,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_74",
+    "slug": "lassi",
+    "title": "Sweet Punjabi Lassi",
+    "description": "Thick and creamy traditional Punjabi yogurt-based cold beverage flavored with cardamom and saffron.",
+    "heroImage": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 5,
+    "prepTime": 5,
+    "totalTime": 10,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 200,
+    "cuisine": "Punjabi",
+    "category": "Beverages",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Fresh Thick Curd (Yogurt)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "4",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Cardamom Powder",
+        "quantity": "0.5",
+        "unit": "tsp"
+      },
+      {
+        "name": "Malai / Cream (for topping)",
+        "quantity": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Blender or Hand Churner (Madani)"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Churn Curd",
+        "description": "In a pitcher, whisk or churn curd, sugar, and cardamoms with ice cubes until thick and frothy."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Serve",
+        "description": "Pour into clay glasses, top with a spoonful of thick malai and chopped pistachios."
+      }
+    ],
+    "nutrition": {
+      "calories": 200,
+      "protein": "5g",
+      "carbs": "28g",
+      "fat": "8g",
+      "fiber": "0g",
+      "sugar": "26g"
+    },
+    "faqs": [],
+    "tags": [
+      "Lassi",
+      "Yogurt Drink",
+      "Punjabi Lassi",
+      "Cooler"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 32,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_75",
+    "slug": "masala-chai",
+    "title": "Masala Chai",
+    "description": "Classic Indian spiced tea brewed with fresh ginger, cardamoms, cloves, and milk.",
+    "heroImage": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 5,
+    "totalTime": 15,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 120,
+    "cuisine": "Indian Beverages",
+    "category": "Beverages",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Water",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Milk",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Tea Leaves",
+        "quantity": "2",
+        "unit": "tsp"
+      },
+      {
+        "name": "Ginger (grated)",
+        "quantity": "1",
+        "unit": "inch"
+      }
+    ],
+    "tools": [
+      "Tea Pan",
+      "Sieve / Strainer"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Boil spices",
+        "description": "Boil water, ginger, cardamoms, and cloves for 2 minutes."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Tea Leaves",
+        "description": "Add tea leaves and sugar. Simmer for 2 minutes."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Brew with Milk",
+        "description": "Pour in milk, bring to a rolling boil, simmer for 1 minute, strain and enjoy."
+      }
+    ],
+    "nutrition": {
+      "calories": 120,
+      "protein": "3g",
+      "carbs": "15g",
+      "fat": "4g",
+      "fiber": "0g",
+      "sugar": "12g"
+    },
+    "faqs": [],
+    "tags": [
+      "Chai",
+      "Tea",
+      "Spiced Tea",
+      "Hot Drink"
+    ],
+    "averageRating": 5,
+    "totalRatings": 42,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_76",
+    "slug": "green-tea",
+    "title": "Honey Lemon Green Tea",
+    "description": "Healthy and relaxing hot drink made with green tea leaves, lemon juice, and honey.",
+    "heroImage": "https://images.unsplash.com/photo-1588675646184-f5bb0d9b9a45?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 3,
+    "prepTime": 2,
+    "totalTime": 5,
+    "difficulty": "Easy",
+    "servings": 1,
+    "calories": 40,
+    "cuisine": "Beverages",
+    "category": "Beverages",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Green Tea Bag or leaves",
+        "quantity": "1",
+        "unit": "bag"
+      },
+      {
+        "name": "Water",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Honey",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Lemon slice",
+        "quantity": "1",
+        "unit": "pc"
+      }
+    ],
+    "tools": [
+      "Cup",
+      "Kettle"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Boil Water",
+        "description": "Heat water until hot but not boiling (around 80°C)."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Steep Tea",
+        "description": "Pour water over green tea bag/leaves. Steep for 2-3 minutes. Remove bag."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Season",
+        "description": "Stir in honey and a squeeze of fresh lemon juice."
+      }
+    ],
+    "nutrition": {
+      "calories": 40,
+      "protein": "0g",
+      "carbs": "10g",
+      "fat": "0g",
+      "fiber": "0g",
+      "sugar": "9g"
+    },
+    "faqs": [
+      {
+        "question": "Why not use boiling water?",
+        "answer": "Boiling water makes green tea leaves taste bitter."
+      }
+    ],
+    "tags": [
+      "Green Tea",
+      "Healthy",
+      "Herbal",
+      "Weight Loss"
+    ],
+    "averageRating": 4.5,
+    "totalRatings": 19,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_77",
+    "slug": "lemon-juice",
+    "title": "Fresh Lemon Juice (Shikanji)",
+    "description": "Cooling summer lemonade seasoned with black salt, sugar, and roasted cumin powder.",
+    "heroImage": "https://images.unsplash.com/photo-1517093157656-b9ecdecfde26?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 5,
+    "prepTime": 5,
+    "totalTime": 10,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 80,
+    "cuisine": "Indian Beverages",
+    "category": "Beverages",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Lemon (juiced)",
+        "quantity": "2",
+        "unit": "large"
+      },
+      {
+        "name": "Chilled Water",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Black Salt & Roasted Cumin",
+        "quantity": "0.5",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Pitcher",
+      "Squeezer"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Mix Sweetener",
+        "description": "Dissolve sugar in lemon juice and water."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Add Spices",
+        "description": "Stir in black salt, roasted cumin powder, and torn mint leaves."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Chill",
+        "description": "Add ice cubes and serve chilled."
+      }
+    ],
+    "nutrition": {
+      "calories": 80,
+      "protein": "0g",
+      "carbs": "20g",
+      "fat": "0g",
+      "fiber": "0g",
+      "sugar": "18g"
+    },
+    "faqs": [],
+    "tags": [
+      "Lemon Juice",
+      "Shikanji",
+      "Cooler",
+      "Lemonade"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 15,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_78",
+    "slug": "watermelon-juice",
+    "title": "Fresh Watermelon Juice",
+    "description": "100% natural, refreshing cold watermelon juice blended with a touch of mint.",
+    "heroImage": "https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 5,
+    "prepTime": 5,
+    "totalTime": 10,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 90,
+    "cuisine": "Beverages",
+    "category": "Beverages",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Watermelon chunks (seeded)",
+        "quantity": "3",
+        "unit": "cups"
+      },
+      {
+        "name": "Lime juice",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Mint leaves",
+        "quantity": "few",
+        "unit": ""
+      }
+    ],
+    "tools": [
+      "Blender",
+      "Sieve"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Blend Fruit",
+        "description": "Blend watermelon chunks and mint leaves until liquefied."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Strain",
+        "description": "Strain through a sieve to remove pulp if desired."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Serve Chilled",
+        "description": "Pour into glasses over ice, squeeze in a little lime juice."
+      }
+    ],
+    "nutrition": {
+      "calories": 90,
+      "protein": "1g",
+      "carbs": "22g",
+      "fat": "0g",
+      "fiber": "1g",
+      "sugar": "20g"
+    },
+    "faqs": [],
+    "tags": [
+      "Watermelon",
+      "Juice",
+      "Refreshing",
+      "Summer Special"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 25,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_79",
+    "slug": "badam-milk",
+    "title": "Kesar Badam Milk",
+    "description": "Chilled sweet milk drink enriched with almond paste, cardamoms, and saffron threads.",
+    "heroImage": "https://images.unsplash.com/photo-1514517604298-cf80e0fb7f1e?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 15,
+    "totalTime": 30,
+    "difficulty": "Medium",
+    "servings": 2,
+    "calories": 240,
+    "cuisine": "Indian Beverages",
+    "category": "Beverages",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Milk",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Almonds (soaked & peeled)",
+        "quantity": "15",
+        "unit": "pcs"
+      },
+      {
+        "name": "Saffron threads",
+        "quantity": "pinch",
+        "unit": ""
+      },
+      {
+        "name": "Sugar",
+        "quantity": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Blender",
+      "Cooking Pot"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Almond Paste",
+        "description": "Grind soaked almonds with a splash of milk into a smooth paste."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Boil Milk",
+        "description": "Boil milk with sugar, saffron, and cardamoms. Add almond paste."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Simmer & Cool",
+        "description": "Simmer on low heat for 10 minutes until slightly thickened. Cool and chill before serving."
+      }
+    ],
+    "nutrition": {
+      "calories": 240,
+      "protein": "8g",
+      "carbs": "26g",
+      "fat": "12g",
+      "fiber": "2g",
+      "sugar": "22g"
+    },
+    "faqs": [],
+    "tags": [
+      "Badam Milk",
+      "Almond Milk",
+      "Kesar",
+      "Saffron Drink"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 21,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_80",
+    "slug": "hot-chocolate",
+    "title": "Rich Hot Chocolate",
+    "description": "Thick, decadent, and creamy hot chocolate made with pure cocoa and chopped dark chocolate.",
+    "heroImage": "https://images.unsplash.com/photo-1494314671902-3a6d7f9996be?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 2,
+    "totalTime": 12,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 280,
+    "cuisine": "Beverages",
+    "category": "Beverages",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Whole Milk",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Cocoa Powder",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Dark Chocolate (chopped)",
+        "quantity": "50",
+        "unit": "g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "1.5",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Saucepan",
+      "Whisk"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Whisk Cocoa",
+        "description": "In a saucepan, whisk milk, cocoa powder, and sugar together until no lumps remain."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Melt Chocolate",
+        "description": "Heat on medium flame until hot but not boiling. Add chopped dark chocolate, stirring constantly until melted."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Thicken",
+        "description": "Simmer gently for 2 minutes until rich and thick. Serve hot topped with marshmallows or whipped cream."
+      }
+    ],
+    "nutrition": {
+      "calories": 280,
+      "protein": "7g",
+      "carbs": "32g",
+      "fat": "14g",
+      "fiber": "3g",
+      "sugar": "24g"
+    },
+    "faqs": [],
+    "tags": [
+      "Hot Chocolate",
+      "Cocoa",
+      "Chocolate Drink",
+      "Winter Classic"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 36,
+    "createdAt": {
+      "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  }
+]

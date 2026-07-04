@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookWithPrem — Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍳</span> CookWithPrem
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="recipes.html" class="nav-link">Recipes</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link active">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Header Banner -->
+    <section class="page-banner">
+        <div class="container text-center">
+            <h1>Contact Us</h1>
+            <p>Have questions about recipes? Get in touch with Prem Sagar Pandey!</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Area -->
+    <main class="container main-content">
+        <div class="grid-2" style="gap: 40px; align-items: start;">
+            <!-- Contact Details -->
+            <div class="contact-info" style="background-color: var(--white); border: 1px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+                <h2>Get in touch</h2>
+                <p style="color: var(--text-muted); margin-bottom: 25px;">If you have any feedback or want to share your recreation of one of my dishes, feel free to fill out the form!</p>
+                
+                <div class="info-block" style="margin-bottom: 20px;">
+                    <h4 style="color: var(--primary-sage-dark); font-size: 16px; margin-bottom: 5px;">📍 Location</h4>
+                    <p style="color: var(--text-muted); font-size: 14px;">Uttar Pradesh, India</p>
+                </div>
+                <div class="info-block" style="margin-bottom: 20px;">
+                    <h4 style="color: var(--primary-sage-dark); font-size: 16px; margin-bottom: 5px;">📧 Email</h4>
+                    <p style="color: var(--text-muted); font-size: 14px;">premsagarpandey@cookwithprem.com</p>
+                </div>
+                <div class="info-block">
+                    <h4 style="color: var(--primary-sage-dark); font-size: 16px; margin-bottom: 5px;">⏱️ Response Time</h4>
+                    <p style="color: var(--text-muted); font-size: 14px;">Typically within 24-48 hours.</p>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="contact-form-card" style="background-color: var(--white); border: 1px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+                <form id="contact-form">
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="name" style="display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px;">Your Name</label>
+                        <input type="text" id="name" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: var(--radius-sm); outline: none; font-family: inherit; font-size: 14px;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="email" style="display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px;">Email Address</label>
+                        <input type="email" id="email" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: var(--radius-sm); outline: none; font-family: inherit; font-size: 14px;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="subject" style="display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px;">Subject</label>
+                        <input type="text" id="subject" required style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: var(--radius-sm); outline: none; font-family: inherit; font-size: 14px;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label for="message" style="display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px;">Message</label>
+                        <textarea id="message" required rows="5" style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: var(--radius-sm); outline: none; font-family: inherit; font-size: 14px; resize: vertical;"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-btn" style="width: 100%; border: none; cursor: pointer; text-align: center;">Send Message</button>
+                </form>
+                <div id="form-feedback" style="display: none; margin-top: 20px; padding: 15px; border-radius: var(--radius-sm); text-align: center; font-size: 14px;"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 CookWithPrem. All Rights Reserved.</p>
+            <p class="footer-note">Designed as a simple beginner student project.</p>
+        </div>
+    </footer>
+
+    <!-- Form script -->
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+            
+            const feedback = document.getElementById("form-feedback");
+            feedback.style.display = "block";
+            feedback.style.backgroundColor = "#edf2ed";
+            feedback.style.color = "#276749";
+            feedback.style.border = "1px solid #c6f6d5";
+            feedback.textContent = `Thank you, ${name}! Your message has been sent successfully. Prem will respond soon.`;
+            
+            // Clear form
+            document.getElementById("contact-form").reset();
+        });
+    </script>
+</body>
+</html>

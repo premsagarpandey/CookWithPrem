@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookWithPrem — Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍳</span> CookWithPrem
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="recipes.html" class="nav-link active">Recipes</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Header Banner -->
+    <section class="page-banner">
+        <div class="container text-center">
+            <h1>Recipe Collection</h1>
+            <p>Browse through my catalog of step-by-step dishes.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container main-content">
+        <!-- Controls Panel -->
+        <div class="controls-panel">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search recipe name, ingredients, or tags...">
+            </div>
+            
+            <div class="category-filters">
+                <span class="filter-label">Filter by Category:</span>
+                <div class="category-buttons-row">
+                    <button class="filter-btn active" data-category="all">⚡ All Dishes</button>
+                    <div id="category-list" class="category-buttons-row inline-row">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipes Grid -->
+        <div id="recipes-grid" class="recipes-grid">
+            <div class="loading-state">Loading recipe database...</div>
+        </div>
+    </main>
+
+    <!-- Modal Details -->
+    <div id="recipe-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="close-btn" id="close-modal">&times;</button>
+            <div id="modal-content">
+                <!-- Loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 CookWithPrem. All Rights Reserved.</p>
+            <p class="footer-note">Designed as a simple beginner student project.</p>
+        </div>
+    </footer>
+
+    <!-- App scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

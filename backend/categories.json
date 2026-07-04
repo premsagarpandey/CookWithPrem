@@ -1,0 +1,65 @@
+[
+  {
+    "id": "cat_1",
+    "name": "Breakfast",
+    "slug": "breakfast",
+    "description": "Start your day with healthy and delicious breakfast options.",
+    "imageUrl": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&auto=format&fit=crop&q=80",
+    "recipeCount": 10,
+    "order": 1
+  },
+  {
+    "id": "cat_2",
+    "name": "Lunch & Mains",
+    "slug": "lunch-mains",
+    "description": "Hearty and satisfying main course curries and sabzis.",
+    "imageUrl": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&auto=format&fit=crop&q=80",
+    "recipeCount": 20,
+    "order": 2
+  },
+  {
+    "id": "cat_3",
+    "name": "Rice Dishes",
+    "slug": "rice-dishes",
+    "description": "Aromatic biryanis, pulaos, and everyday rice items.",
+    "imageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&auto=format&fit=crop&q=80",
+    "recipeCount": 10,
+    "order": 3
+  },
+  {
+    "id": "cat_4",
+    "name": "Snacks",
+    "slug": "snacks",
+    "description": "Crispy, savory, and quick street-style snacks.",
+    "imageUrl": "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=600&auto=format&fit=crop&q=80",
+    "recipeCount": 10,
+    "order": 4
+  },
+  {
+    "id": "cat_5",
+    "name": "Indo-Chinese",
+    "slug": "indo-chinese",
+    "description": "Spicy and tangy Chinese dishes tailored for Indian taste buds.",
+    "imageUrl": "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&auto=format&fit=crop&q=80",
+    "recipeCount": 10,
+    "order": 5
+  },
+  {
+    "id": "cat_6",
+    "name": "Desserts",
+    "slug": "desserts",
+    "description": "Indulge in sweet traditional Indian desserts and halwas.",
+    "imageUrl": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80",
+    "recipeCount": 10,
+    "order": 6
+  },
+  {
+    "id": "cat_7",
+    "name": "Beverages",
+    "slug": "beverages",
+    "description": "Refreshing cold shakes, juices, and hot chai.",
+    "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&auto=format&fit=crop&q=80",
+    "recipeCount": 10,
+    "order": 7
+  }
+]
