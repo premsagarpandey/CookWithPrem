@@ -1,7 +1,19 @@
 # CookWithPrem 🍳
 > **Step-by-Step Recipes by Prem Sagar Pandey**
 
-A super simple, lightweight cooking recipe platform built using a **pure HTML/CSS/JS frontend** and a **C++ backend HTTP server**. The project size has been reduced from 450MB+ (framework overhead) to **under 1MB**!
+A premium, ultra-lightweight cooking recipe platform designed as a beginner-student project. It features a **pure HTML/CSS/JS frontend** served entirely by a custom-written **C++ backend HTTP server**. 
+
+By replacing heavy frameworks like Next.js, the project disk size has been optimized from **450MB+ down to under 1MB**!
+
+---
+
+## ✨ Features
+
+- 🍦 **Vanilla Stack**: Built purely using HTML5, CSS3, and standard ES6 JavaScript. No framework overhead.
+- 🎨 **Premium Aesthetics**: Features a beautiful color scheme (Cream, Sage Green & Warm Brown) with responsive grids and interactive detail modals.
+- 📂 **Multi-Page Layout**: Separate sections for Home, Recipes (with Category dynamic filtering and Search), About Us, and Contact Us.
+- ⚡ **Lightweight C++ Server**: Actively handles routing, serves static frontend assets, and handles REST API requests (`/api/recipes`, `/api/categories`).
+- 🌐 **Winsock Socket Server**: Uses native low-level Windows Sockets (`winsock2.h`) and standard POSIX sockets.
 
 ---
 
@@ -10,9 +22,12 @@ A super simple, lightweight cooking recipe platform built using a **pure HTML/CS
 ```
 CookWithPrem/
 ├── frontend/                     # ── STATIC FRONTEND LAYER ───────────────
-│   ├── index.html                # Main homepage & recipe viewer
-│   ├── style.css                 # Sage Green, Cream, and Brown theme styles
-│   └── app.js                    # Fetch logic to query C++ backend & render cards
+│   ├── index.html                # Home Landing Page
+│   ├── recipes.html              # Recipes Catalog (with dynamic filtering)
+│   ├── about.html                # About Prem Sagar Pandey & cooking tips
+│   ├── contact.html              # Contact Form (with live success alerts)
+│   ├── style.css                 # Premium style sheets
+│   └── app.js                    # Dynamic fetch operations & modal popups
 │
 └── backend/                      # ── C++ BACKEND WEB SERVER ──────────────
     ├── main.cpp                  # C++ HTTP socket server
@@ -24,27 +39,19 @@ CookWithPrem/
 
 ---
 
-## 🛠️ How to Compile & Run
+## 🛠️ How to Compile & Run Locally
 
 ### 1. Compile the Backend (MinGW/GCC)
-Open terminal/cmd in the `backend/` folder and run:
+Open your command prompt or terminal in the `backend/` directory and run:
 
 ```bash
-# Compilation
+# Compile using g++ compiler linking Winsock
 g++ main.cpp -o cpp_backend.exe -lws2_32
 
-# Execution
+# Run the backend server
 ./cpp_backend.exe
 ```
 
-### 2. View the Website
-Once the backend server starts, it will listen on port `8080`.
-Open your browser and navigate to:
+### 2. View the Platform
+Once the C++ server is running, open your web browser and visit:
 👉 **[http://localhost:8080](http://localhost:8080)**
-
----
-
-## 🎓 Design Focus
-- **Pure HTML, CSS, & Vanilla JS**: Zero dependencies, no node_modules, no frameworks, no configuration bloat.
-- **Lightweight C++ Server**: Acts as both the API server (serving JSON data) and the static file server (serving HTML, CSS, and JS).
-- **CORS Compliant**: Ready to handle AJAX fetch requests.
