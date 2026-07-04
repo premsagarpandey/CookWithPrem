@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
@@ -26,28 +26,33 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero homepage-hero">
-        <div class="container text-center">
-            <h1>Master Cooking, One Step at a Time</h1>
-            <p>Simple, detailed recipes for beginners designed by Prem Sagar Pandey.</p>
-            <a href="recipes.html" class="cta-btn">Explore Recipes</a>
+    <!-- Editorial Hero Section -->
+    <header class="homepage-hero">
+        <div class="container hero-grid">
+            <div class="hero-content reveal">
+                <h1>The Art of <br><i>Simple Cooking</i></h1>
+                <p>Curated, foolproof recipes for beginners and students who want to explore the joy of cooking without the overwhelming complexity.</p>
+                <a href="recipes.html" class="cta-btn">Explore Recipes</a>
+            </div>
+            <div class="hero-image-wrapper reveal" style="transition-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800" alt="Beautiful fresh ingredients">
+            </div>
         </div>
-    </section>
+    </header>
 
     <!-- Introduction Section -->
     <section class="section intro-section">
         <div class="container grid-2">
-            <div class="intro-text">
-                <span class="sub-heading">Welcome to CookWithPrem</span>
-                <h2>Delicious Food Made Simple</h2>
-                <p>Hello! I am **Prem Sagar Pandey**. I created this platform to help beginner cooks learn how to prepare authentic, tasty home-cooked meals without getting overwhelmed by complex kitchen jargon.</p>
-                <p>Every single dish listed here comes with a precise list of ingredients, measurements, cooking times, and a clear step-by-step breakdown. If I can cook it, you can too!</p>
-                <a href="about.html" class="text-link">Read my story &rarr;</a>
-            </div>
-            <div class="intro-image-container">
-                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600" alt="Cooking Illustration" class="intro-image">
-            </div>
+            <div class="intro-text reveal">
+            <span class="sub-heading">My Story</span>
+            <h2>How Cooking Changed My Life</h2>
+            <p>I started cooking as a complete beginner. Through trial and error, I discovered that creating delicious meals doesn't require a professional kitchen—it just takes passion.</p>
+            <p>CookWithPrem is a platform dedicated to students and beginners who want to explore the joy of cooking with simple, foolproof recipes.</p>
+            <a href="about.html" class="text-link">Read full story &rarr;</a>
+        </div>
+        <div class="reveal" style="transition-delay: 0.2s;">
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800" alt="Prem cooking" class="intro-image">
+        </div>
         </div>
     </section>
 
@@ -58,23 +63,23 @@
             <p class="section-desc">Find exactly what you want to cook today by browsing our top categories.</p>
             
             <div class="category-cards-grid">
-                <a href="recipes.html?cat=breakfast" class="cat-showcase-card">
-                    <span class="cat-icon">🥞</span>
+            <a href="recipes.html?cat=breakfast" class="cat-showcase-card reveal" style="transition-delay: 0.1s;">
+                <span class="cat-icon">🥞</span>
                     <h3>Breakfast</h3>
                     <p>Start your day with healthy, quick meals.</p>
                 </a>
-                <a href="recipes.html?cat=lunch" class="cat-showcase-card">
-                    <span class="cat-icon">🍛</span>
+                <a href="recipes.html?cat=lunch" class="cat-showcase-card reveal" style="transition-delay: 0.2s;">
+                <span class="cat-icon">🍛</span>
                     <h3>Lunch</h3>
                     <p>Hearty and filling recipes for lunch.</p>
                 </a>
-                <a href="recipes.html?cat=dinner" class="cat-showcase-card">
-                    <span class="cat-icon">🍲</span>
+                <a href="recipes.html?cat=dinner" class="cat-showcase-card reveal" style="transition-delay: 0.3s;">
+                <span class="cat-icon">🍲</span>
                     <h3>Dinner</h3>
                     <p>Elegant yet simple evening delights.</p>
                 </a>
-                <a href="recipes.html?cat=dessert" class="cat-showcase-card">
-                    <span class="cat-icon">🍰</span>
+                <a href="recipes.html?cat=dessert" class="cat-showcase-card reveal" style="transition-delay: 0.4s;">
+                <span class="cat-icon">🍰</span>
                     <h3>Dessert</h3>
                     <p>Sweet treats to satisfy your cravings.</p>
                 </a>

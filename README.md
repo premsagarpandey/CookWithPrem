@@ -55,3 +55,34 @@ g++ main.cpp -o cpp_backend.exe -lws2_32
 ### 2. View the Platform
 Once the C++ server is running, open your web browser and visit:
 👉 **[http://localhost:8080](http://localhost:8080)**
+
+---
+
+## 🎓 Git Tutorial: How to Commit & Push Changes
+
+If you make modifications to this project (e.g., editing HTML files, changing style sheets, or updating C++ code), follow these steps to commit and push your changes to GitHub:
+
+### Step 1: Check your modified files
+Verify what files have been changed or added:
+```bash
+git status
+```
+
+### Step 2: Stage the changes
+Add all the changed files to the Git staging index:
+```bash
+git add .
+```
+*(Alternatively, stage a specific file using `git add folder/file.html`)*
+
+### Step 3: Create a local Commit
+Save a snapshot of your changes locally with a descriptive message:
+```bash
+git commit -m "Describe what changes you made (e.g., Updated contact details)"
+```
+
+### Step 4: Push the changes to GitHub
+Upload your local commits to the remote repository on GitHub:
+```bash
+git push origin main
+```

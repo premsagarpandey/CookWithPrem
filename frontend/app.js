@@ -3,9 +3,11 @@
 // ==========================================================================
 
 let recipes = [];
+let filteredRecipes = [];
 let categories = [];
 let currentCategory = 'all';
 let searchQuery = '';
+let currentRecipeIndex = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
     init();
@@ -20,8 +22,27 @@ async function init() {
     }
 
     setupEventListeners();
+    initScrollReveal();
     await loadCategories();
     await loadRecipes();
+}
+
+// Initialize IntersectionObserver for scroll animations
+function initScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Optional: unobserve if you want the animation to happen only once
+                // observer.unobserve(entry.target); 
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    
+    // Make a global observer so we can observe dynamic elements later
+    window.scrollObserver = observer;
 }
 
 function setupEventListeners() {
@@ -30,26 +51,19 @@ function setupEventListeners() {
     if (searchInput) {
         searchInput.addEventListener("input", (e) => {
             searchQuery = e.target.value.toLowerCase();
-            renderRecipes();
+            applyFilters();
         });
     }
 
-    // Close modal event
-    const closeModal = document.getElementById("close-modal");
-    const modal = document.getElementById("recipe-modal");
-    
-    if (closeModal && modal) {
-        closeModal.addEventListener("click", () => {
-            modal.classList.remove("show");
-            document.body.style.overflow = "auto";
-        });
+    // Book Navigation Events
+    const prevBtn = document.getElementById("prev-page");
+    const nextBtn = document.getElementById("next-page");
 
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove("show");
-                document.body.style.overflow = "auto";
-            }
-        });
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => turnPage(-1));
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => turnPage(1));
     }
 }
 
@@ -85,7 +99,7 @@ async function loadCategories() {
                 btn.classList.add("active");
                 
                 currentCategory = cat.slug;
-                renderRecipes();
+                applyFilters();
             });
             
             categoryList.appendChild(btn);
@@ -98,7 +112,7 @@ async function loadCategories() {
                 document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
                 allBtn.classList.add("active");
                 currentCategory = 'all';
-                renderRecipes();
+                applyFilters();
             });
         }
     } catch (error) {
@@ -108,33 +122,25 @@ async function loadCategories() {
 
 // Fetch recipes from C++ API
 async function loadRecipes() {
-    const grid = document.getElementById("recipes-grid");
-    if (!grid) return; // Skip if not on recipes page
+    const bookContainer = document.getElementById("recipe-book-container");
+    if (!bookContainer) return; // Skip if not on recipes page
     
     try {
         const response = await fetch("/api/recipes");
         if (!response.ok) throw new Error("Network error");
         recipes = await response.json();
-        renderRecipes();
+        applyFilters();
     } catch (error) {
         console.error("Error loading recipes:", error);
-        grid.innerHTML = `<div class="loading-state">Error loading recipes from C++ Backend. Make sure it is compiled and running on port 8080.</div>`;
+        const leftPage = document.getElementById("book-left");
+        if (leftPage) leftPage.innerHTML = `<div class="empty-book">Error loading database.</div>`;
     }
 }
 
-// Render filtered recipes to grid
-function renderRecipes() {
-    const grid = document.getElementById("recipes-grid");
-    if (!grid) return;
-    
-    grid.innerHTML = "";
-    
-    // Filter recipes
-    const filtered = recipes.filter(recipe => {
-        // Category Filter
+// Apply Filters and reset book
+function applyFilters() {
+    filteredRecipes = recipes.filter(recipe => {
         const matchesCategory = currentCategory === 'all' || recipe.category.toLowerCase() === currentCategory.toLowerCase();
-        
-        // Search Query Filter
         const matchesSearch = searchQuery === '' || 
             recipe.title.toLowerCase().includes(searchQuery) ||
             recipe.description.toLowerCase().includes(searchQuery) ||
@@ -143,93 +149,103 @@ function renderRecipes() {
         return matchesCategory && matchesSearch;
     });
 
-    if (filtered.length === 0) {
-        grid.innerHTML = `<div class="loading-state">No recipes found matching your search.</div>`;
+    currentRecipeIndex = 0; // Reset to first page
+    renderBookPage();
+}
+
+// Turn Page (Navigation)
+function turnPage(direction) {
+    const newIndex = currentRecipeIndex + direction;
+    if (newIndex >= 0 && newIndex < filteredRecipes.length) {
+        const spread = document.getElementById("book-spread");
+        
+        // Add turning animation
+        if (spread) {
+            spread.classList.add("page-turning");
+            setTimeout(() => {
+                currentRecipeIndex = newIndex;
+                renderBookPage();
+                spread.classList.remove("page-turning");
+            }, 400); // Wait for transition
+        } else {
+            currentRecipeIndex = newIndex;
+            renderBookPage();
+        }
+    }
+}
+
+// Render the current recipe into the book spread
+function renderBookPage() {
+    const leftPage = document.getElementById("book-left");
+    const rightPage = document.getElementById("book-right");
+    const prevBtn = document.getElementById("prev-page");
+    const nextBtn = document.getElementById("next-page");
+    
+    if (!leftPage || !rightPage) return;
+
+    if (filteredRecipes.length === 0) {
+        leftPage.innerHTML = `<div class="empty-book">No recipes found. Try a different search.</div>`;
+        rightPage.innerHTML = ``;
+        if (prevBtn) prevBtn.disabled = true;
+        if (nextBtn) nextBtn.disabled = true;
         return;
     }
 
-    filtered.forEach(recipe => {
-        const card = document.createElement("div");
-        card.className = "recipe-card";
-        
-        const imgUrl = recipe.heroImage || "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=800";
-        
-        card.innerHTML = `
-            <img class="recipe-image" src="${imgUrl}" alt="${recipe.title}">
-            <div class="recipe-details">
-                <span class="recipe-badge ${recipe.isVeg ? '' : 'non-veg'}">${recipe.isVeg ? 'Veg' : 'Non-Veg'}</span>
-                <h3 class="recipe-title">${recipe.title}</h3>
-                <p class="recipe-desc">${recipe.description}</p>
-                <div class="recipe-meta">
-                    <span>⏱️ ${recipe.totalTime} mins</span>
-                    <span>📊 ${recipe.difficulty}</span>
-                </div>
-            </div>
-        `;
-        
-        card.addEventListener("click", () => {
-            openRecipeDetail(recipe);
-        });
-        
-        grid.appendChild(card);
-    });
-}
-
-// Open recipe detail modal popup
-function openRecipeDetail(recipe) {
-    const modal = document.getElementById("recipe-modal");
-    const content = document.getElementById("modal-content");
-    if (!modal || !content) return;
-    
+    const recipe = filteredRecipes[currentRecipeIndex];
     const imgUrl = recipe.heroImage || "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=800";
-    
-    // Format lists
+
+    // Update Pagination Buttons State
+    if (prevBtn) prevBtn.disabled = currentRecipeIndex === 0;
+    if (nextBtn) nextBtn.disabled = currentRecipeIndex === filteredRecipes.length - 1;
+
+    // --- RENDER LEFT PAGE (Details & Ingredients) ---
     const ingredientsHtml = recipe.ingredients.map(ing => `
-        <li>${ing.quantity} ${ing.unit} ${ing.name}</li>
+        <li><span>${ing.name}</span> <span class="qty">${ing.quantity} ${ing.unit}</span></li>
     `).join('');
-    
+
+    leftPage.innerHTML = `
+        <h2 class="book-recipe-title">${recipe.title}</h2>
+        <div class="book-recipe-badges">
+            <span class="detail-badge">${recipe.category}</span>
+            <span class="detail-badge">${recipe.isVeg ? 'Veg 🌱' : 'Non-Veg 🍗'}</span>
+        </div>
+        
+        <div class="book-meta-grid">
+            <div class="book-meta-item">
+                <span class="book-meta-label">Prep:</span>
+                <span class="book-meta-value">${recipe.prepTime}m</span>
+            </div>
+            <div class="book-meta-item">
+                <span class="book-meta-label">Cook:</span>
+                <span class="book-meta-value">${recipe.cookTime}m</span>
+            </div>
+            <div class="book-meta-item">
+                <span class="book-meta-label">Servings:</span>
+                <span class="book-meta-value">${recipe.servings || 4}</span>
+            </div>
+        </div>
+
+        <h3 class="book-section-title">Ingredients</h3>
+        <ul class="book-ingredients">
+            ${ingredientsHtml}
+        </ul>
+    `;
+
+    // --- RENDER RIGHT PAGE (Steps) ---
     const stepsHtml = recipe.steps.map(step => `
-        <div class="step-item">
-            <div class="step-num">${step.stepNumber}</div>
-            <div class="step-text">
-                <h3>${step.title}</h3>
+        <div class="book-step">
+            <div class="book-step-num">${step.stepNumber}</div>
+            <div class="book-step-content">
+                <h4>${step.title}</h4>
                 <p>${step.description}</p>
             </div>
         </div>
     `).join('');
 
-    content.innerHTML = `
-        <div class="modal-hero">
-            <img src="${imgUrl}" alt="${recipe.title}">
-        </div>
-        <div class="modal-body">
-            <h1 class="modal-title">${recipe.title}</h1>
-            <div class="modal-badges">
-                <span class="detail-badge">${recipe.category}</span>
-                <span class="detail-badge">${recipe.cuisine} Cuisine</span>
-                <span class="detail-badge">${recipe.isVeg ? 'Vegetarian 🌱' : 'Non-Vegetarian 🍗'}</span>
-                <span class="detail-badge">Difficulty: ${recipe.difficulty}</span>
-                <span class="detail-badge">⏱️ Cook: ${recipe.cookTime}m / Prep: ${recipe.prepTime}m</span>
-            </div>
-            
-            <p class="detail-description">${recipe.description}</p>
-            
-            <div class="detail-section">
-                <h2>Ingredients</h2>
-                <ul class="ingredients-list">
-                    ${ingredientsHtml}
-                </ul>
-            </div>
-            
-            <div class="detail-section">
-                <h2>Step-by-Step Instructions</h2>
-                <div class="steps-list">
-                    ${stepsHtml}
-                </div>
-            </div>
+    rightPage.innerHTML = `
+        <h3 class="book-section-title">Preparation Method</h3>
+        <div class="book-steps">
+            ${stepsHtml}
         </div>
     `;
-    
-    modal.classList.add("show");
-    document.body.style.overflow = "hidden";
 }
