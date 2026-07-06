@@ -430,7 +430,7 @@ h1, h2, h3, .logo, .serif {
     border-radius: 8px;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(139, 69, 19, 0.2);
     width: 1200px;
-    height: 800px; /* Fixed height, larger for no-scroll */
+    height: 650px; /* Optimized height for better aspect ratio */
     position: relative;
     transition: opacity 0.4s ease;
     font-family: 'Playfair Display', Georgia, serif; /* Old school serif for entire book */
@@ -473,7 +473,7 @@ h1, h2, h3, .logo, .serif {
         linear-gradient(to right, rgba(255,255,255,0.4) 0%, transparent 10%, transparent 90%, rgba(255,255,255,0.4) 100%);
     box-shadow: inset 0 0 0 1px rgba(139, 69, 19, 0.2);
     overflow: hidden;
-    padding: 40px;
+    padding: 50px 60px; /* Matching the page padding */
 }
 
 .flip-page.next .flip-back {
@@ -494,8 +494,8 @@ h1, h2, h3, .logo, .serif {
 
 .book-page {
     flex: 1;
-    padding: 40px;
-    overflow-y: hidden; /* Prevent scrolling as requested */
+    padding: 50px 60px; /* Elegant wide margins */
+    overflow-y: auto; /* Allow smooth scrolling if content is long */
     position: relative;
 }
 
@@ -511,9 +511,16 @@ h1, h2, h3, .logo, .serif {
 .book-page::-webkit-scrollbar {
     width: 6px;
 }
+.book-page::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 20px 0; /* padding for track */
+}
 .book-page::-webkit-scrollbar-thumb {
-    background: #EAE6DF;
-    border-radius: 3px;
+    background: rgba(139, 69, 19, 0.2);
+    border-radius: 10px;
+}
+.book-page::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 69, 19, 0.4);
 }
 
 /* Book Binding (Spine) */
