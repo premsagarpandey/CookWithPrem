@@ -157,54 +157,102 @@ function applyFilters() {
 // Turn Page (Navigation)
 function turnPage(direction) {
     const newIndex = currentRecipeIndex + direction;
-    if (newIndex >= 0 && newIndex < filteredRecipes.length) {
-        const spread = document.getElementById("book-spread");
-        
-        // Add turning animation
-        if (spread) {
-            spread.classList.add("page-turning");
-            setTimeout(() => {
-                currentRecipeIndex = newIndex;
-                renderBookPage();
-                spread.classList.remove("page-turning");
-            }, 400); // Wait for transition
-        } else {
-            currentRecipeIndex = newIndex;
-            renderBookPage();
-        }
+    if (newIndex < 0 || newIndex >= filteredRecipes.length) return;
+    
+    const spread = document.getElementById("book-spread");
+    const leftPage = document.getElementById("book-left");
+    const rightPage = document.getElementById("book-right");
+    
+    if (!spread || !leftPage || !rightPage) {
+        currentRecipeIndex = newIndex;
+        renderBookPage();
+        return;
     }
+
+    const isNext = direction === 1;
+    const currentRecipe = filteredRecipes[currentRecipeIndex];
+    const newRecipe = filteredRecipes[newIndex];
+    
+    // Create flipping page
+    const flipPage = document.createElement("div");
+    flipPage.className = `flip-page ${isNext ? 'next' : 'prev'}`;
+    
+    const flipFront = document.createElement("div");
+    flipFront.className = "flip-front";
+    
+    const flipBack = document.createElement("div");
+    flipBack.className = "flip-back";
+    
+    if (isNext) {
+        // Turning to the right (next page)
+        flipFront.innerHTML = generateRightPageHtml(currentRecipe);
+        flipBack.innerHTML = generateLeftPageHtml(newRecipe);
+        // Actual right page updates instantly
+        rightPage.innerHTML = generateRightPageHtml(newRecipe);
+    } else {
+        // Turning to the left (prev page)
+        flipFront.innerHTML = generateLeftPageHtml(currentRecipe);
+        flipBack.innerHTML = generateRightPageHtml(newRecipe);
+        // Actual left page updates instantly
+        leftPage.innerHTML = generateLeftPageHtml(newRecipe);
+    }
+    
+    flipPage.appendChild(flipFront);
+    flipPage.appendChild(flipBack);
+    spread.appendChild(flipPage);
+    
+    // Trigger animation
+    setTimeout(() => {
+        flipPage.classList.add("is-flipping");
+    }, 50);
+    
+    // After animation finishes
+    setTimeout(() => {
+        currentRecipeIndex = newIndex;
+        if (isNext) {
+            leftPage.innerHTML = generateLeftPageHtml(newRecipe);
+        } else {
+            rightPage.innerHTML = generateRightPageHtml(newRecipe);
+        }
+        flipPage.remove();
+        updatePaginationButtons();
+    }, 850);
 }
 
-// Render the current recipe into the book spread
+function updatePaginationButtons() {
+    const prevBtn = document.getElementById("prev-page");
+    const nextBtn = document.getElementById("next-page");
+    if (prevBtn) prevBtn.disabled = currentRecipeIndex === 0;
+    if (nextBtn) nextBtn.disabled = currentRecipeIndex === filteredRecipes.length - 1;
+}
+
+// Render the current recipe into the book spread (initial load)
 function renderBookPage() {
     const leftPage = document.getElementById("book-left");
     const rightPage = document.getElementById("book-right");
-    const prevBtn = document.getElementById("prev-page");
-    const nextBtn = document.getElementById("next-page");
     
     if (!leftPage || !rightPage) return;
 
     if (filteredRecipes.length === 0) {
         leftPage.innerHTML = `<div class="empty-book">No recipes found. Try a different search.</div>`;
         rightPage.innerHTML = ``;
-        if (prevBtn) prevBtn.disabled = true;
-        if (nextBtn) nextBtn.disabled = true;
+        updatePaginationButtons();
         return;
     }
 
     const recipe = filteredRecipes[currentRecipeIndex];
-    const imgUrl = recipe.heroImage || "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=800";
+    leftPage.innerHTML = generateLeftPageHtml(recipe);
+    rightPage.innerHTML = generateRightPageHtml(recipe);
+    updatePaginationButtons();
+}
 
-    // Update Pagination Buttons State
-    if (prevBtn) prevBtn.disabled = currentRecipeIndex === 0;
-    if (nextBtn) nextBtn.disabled = currentRecipeIndex === filteredRecipes.length - 1;
-
-    // --- RENDER LEFT PAGE (Details & Ingredients) ---
+function generateLeftPageHtml(recipe) {
+    if (!recipe) return '';
     const ingredientsHtml = recipe.ingredients.map(ing => `
         <li><span>${ing.name}</span> <span class="qty">${ing.quantity} ${ing.unit}</span></li>
     `).join('');
 
-    leftPage.innerHTML = `
+    return `
         <h2 class="book-recipe-title">${recipe.title}</h2>
         <div class="book-recipe-badges">
             <span class="detail-badge">${recipe.category}</span>
@@ -231,8 +279,10 @@ function renderBookPage() {
             ${ingredientsHtml}
         </ul>
     `;
+}
 
-    // --- RENDER RIGHT PAGE (Steps) ---
+function generateRightPageHtml(recipe) {
+    if (!recipe) return '';
     const stepsHtml = recipe.steps.map(step => `
         <div class="book-step">
             <div class="book-step-num">${step.stepNumber}</div>
@@ -243,7 +293,7 @@ function renderBookPage() {
         </div>
     `).join('');
 
-    rightPage.innerHTML = `
+    return `
         <h3 class="book-section-title">Preparation Method</h3>
         <div class="book-steps">
             ${stepsHtml}

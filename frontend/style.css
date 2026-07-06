@@ -436,10 +436,60 @@ h1, h2, h3, .logo, .serif {
     font-family: 'Playfair Display', Georgia, serif; /* Old school serif for entire book */
 }
 
-/* Page Turn Animation */
-.book-spread.page-turning {
-    opacity: 0;
-    transform: scale(0.98);
+/* 3D Page Turn Animation */
+.book-spread {
+    perspective: 2500px; /* Add perspective to the spread */
+    position: relative; /* For absolute positioning of flip-page */
+}
+
+.flip-page {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    z-index: 10;
+}
+
+.flip-page.next {
+    right: 0;
+    transform-origin: left center;
+}
+
+.flip-page.prev {
+    left: 0;
+    transform-origin: right center;
+}
+
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: #F4EAD5;
+    background-image: 
+        radial-gradient(circle at center, transparent 70%, rgba(139, 69, 19, 0.05) 100%),
+        linear-gradient(to right, rgba(255,255,255,0.4) 0%, transparent 10%, transparent 90%, rgba(255,255,255,0.4) 100%);
+    box-shadow: inset 0 0 0 1px rgba(139, 69, 19, 0.2);
+    overflow: hidden;
+    padding: 40px;
+}
+
+.flip-page.next .flip-back {
+    transform: rotateY(180deg);
+}
+
+.flip-page.prev .flip-back {
+    transform: rotateY(-180deg);
+}
+
+.flip-page.next.is-flipping {
+    transform: rotateY(-180deg);
+}
+
+.flip-page.prev.is-flipping {
+    transform: rotateY(180deg);
 }
 
 .book-page {
