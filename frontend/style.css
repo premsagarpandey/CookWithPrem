@@ -630,3 +630,94 @@ h1, h2, h3, .logo, .serif {
     }
 }
 
+/* ==========================================================================
+   3D Tilt Chef's Special Interactive Card
+   ========================================================================== */
+.tilt-container {
+    perspective: 1000px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.tilt-card {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    border-radius: var(--radius-md);
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out; /* Smooth follow for JS */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.tilt-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 0.3s;
+}
+
+.tilt-card:hover .tilt-bg {
+    transform: scale(1.05); /* slight zoom on hover */
+}
+
+.tilt-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    z-index: 2;
+}
+
+.tilt-content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    z-index: 3;
+    transform: translateZ(50px); /* Pops out in 3D */
+    color: white;
+}
+
+.tilt-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 5px 12px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: var(--radius-sm);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.tilt-content h3 {
+    font-size: 38px;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.tilt-content p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 25px;
+    max-width: 500px;
+}
+
+.tilt-btn {
+    background: white;
+    color: var(--text-dark);
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.tilt-btn:hover {
+    background: var(--primary);
+    color: white;
+}
