@@ -1,0 +1,12 @@
+# Compiled binaries
+*.exe
+*.out
+*.o
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

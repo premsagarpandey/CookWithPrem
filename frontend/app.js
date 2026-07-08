@@ -34,8 +34,6 @@ function initScrollReveal() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Optional: unobserve if you want the animation to happen only once
-                // observer.unobserve(entry.target); 
             }
         });
     }, { threshold: 0.1 });
@@ -148,7 +146,7 @@ function applyFilters() {
         const matchesSearch = searchQuery === '' || 
             recipe.title.toLowerCase().includes(searchQuery) ||
             recipe.description.toLowerCase().includes(searchQuery) ||
-            recipe.tags.some(tag => tag.toLowerCase().includes(searchQuery));
+            (recipe.tags && recipe.tags.some(tag => tag.toLowerCase().includes(searchQuery)));
             
         return matchesCategory && matchesSearch;
     });

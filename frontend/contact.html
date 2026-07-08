@@ -83,17 +83,12 @@
         </div>
     </main>
 
-
-
     <!-- Form script -->
     <script>
         document.getElementById("contact-form").addEventListener("submit", function(e) {
             e.preventDefault();
             
             const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const subject = document.getElementById("subject").value;
-            const message = document.getElementById("message").value;
             
             const feedback = document.getElementById("form-feedback");
             feedback.style.display = "block";
