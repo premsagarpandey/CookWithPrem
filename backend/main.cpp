@@ -96,6 +96,23 @@ void handleClient(SOCKET clientSocket) {
             if (responseBody.empty()) {
                 status = "404 Not Found";
             }
+        } else if (cleanPath.find("/images/") == 0) {
+            std::string imagePath = "../frontend" + cleanPath;
+            responseBody = readFile(imagePath);
+            if (cleanPath.find(".png") != std::string::npos) {
+                contentType = "image/png";
+            } else if (cleanPath.find(".jpg") != std::string::npos || cleanPath.find(".jpeg") != std::string::npos) {
+                contentType = "image/jpeg";
+            } else if (cleanPath.find(".svg") != std::string::npos) {
+                contentType = "image/svg+xml";
+            } else if (cleanPath.find(".gif") != std::string::npos) {
+                contentType = "image/gif";
+            } else {
+                contentType = "application/octet-stream";
+            }
+            if (responseBody.empty()) {
+                status = "404 Not Found";
+            }
         } else if (cleanPath == "/api/recipes" || cleanPath == "/api/recipes/") {
             responseBody = readFile("recipes.json");
             contentType = "application/json";

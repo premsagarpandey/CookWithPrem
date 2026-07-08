@@ -36,52 +36,50 @@
 
     <!-- About Content -->
     <main class="container main-content">
-        <section class="about-section">
-            <div class="grid-2 reveal">
-                <div class="about-image-container">
-                    <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?w=600" alt="Culinary journey illustration" class="about-image">
+        <section class="about-section" style="padding-top: 20px;">
+            <div class="about-enhanced-grid reveal">
+                <!-- Blob Animated Image Container -->
+                <div class="blob-container reveal" style="transition-delay: 0.1s;">
+                    <div class="blob-shape">
+                        <img src="images/prem-profile.jpg" alt="Prem Sagar Pandey" class="blob-img">
+                    </div>
                 </div>
-                <div class="about-text">
-                    <h2>My Culinary Journey</h2>
-                    <p>Welcome to **CookWithPrem**! This project was started by **Prem Sagar Pandey** as a simple repository of recipe instructions. What began as a personal log of my favorite home-cooked meals quickly grew into a complete, beginner-focused guide to traditional cooking.</p>
-                    <p>I believe that cooking is not an innate talent, but a skill that anyone can pick up with practice. The biggest obstacle for most beginners is when recipes omit simple steps or assume prior knowledge. That is why I design each recipe card to be completely self-explanatory, focusing on exact times, temperatures, and visuals.</p>
+
+                <div class="about-text" style="position: relative;">
+                    <h2 style="font-size: 42px; margin-bottom: 5px; color: var(--text-dark);">Prem Sagar Pandey</h2>
+                    <p style="font-size: 18px; color: var(--primary); font-weight: 600; margin-bottom: 15px; letter-spacing: 1px;">Lead Developer & Culinary Enthusiast</p>
                     
-                    <h3 style="margin: 25px 0 10px 0; color: var(--primary-sage-dark);">My Cooking Principles</h3>
-                    <ul class="principles-list" style="margin-left: 20px; margin-bottom: 20px;">
-                        <li><strong>Keep it fresh:</strong> Use simple, fresh ingredients that are easily available in local grocery stores.</li>
-                        <li><strong>No shortcuts on prep:</strong> A clean and prepped workspace makes cooking enjoyable and stress-free.</li>
-                        <li><strong>Taste as you go:</strong> Adjust salt and spices at different stages of cooking.</li>
-                    </ul>
+                    <!-- Replaced Mail Button with Text Display -->
+                    <div class="about-email-display">
+                        <span class="about-email-icon" style="display: flex; align-items: center; justify-content: center;">
+                            <svg viewBox="0 0 24 24" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/><path d="M12 9.548 5.455 4.64 3.927 3.493a1.66 1.66 0 0 0-2.29.043v8.194L12 16.64z" fill="#C5221F"/><path d="M12 9.548l6.545-4.909 1.528-1.146a1.66 1.66 0 0 1 2.29.043v8.194L12 16.64z" fill="#FABB05"/></svg>
+                        </span>
+                        premsagarpandey.cs@gmail.com
+                    </div>
+
+                    <div style="margin-bottom: 35px; margin-top: 10px;">
+                        <a href="https://www.linkedin.com/in/prem-sagar-pandey-2b0022382/" target="_blank" class="cta-btn" style="background-color: transparent; border: 2px solid var(--primary); color: var(--primary); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; font-size: 15px; transition: all 0.3s ease; border-radius: 50px;">
+                            <span style="display: flex; align-items: center; justify-content: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0A66C2"/></svg>
+                            </span> 
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                    
+                    <div style="background: var(--bg-cream); padding: 30px; border-radius: var(--radius-md); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-left: 5px solid var(--primary); position: relative; overflow: hidden;">
+                        <h3 style="margin: 0 0 15px 0; font-size: 24px; color: var(--brown-accent-dark);">My Culinary Journey</h3>
+                        <p style="margin-bottom: 15px; color: var(--text-muted); line-height: 1.7;">Welcome to <strong>CookWithPrem</strong>! This project was started by me as a simple repository of recipe instructions. What began as a personal log of my favorite home-cooked meals quickly grew into a complete, beginner-focused guide to traditional cooking.</p>
+                        <p style="margin: 0; color: var(--text-muted); line-height: 1.7;">I believe that cooking is not an innate talent, but a skill that anyone can pick up with practice. The biggest obstacle for most beginners is when recipes omit simple steps or assume prior knowledge.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Kitchen Tips Box -->
-        <section class="kitchen-tips-panel" style="background-color: var(--white); border: 1px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); margin-top: 50px;">
-            <h2 class="text-center" style="margin-bottom: 25px; color: var(--primary-sage-dark);">Prem's Top 3 Tips for Beginners</h2>
-            <div class="tips-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                <div class="tip-card" style="background-color: var(--bg-cream); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--brown-accent-dark);">1. Read the recipe fully first</h4>
-                    <p style="font-size: 14px; color: var(--text-muted);">Never start cooking mid-read. Read the entire recipe before chopping or turning on the stove, so you know what is coming next.</p>
-                </div>
-                <div class="tip-card" style="background-color: var(--bg-cream); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--brown-accent-dark);">2. Prep everything in advance</h4>
-                    <p style="font-size: 14px; color: var(--text-muted);">Mise en place is key. Chop your vegetables and measure out spice mixes into small bowls before you heat any oil. It prevents burning ingredients while searching for spices.</p>
-                </div>
-                <div class="tip-card" style="background-color: var(--bg-cream); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-                    <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--brown-accent-dark);">3. Control your heat</h4>
-                    <p style="font-size: 14px; color: var(--text-muted);">High heat is not always faster. Most traditional curries and gravies release their best flavors when cooked slowly on low to medium heat.</p>
-                </div>
-            </div>
-        </section>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container text-center">
-            <p>&copy; 2026 CookWithPrem. All Rights Reserved.</p>
-            <p class="footer-note">Designed as a simple beginner student project.</p>
-        </div>
-    </footer>
+
+    <!-- App scripts -->
+    <script src="app.js"></script>
 </body>
 </html>
