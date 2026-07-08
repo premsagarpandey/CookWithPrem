@@ -291,7 +291,7 @@ function generateRightPageHtml(recipe) {
             <div class="book-step-num">${step.stepNumber}</div>
             <div class="book-step-content">
                 <h4>${step.title}</h4>
-                <p>${step.description}</p>
+                <p>${step.description || step.instruction}</p>
             </div>
         </div>
     `).join('');
