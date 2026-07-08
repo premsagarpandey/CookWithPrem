@@ -421,26 +421,50 @@ h1, h2, h3, .logo, .serif {
     box-shadow: none;
 }
 
+/* Book Cover Styling */
+.book-cover {
+    background-color: #3e2723; /* Dark brown vintage leather look */
+    border-radius: 12px;
+    padding: 10px 15px; /* Cover edges extending beyond the pages */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(255, 255, 255, 0.05);
+    position: relative;
+    /* Simulated inner spine crease on the cover itself */
+    background-image: linear-gradient(to right, 
+        rgba(0,0,0,0.1) 0%, 
+        rgba(0,0,0,0.5) 48%, 
+        rgba(0,0,0,0.8) 50%, 
+        rgba(0,0,0,0.5) 52%, 
+        rgba(0,0,0,0.1) 100%);
+    perspective: 2500px; /* Perspective applied to the cover */
+}
+
 .book-spread {
     display: flex;
     background-color: #F4EAD5; /* Vintage Pale Yellow Paper */
     background-image: 
         radial-gradient(circle at center, transparent 70%, rgba(139, 69, 19, 0.05) 100%),
         linear-gradient(to right, rgba(255,255,255,0.4) 0%, transparent 10%, transparent 90%, rgba(255,255,255,0.4) 100%);
-    border-radius: 8px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(139, 69, 19, 0.2);
-    width: 1200px;
+    border-radius: 4px;
+    box-shadow: 
+        inset 0 0 0 1px rgba(139, 69, 19, 0.2),
+        -1px 1px 0px 0px #e6d8bc,
+        -2px 2px 0px 0px #e6d8bc,
+        -3px 3px 0px 0px #e6d8bc,
+        -4px 4px 0px 0px #e6d8bc,
+        1px 1px 0px 0px #e6d8bc,
+        2px 2px 0px 0px #e6d8bc,
+        3px 3px 0px 0px #e6d8bc,
+        4px 4px 0px 0px #e6d8bc; /* Layered page edges effect */
+    width: 1150px;
     height: 650px; /* Optimized height for better aspect ratio */
     position: relative;
     transition: opacity 0.4s ease;
     font-family: 'Playfair Display', Georgia, serif; /* Old school serif for entire book */
+    transform-style: preserve-3d;
 }
 
 /* 3D Page Turn Animation */
-.book-spread {
-    perspective: 2500px; /* Add perspective to the spread */
-    position: relative; /* For absolute positioning of flip-page */
-}
+
 
 .flip-page {
     width: 50%;
@@ -474,6 +498,39 @@ h1, h2, h3, .logo, .serif {
     box-shadow: inset 0 0 0 1px rgba(139, 69, 19, 0.2);
     overflow: hidden;
     padding: 50px 60px; /* Matching the page padding */
+}
+
+/* Dynamic Shadows for Flipping Page */
+.flip-front::after, .flip-back::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    transition: background 0.8s, opacity 0.8s;
+}
+
+.flip-page.next .flip-front::after {
+    background: linear-gradient(to right, rgba(0,0,0,0) 80%, rgba(0,0,0,0.1) 100%);
+}
+
+.flip-page.prev .flip-front::after {
+    background: linear-gradient(to left, rgba(0,0,0,0) 80%, rgba(0,0,0,0.1) 100%);
+}
+
+.flip-page.next.is-flipping .flip-front::after {
+    background: linear-gradient(to right, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%);
+}
+
+.flip-page.prev.is-flipping .flip-front::after {
+    background: linear-gradient(to left, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%);
+}
+
+.flip-page.next .flip-back::after {
+    background: linear-gradient(to left, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%);
+}
+
+.flip-page.prev .flip-back::after {
+    background: linear-gradient(to right, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%);
 }
 
 .flip-page.next .flip-back {
@@ -525,17 +582,37 @@ h1, h2, h3, .logo, .serif {
 
 /* Book Binding (Spine) */
 .book-spine {
-    width: 40px;
+    width: 50px;
     background: linear-gradient(to right, 
-        rgba(93, 64, 55, 0.2) 0%, 
-        rgba(93, 64, 55, 0.4) 20%, 
-        rgba(93, 64, 55, 0.1) 50%, 
-        rgba(93, 64, 55, 0.4) 80%, 
-        rgba(93, 64, 55, 0.2) 100%);
-    box-shadow: inset 2px 0 5px rgba(255,255,255,0.2), inset -2px 0 5px rgba(255,255,255,0.2);
+        rgba(0, 0, 0, 0.05) 0%,
+        rgba(93, 64, 55, 0.4) 10%, 
+        rgba(93, 64, 55, 0.7) 30%, 
+        rgba(93, 64, 55, 0.9) 50%, 
+        rgba(93, 64, 55, 0.7) 70%, 
+        rgba(93, 64, 55, 0.4) 90%,
+        rgba(0, 0, 0, 0.05) 100%);
+    box-shadow: inset 4px 0 10px rgba(0,0,0,0.3), inset -4px 0 10px rgba(0,0,0,0.3);
     z-index: 2;
-    border-left: 1px solid rgba(93, 64, 55, 0.3);
-    border-right: 1px solid rgba(93, 64, 55, 0.3);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.left-page::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 30px;
+    background: linear-gradient(to left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+}
+
+.right-page::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 30px;
+    background: linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
 }
 
 /* Left Page Content Styling */
@@ -666,6 +743,10 @@ h1, h2, h3, .logo, .serif {
 @media(max-width: 1024px) {
     .book-container {
         flex-direction: column;
+    }
+    .book-cover {
+        width: 100%;
+        padding: 8px;
     }
     .book-spread {
         width: 100%;
