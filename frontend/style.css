@@ -315,8 +315,10 @@ h1, h2, h3, .logo, .serif {
    ========================================================================== */
 .controls-panel {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 25px;
     margin-bottom: 50px;
     padding-bottom: 30px;
     border-bottom: 1px solid var(--border-color);
@@ -324,7 +326,17 @@ h1, h2, h3, .logo, .serif {
 
 .category-filters {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
+}
+
+.category-buttons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .filter-btn {
@@ -336,7 +348,7 @@ h1, h2, h3, .logo, .serif {
     letter-spacing: 0.05em;
     cursor: pointer;
     transition: color 0.3s;
-    padding: 5px 0;
+    padding: 5px 10px;
     position: relative;
 }
 
@@ -365,18 +377,21 @@ h1, h2, h3, .logo, .serif {
 .search-box input {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    padding: 12px 25px;
-    font-size: 15px;
+    padding: 16px 30px;
+    font-size: 17px;
     border-radius: var(--radius-full);
     outline: none;
-    width: 250px;
+    width: 500px;
+    max-width: 100%;
     font-family: inherit;
-    transition: border-color 0.3s, width 0.4s ease;
+    transition: border-color 0.3s, width 0.4s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-sm);
 }
 
 .search-box input:focus {
     border-color: var(--secondary);
-    width: 300px;
+    width: 600px;
+    box-shadow: var(--shadow-hover);
 }
 
 /* ==========================================================================

@@ -141,7 +141,10 @@ async function loadRecipes() {
 // Apply Filters and reset book
 function applyFilters() {
     filteredRecipes = recipes.filter(recipe => {
-        const matchesCategory = currentCategory === 'all' || recipe.category.toLowerCase() === currentCategory.toLowerCase();
+        const catObj = categories.find(c => c.name.toLowerCase() === recipe.category.toLowerCase());
+        const recipeCatSlug = catObj ? catObj.slug : recipe.category.toLowerCase().replace(/\s+/g, '-');
+        
+        const matchesCategory = currentCategory === 'all' || recipeCatSlug === currentCategory.toLowerCase();
         const matchesSearch = searchQuery === '' || 
             recipe.title.toLowerCase().includes(searchQuery) ||
             recipe.description.toLowerCase().includes(searchQuery) ||

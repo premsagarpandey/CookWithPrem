@@ -1,5 +1,43 @@
 [
   {
+    "id": "rec_dal_makhani",
+    "slug": "dal-makhani",
+    "title": "Dal Makhani",
+    "description": "A classic North Indian dish made with whole black lentils and red kidney beans, slow-cooked with butter and cream.",
+    "heroImage": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 40,
+    "prepTime": 15,
+    "totalTime": 55,
+    "difficulty": "Medium",
+    "servings": 4,
+    "calories": 320,
+    "cuisine": "North Indian",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      { "name": "Whole Black Lentils (Urad Dal)", "quantity": "1", "unit": "cup" },
+      { "name": "Kidney Beans (Rajma)", "quantity": "0.25", "unit": "cup" },
+      { "name": "Butter", "quantity": "3", "unit": "tbsp" },
+      { "name": "Heavy Cream", "quantity": "0.5", "unit": "cup" },
+      { "name": "Tomato Puree", "quantity": "1", "unit": "cup" },
+      { "name": "Ginger-Garlic Paste", "quantity": "1", "unit": "tbsp" }
+    ],
+    "tools": [ "Pressure Cooker", "Heavy Bottom Pan" ],
+    "steps": [
+      { "stepNumber": 1, "title": "Soak Lentils", "description": "Wash and soak the black lentils and kidney beans overnight in plenty of water." },
+      { "stepNumber": 2, "title": "Pressure Cook", "description": "Pressure cook the soaked lentils and rajma with water and salt for 15-20 whistles on low heat until completely soft and easily mashable." },
+      { "stepNumber": 3, "title": "Prepare Masala", "description": "In a heavy bottom pan, heat butter, add ginger-garlic paste and cook for a minute. Add tomato puree and red chili powder, cook until butter separates." },
+      { "stepNumber": 4, "title": "Slow Cook", "description": "Add the cooked dal along with its water to the masala. Mix well and let it simmer on low heat for at least 30-40 minutes. Add cream just before serving." }
+    ],
+    "nutrition": { "calories": 320, "protein": "12g", "carbs": "35g", "fat": "15g", "fiber": "9g", "sugar": "3g" },
+    "faqs": [ { "question": "Can I skip cream?", "answer": "Yes, but cream gives it the authentic restaurant-style richness." } ],
+    "tags": [ "Dal", "Lentils", "Comfort Food", "Creamy" ],
+    "averageRating": 4.9,
+    "totalRatings": 120,
+    "createdAt": { "seconds": 1783192600, "nanoseconds": 0 }
+  },
+  {
     "id": "rec_1",
     "slug": "paneer-butter-masala",
     "title": "Paneer Butter Masala",
