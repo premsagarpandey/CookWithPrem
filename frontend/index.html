@@ -27,15 +27,43 @@
     </header>
 
     <!-- Editorial Hero Section -->
-    <header class="homepage-hero">
+    <header class="homepage-hero" id="hero">
+        <!-- Floating 3D Ingredients -->
+        <div class="floating-item float-1">🍅</div>
+        <div class="floating-item float-2">🌿</div>
+        <div class="floating-item float-3">🍋</div>
+        <div class="floating-item float-4">🧅</div>
+        <div class="floating-item float-5">🌶️</div>
+
         <div class="container hero-grid">
             <div class="hero-content reveal">
                 <h1>The Art of <br><i>Simple Cooking</i></h1>
                 <p>Curated, foolproof recipes for beginners and students who want to explore the joy of cooking without the overwhelming complexity.</p>
-                <a href="recipes.html" class="cta-btn">Explore Recipes</a>
+                
+                <div class="hero-actions" style="display: flex; align-items: center; gap: 20px;">
+                    <a href="recipes.html" class="cta-btn">Explore Recipes</a>
+                    
+                    <!-- Animated Boiling Pot SVG -->
+                    <div class="cooking-animation">
+                        <svg viewBox="0 0 100 100" class="boiling-pot">
+                            <path class="pot-body" d="M20,50 Q20,80 50,80 Q80,80 80,50 Z" fill="#4a3b32" />
+                            <rect x="15" y="45" width="70" height="5" rx="2" fill="#2a1f18" />
+                            <path class="handle left" d="M15,55 Q5,55 5,65" stroke="#4a3b32" stroke-width="4" fill="none" stroke-linecap="round"/>
+                            <path class="handle right" d="M85,55 Q95,55 95,65" stroke="#4a3b32" stroke-width="4" fill="none" stroke-linecap="round"/>
+                            <!-- Bubbles -->
+                            <circle class="bubble b1" cx="35" cy="45" r="4" fill="#e8d8c8"/>
+                            <circle class="bubble b2" cx="50" cy="45" r="5" fill="#e8d8c8"/>
+                            <circle class="bubble b3" cx="65" cy="45" r="3" fill="#e8d8c8"/>
+                            <!-- Steam -->
+                            <path class="steam s1" d="M35,35 Q40,25 35,15" stroke="#ccc" stroke-width="2" fill="none" stroke-linecap="round" />
+                            <path class="steam s2" d="M50,35 Q55,25 50,15" stroke="#ccc" stroke-width="2" fill="none" stroke-linecap="round" />
+                            <path class="steam s3" d="M65,35 Q70,25 65,15" stroke="#ccc" stroke-width="2" fill="none" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                </div>
             </div>
             <div class="hero-image-wrapper reveal" style="transition-delay: 0.2s;">
-                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800" alt="Beautiful fresh ingredients">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800" alt="Beautiful fresh ingredients" id="hero-img">
             </div>
         </div>
     </header>

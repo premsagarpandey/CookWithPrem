@@ -191,6 +191,74 @@ h1, h2, h3, .logo, .serif {
     border-radius: 200px 200px 0 0; /* Arch shape for aesthetic feel */
 }
 
+/* --- New UI/UX 3D Animations --- */
+.homepage-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-item {
+    position: absolute;
+    font-size: 32px;
+    z-index: 1;
+    pointer-events: none; /* Let clicks pass through */
+    animation: floatDrift 8s infinite ease-in-out alternate;
+    opacity: 0.8;
+}
+.float-1 { top: 15%; left: 10%; animation-delay: 0s; font-size: 40px; }
+.float-2 { top: 75%; left: 5%; animation-delay: -2s; font-size: 28px; }
+.float-3 { top: 25%; right: 45%; animation-delay: -4s; font-size: 35px; }
+.float-4 { bottom: 15%; right: 55%; animation-delay: -1s; font-size: 24px; }
+.float-5 { top: 60%; right: 10%; animation-delay: -5s; font-size: 38px; }
+
+@keyframes floatDrift {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-40px) rotate(20deg); }
+}
+
+.cooking-animation {
+    width: 60px;
+    height: 60px;
+    margin-left: 20px;
+}
+.boiling-pot {
+    width: 100%;
+    height: 100%;
+}
+.bubble {
+    animation: bubbleUp 1.5s infinite ease-in;
+    opacity: 0;
+}
+.b1 { animation-delay: 0s; }
+.b2 { animation-delay: 0.4s; }
+.b3 { animation-delay: 0.8s; }
+
+@keyframes bubbleUp {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-15px); opacity: 0; }
+}
+
+.steam {
+    animation: steamRise 2s infinite ease-out;
+    opacity: 0;
+}
+.s1 { animation-delay: 0s; }
+.s2 { animation-delay: 0.6s; }
+.s3 { animation-delay: 1.2s; }
+
+@keyframes steamRise {
+    0% { transform: translateY(0) scaleX(1); opacity: 0; }
+    20% { opacity: 0.6; }
+    100% { transform: translateY(-20px) scaleX(1.5); opacity: 0; }
+}
+
+#hero-img {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+/* ----------------------------- */
+
 /* ==========================================================================
    General Components
    ========================================================================== */
@@ -286,6 +354,7 @@ h1, h2, h3, .logo, .serif {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    perspective: 1000px; /* Enable 3D space */
 }
 
 .cat-showcase-card {
@@ -295,12 +364,13 @@ h1, h2, h3, .logo, .serif {
     border-radius: var(--radius-md);
     text-decoration: none;
     text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    transform-style: preserve-3d;
 }
 
 .cat-showcase-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-10px) rotateX(8deg) rotateY(-5deg);
+    box-shadow: 15px 20px 30px rgba(0,0,0,0.08);
 }
 
 .cat-icon {

@@ -24,6 +24,7 @@ async function init() {
     setupEventListeners();
     initScrollReveal();
     initTiltEffect();
+    initHeroParallax();
     await loadCategories();
     await loadRecipes();
 }
@@ -382,5 +383,35 @@ function initTiltEffect() {
     
     card.addEventListener('mouseenter', () => {
         card.style.transition = `transform 0.1s ease-out`;
+    });
+}
+
+// Interactive Hero Parallax Effect
+function initHeroParallax() {
+    const hero = document.getElementById('hero');
+    const heroImg = document.getElementById('hero-img');
+    
+    if (!hero || !heroImg) return;
+
+    hero.addEventListener('mousemove', (e) => {
+        const x = e.clientX / window.innerWidth - 0.5;
+        const y = e.clientY / window.innerHeight - 0.5;
+        
+        // Subtle 3D movement for the hero image
+        const rotateX = y * 15; // Max 15 deg rotation
+        const rotateY = x * -15;
+        const translateX = x * -30; // Slight shift
+        const translateY = y * -30;
+        
+        heroImg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateX(${translateX}px) translateY(${translateY}px) scale(1.05)`;
+    });
+
+    hero.addEventListener('mouseleave', () => {
+        heroImg.style.transform = `perspective(1000px) rotateX(0) rotateY(0) translateX(0) translateY(0) scale(1)`;
+        heroImg.style.transition = `transform 0.5s ease-out`;
+    });
+    
+    hero.addEventListener('mouseenter', () => {
+        heroImg.style.transition = `transform 0.1s ease-out`;
     });
 }
