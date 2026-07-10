@@ -16,14 +16,46 @@
     "isVeg": true,
     "isFeatured": true,
     "ingredients": [
-      { "name": "Fettuccine or Tagliatelle", "quantity": "250", "unit": "g" },
-      { "name": "Heavy Cream", "quantity": "1/2", "unit": "cup" },
-      { "name": "Parmesan Cheese (grated)", "quantity": "1/2", "unit": "cup" },
-      { "name": "Truffle Oil", "quantity": "1", "unit": "tbsp" },
-      { "name": "Garlic (minced)", "quantity": "2", "unit": "cloves" },
-      { "name": "Butter", "quantity": "2", "unit": "tbsp" },
-      { "name": "Black Pepper", "quantity": "1", "unit": "tsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Fettuccine or Tagliatelle",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "name": "Heavy Cream",
+        "quantity": "1/2",
+        "unit": "cup"
+      },
+      {
+        "name": "Parmesan Cheese (grated)",
+        "quantity": "1/2",
+        "unit": "cup"
+      },
+      {
+        "name": "Truffle Oil",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Garlic (minced)",
+        "quantity": "2",
+        "unit": "cloves"
+      },
+      {
+        "name": "Butter",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ],
     "tools": [
       "Large Pot",
@@ -74,26 +106,89 @@
     "isVeg": true,
     "isFeatured": true,
     "ingredients": [
-      { "name": "Whole Black Lentils (Urad Dal)", "quantity": "1", "unit": "cup" },
-      { "name": "Kidney Beans (Rajma)", "quantity": "0.25", "unit": "cup" },
-      { "name": "Butter", "quantity": "3", "unit": "tbsp" },
-      { "name": "Heavy Cream", "quantity": "0.5", "unit": "cup" },
-      { "name": "Tomato Puree", "quantity": "1", "unit": "cup" },
-      { "name": "Ginger-Garlic Paste", "quantity": "1", "unit": "tbsp" }
+      {
+        "name": "Whole Black Lentils (Urad Dal)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Kidney Beans (Rajma)",
+        "quantity": "0.25",
+        "unit": "cup"
+      },
+      {
+        "name": "Butter",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Heavy Cream",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Tomato Puree",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Ginger-Garlic Paste",
+        "quantity": "1",
+        "unit": "tbsp"
+      }
     ],
-    "tools": [ "Pressure Cooker", "Heavy Bottom Pan" ],
+    "tools": [
+      "Pressure Cooker",
+      "Heavy Bottom Pan"
+    ],
     "steps": [
-      { "stepNumber": 1, "title": "Soak Lentils", "description": "Wash and soak the black lentils and kidney beans overnight in plenty of water." },
-      { "stepNumber": 2, "title": "Pressure Cook", "description": "Pressure cook the soaked lentils and rajma with water and salt for 15-20 whistles on low heat until completely soft and easily mashable." },
-      { "stepNumber": 3, "title": "Prepare Masala", "description": "In a heavy bottom pan, heat butter, add ginger-garlic paste and cook for a minute. Add tomato puree and red chili powder, cook until butter separates." },
-      { "stepNumber": 4, "title": "Slow Cook", "description": "Add the cooked dal along with its water to the masala. Mix well and let it simmer on low heat for at least 30-40 minutes. Add cream just before serving." }
+      {
+        "stepNumber": 1,
+        "title": "Soak Lentils",
+        "description": "Wash and soak the black lentils and kidney beans overnight in plenty of water."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Pressure Cook",
+        "description": "Pressure cook the soaked lentils and rajma with water and salt for 15-20 whistles on low heat until completely soft and easily mashable."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Prepare Masala",
+        "description": "In a heavy bottom pan, heat butter, add ginger-garlic paste and cook for a minute. Add tomato puree and red chili powder, cook until butter separates."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Slow Cook",
+        "description": "Add the cooked dal along with its water to the masala. Mix well and let it simmer on low heat for at least 30-40 minutes. Add cream just before serving."
+      }
     ],
-    "nutrition": { "calories": 320, "protein": "12g", "carbs": "35g", "fat": "15g", "fiber": "9g", "sugar": "3g" },
-    "faqs": [ { "question": "Can I skip cream?", "answer": "Yes, but cream gives it the authentic restaurant-style richness." } ],
-    "tags": [ "Dal", "Lentils", "Comfort Food", "Creamy" ],
+    "nutrition": {
+      "calories": 320,
+      "protein": "12g",
+      "carbs": "35g",
+      "fat": "15g",
+      "fiber": "9g",
+      "sugar": "3g"
+    },
+    "faqs": [
+      {
+        "question": "Can I skip cream?",
+        "answer": "Yes, but cream gives it the authentic restaurant-style richness."
+      }
+    ],
+    "tags": [
+      "Dal",
+      "Lentils",
+      "Comfort Food",
+      "Creamy"
+    ],
     "averageRating": 4.9,
     "totalRatings": 120,
-    "createdAt": { "seconds": 1783192600, "nanoseconds": 0 }
+    "createdAt": {
+      "seconds": 1783192600,
+      "nanoseconds": 0
+    }
   },
   {
     "id": "rec_1",
@@ -6667,6 +6762,188 @@
     "totalRatings": 36,
     "createdAt": {
       "seconds": 1783192563,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_tea_1",
+    "slug": "masala-chai",
+    "title": "Masala Chai",
+    "description": "A classic Indian spiced tea brewed with fresh ginger, cardamom, and strong tea leaves for a comforting warm hug.",
+    "heroImage": "https://images.unsplash.com/photo-1576092762791-dd9e2220abd4?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 5,
+    "totalTime": 15,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 120,
+    "cuisine": "Indian",
+    "category": "Beverages",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Water",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Milk",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Black Tea Leaves",
+        "quantity": "2",
+        "unit": "tsp"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "2",
+        "unit": "tsp"
+      },
+      {
+        "name": "Fresh Ginger (crushed)",
+        "quantity": "1",
+        "unit": "inch"
+      },
+      {
+        "name": "Green Cardamom",
+        "quantity": "2-3",
+        "unit": "pods"
+      }
+    ],
+    "tools": [
+      "Saucepan",
+      "Tea Strainer"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Boil Water with Spices",
+        "description": "Crush ginger and cardamom. Add them to a saucepan with water and bring to a boil. Let it simmer for 2 minutes to extract flavors."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Brew Tea",
+        "description": "Add black tea leaves to the boiling spiced water and simmer for 1-2 minutes until the color is dark."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Add Milk",
+        "description": "Pour in the milk and add sugar. Bring to a boil again, lower the heat, and simmer for another 2-3 minutes."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Serve",
+        "description": "Strain the hot tea into cups and enjoy."
+      }
+    ],
+    "nutrition": {
+      "calories": 120,
+      "protein": "4g",
+      "carbs": "15g",
+      "fat": "4g",
+      "fiber": "0g",
+      "sugar": "12g"
+    },
+    "faqs": [],
+    "tags": [
+      "Tea",
+      "Chai",
+      "Spiced",
+      "Hot"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 150,
+    "createdAt": {
+      "seconds": 1783693488,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_coffee_1",
+    "slug": "filter-coffee",
+    "title": "South Indian Filter Coffee",
+    "description": "Authentic rich and frothy South Indian coffee made using a traditional metal filter and strong coffee decoction.",
+    "heroImage": "https://images.unsplash.com/photo-1620067637841-8664150531bd?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 5,
+    "prepTime": 15,
+    "totalTime": 20,
+    "difficulty": "Medium",
+    "servings": 2,
+    "calories": 90,
+    "cuisine": "South Indian",
+    "category": "Beverages",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Filter Coffee Powder",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Boiling Water",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Full-fat Milk",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "2",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Traditional Coffee Filter",
+      "Saucepan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Prepare Decoction",
+        "description": "Add the coffee powder to the upper compartment of the filter and press lightly. Pour boiling water over it and cover. Let it drip into the lower compartment for 10-15 minutes."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Boil Milk",
+        "description": "In a saucepan, bring the full-fat milk to a boil."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Mix",
+        "description": "Add sugar to your serving cup (dabarah and tumbler). Pour 2-3 tablespoons of the strong coffee decoction, then fill with the boiling hot milk."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Froth",
+        "description": "Pour the coffee back and forth between the dabarah and tumbler a few times to dissolve the sugar and create a thick frothy layer on top. Serve hot."
+      }
+    ],
+    "nutrition": {
+      "calories": 90,
+      "protein": "4g",
+      "carbs": "10g",
+      "fat": "4g",
+      "fiber": "0g",
+      "sugar": "8g"
+    },
+    "faqs": [],
+    "tags": [
+      "Coffee",
+      "Filter Coffee",
+      "Hot",
+      "South Indian"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 120,
+    "createdAt": {
+      "seconds": 1783693488,
       "nanoseconds": 0
     }
   }

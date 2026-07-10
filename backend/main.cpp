@@ -32,6 +32,19 @@ std::string readFile(const std::string& filepath) {
     return buffer.str();
 }
 
+std::string getMimeType(const std::string& path) {
+    if (path.find(".html") != std::string::npos) return "text/html";
+    if (path.find(".css") != std::string::npos) return "text/css";
+    if (path.find(".js") != std::string::npos) return "application/javascript";
+    if (path.find(".json") != std::string::npos) return "application/json";
+    if (path.find(".png") != std::string::npos) return "image/png";
+    if (path.find(".jpg") != std::string::npos || path.find(".jpeg") != std::string::npos) return "image/jpeg";
+    if (path.find(".svg") != std::string::npos) return "image/svg+xml";
+    if (path.find(".gif") != std::string::npos) return "image/gif";
+    if (path.find(".ico") != std::string::npos) return "image/x-icon";
+    return "text/plain";
+}
+
 void handleClient(SOCKET clientSocket) {
     char buffer[4096] = {0};
     int bytesRead = recv(clientSocket, buffer, sizeof(buffer) - 1, 0);
@@ -56,79 +69,29 @@ void handleClient(SOCKET clientSocket) {
     std::string status = "200 OK";
 
     if (method == "GET") {
-        if (cleanPath == "/" || cleanPath == "/index.html") {
-            responseBody = readFile("../frontend/index.html");
-            contentType = "text/html";
-            if (responseBody.empty()) {
-                status = "404 Not Found";
-                responseBody = "<h1>404 Not Found</h1><p>index.html could not be read.</p>";
-            }
-        } else if (cleanPath == "/recipes.html") {
-            responseBody = readFile("../frontend/recipes.html");
-            contentType = "text/html";
-            if (responseBody.empty()) {
-                status = "404 Not Found";
-                responseBody = "<h1>404 Not Found</h1><p>recipes.html could not be read.</p>";
-            }
-        } else if (cleanPath == "/about.html") {
-            responseBody = readFile("../frontend/about.html");
-            contentType = "text/html";
-            if (responseBody.empty()) {
-                status = "404 Not Found";
-                responseBody = "<h1>404 Not Found</h1><p>about.html could not be read.</p>";
-            }
-        } else if (cleanPath == "/contact.html") {
-            responseBody = readFile("../frontend/contact.html");
-            contentType = "text/html";
-            if (responseBody.empty()) {
-                status = "404 Not Found";
-                responseBody = "<h1>404 Not Found</h1><p>contact.html could not be read.</p>";
-            }
-        } else if (cleanPath == "/style.css") {
-            responseBody = readFile("../frontend/style.css");
-            contentType = "text/css";
-            if (responseBody.empty()) {
-                status = "404 Not Found";
-            }
-        } else if (cleanPath == "/app.js") {
-            responseBody = readFile("../frontend/app.js");
-            contentType = "application/javascript";
-            if (responseBody.empty()) {
-                status = "404 Not Found";
-            }
-        } else if (cleanPath.find("/images/") == 0) {
-            std::string imagePath = "../frontend" + cleanPath;
-            responseBody = readFile(imagePath);
-            if (cleanPath.find(".png") != std::string::npos) {
-                contentType = "image/png";
-            } else if (cleanPath.find(".jpg") != std::string::npos || cleanPath.find(".jpeg") != std::string::npos) {
-                contentType = "image/jpeg";
-            } else if (cleanPath.find(".svg") != std::string::npos) {
-                contentType = "image/svg+xml";
-            } else if (cleanPath.find(".gif") != std::string::npos) {
-                contentType = "image/gif";
-            } else {
-                contentType = "application/octet-stream";
-            }
-            if (responseBody.empty()) {
-                status = "404 Not Found";
-            }
-        } else if (cleanPath == "/api/recipes" || cleanPath == "/api/recipes/") {
-            responseBody = readFile("recipes.json");
-            contentType = "application/json";
-            if (responseBody.empty()) {
-                responseBody = "[]";
-            }
-        } else if (cleanPath == "/api/categories" || cleanPath == "/api/categories/") {
-            responseBody = readFile("categories.json");
+        if (cleanPath == "/") {
+            cleanPath = "/index.html";
+        }
+        
+        if (cleanPath.find("/api/") == 0) {
+            std::string filename = cleanPath.substr(5);
+            if (!filename.empty() && filename.back() == '/') filename.pop_back();
+            responseBody = readFile(filename + ".json");
             contentType = "application/json";
             if (responseBody.empty()) {
                 responseBody = "[]";
             }
         } else {
-            status = "404 Not Found";
-            contentType = "text/html";
-            responseBody = "<h1>404 Not Found</h1>";
+            std::string filepath = "../frontend" + cleanPath;
+            responseBody = readFile(filepath);
+            
+            if (responseBody.empty()) {
+                status = "404 Not Found";
+                contentType = "text/html";
+                responseBody = "<h1>404 Not Found</h1><p>File could not be read.</p>";
+            } else {
+                contentType = getMimeType(cleanPath);
+            }
         }
     } else if (method == "OPTIONS") {
         status = "204 No Content";

@@ -140,19 +140,73 @@ async function loadRecipes() {
 function applyFilters() {
     filteredRecipes = recipes.filter(recipe => {
         const catObj = categories.find(c => c.name.toLowerCase() === recipe.category.toLowerCase());
-        const recipeCatSlug = catObj ? catObj.slug : recipe.category.toLowerCase().replace(/\s+/g, '-');
+        const recipeCatSlug = catObj ? catObj.slug : (recipe.category || '').toLowerCase().replace(/\s+/g, '-');
         
         const matchesCategory = currentCategory === 'all' || recipeCatSlug === currentCategory.toLowerCase();
-        const matchesSearch = searchQuery === '' || 
-            recipe.title.toLowerCase().includes(searchQuery) ||
-            recipe.description.toLowerCase().includes(searchQuery) ||
-            (recipe.tags && recipe.tags.some(tag => tag.toLowerCase().includes(searchQuery)));
+        const matchesSearch = searchQuery === '' || fuzzyMatchRecipe(recipe, searchQuery);
             
         return matchesCategory && matchesSearch;
     });
 
     currentRecipeIndex = 0; // Reset to first page
     renderBookPage();
+}
+
+function levenshteinDistance(a, b) {
+    const matrix = [];
+    for (let i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+    }
+    for (let j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+    }
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1, // substitution
+                    matrix[i][j - 1] + 1,     // insertion
+                    matrix[i - 1][j] + 1      // deletion
+                );
+            }
+        }
+    }
+    return matrix[b.length][a.length];
+}
+
+function fuzzyMatchRecipe(recipe, query) {
+    const q = query.toLowerCase().trim();
+    if (!q) return true;
+    
+    // Exact substring match first (fastest)
+    if (recipe.title && recipe.title.toLowerCase().includes(q)) return true;
+    if (recipe.description && recipe.description.toLowerCase().includes(q)) return true;
+    if (recipe.tags && recipe.tags.some(tag => tag.toLowerCase().includes(q))) return true;
+
+    // Fuzzy word-by-word match
+    const queryWords = q.split(/\s+/).filter(w => w.length > 2);
+    if (queryWords.length === 0) return false;
+
+    // Get all searchable words from recipe
+    const searchableText = `${recipe.title || ''} ${recipe.description || ''} ${(recipe.tags || []).join(' ')}`.toLowerCase();
+    const textWords = searchableText.split(/[^a-z0-9]+/).filter(w => w.length > 2);
+
+    // Every significant word in the query must match at least one word in the recipe closely
+    for (const qw of queryWords) {
+        let maxDist = qw.length <= 4 ? 1 : 2;
+        let wordMatched = false;
+        for (const tw of textWords) {
+            if (Math.abs(qw.length - tw.length) > maxDist) continue;
+            if (levenshteinDistance(qw, tw) <= maxDist) {
+                wordMatched = true;
+                break;
+            }
+        }
+        if (!wordMatched) return false;
+    }
+    return true;
 }
 
 // Turn Page (Navigation)
