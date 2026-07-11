@@ -103,6 +103,7 @@
                         <div class="pan-layer p-2"></div>
                         <div class="pan-layer p-3"></div>
                         <div class="pan-layer p-4"></div>
+                        <div class="pan-layer p-5"></div>
                         
                         <!-- Solid Handle -->
                         <div class="pan-handle">
@@ -129,19 +130,100 @@
             <div class="section-header reveal">
                 <span class="sub-heading">Featured</span>
                 <h2>Chef's Special</h2>
-                <p class="section-desc">Experience our most loved recipe with an interactive 3D view.</p>
             </div>
             
-            <div class="tilt-container reveal" style="transition-delay: 0.2s;">
-                <div class="tilt-card" id="tilt-card">
-                    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=800&auto=format&fit=crop&q=80" alt="Classic Truffle Pasta" class="tilt-bg">
-                    <div class="tilt-overlay"></div>
-                    <div class="tilt-content">
-                        <span class="tilt-badge">Most Popular</span>
-                        <h3>Classic Truffle Pasta</h3>
-                        <p>A rich, creamy, and earthy delight that is surprisingly simple to make.</p>
-                        <a href="recipes.html?cat=lunch-mains" class="cta-btn tilt-btn">View Recipe</a>
+            <!-- 3D Recipe Carousel Viewport -->
+            <div class="carousel-3d-viewport reveal" style="transition-delay: 0.2s;">
+                <div class="carousel-3d-stage">
+                    
+                    <!-- Card 1: Truffle Pasta -->
+                    <div class="carousel-3d-card active" data-index="0">
+                        <div class="carousel-3d-card-inner">
+                            <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=800&auto=format&fit=crop&q=80" alt="Classic Truffle Pasta" class="carousel-bg">
+                            <div class="carousel-overlay"></div>
+                            <div class="carousel-glare"></div>
+                            <div class="carousel-content">
+                                <span class="carousel-badge badge-popular">Most Popular</span>
+                                <h3>Classic Truffle Pasta</h3>
+                                <p>A rich, creamy, and earthy delight that is surprisingly simple to make.</p>
+                                <a href="recipes.html?recipe=classic-truffle-pasta" class="cta-btn carousel-btn">View Recipe</a>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Card 2: Paneer Butter Masala -->
+                    <div class="carousel-3d-card" data-index="1">
+                        <div class="carousel-3d-card-inner">
+                            <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&auto=format&fit=crop&q=80" alt="Paneer Butter Masala" class="carousel-bg">
+                            <div class="carousel-overlay"></div>
+                            <div class="carousel-glare"></div>
+                            <div class="carousel-content">
+                                <span class="carousel-badge badge-signature">Chef's Signature</span>
+                                <h3>Paneer Butter Masala</h3>
+                                <p>A rich, creamy, and mildly sweet restaurant-style North Indian paneer curry.</p>
+                                <a href="recipes.html?recipe=paneer-butter-masala" class="cta-btn carousel-btn">View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Veg Biryani -->
+                    <div class="carousel-3d-card" data-index="2">
+                        <div class="carousel-3d-card-inner">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80" alt="Veg Biryani" class="carousel-bg">
+                            <div class="carousel-overlay"></div>
+                            <div class="carousel-glare"></div>
+                            <div class="carousel-content">
+                                <span class="carousel-badge badge-trending">Trending</span>
+                                <h3>Hyderabadi Veg Biryani</h3>
+                                <p>Aromatic basmati rice cooked layered with spiced mixed vegetables and fresh herbs.</p>
+                                <a href="recipes.html?recipe=veg-biryani" class="cta-btn carousel-btn">View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Dal Makhani -->
+                    <div class="carousel-3d-card" data-index="3">
+                        <div class="carousel-3d-card-inner">
+                            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80" alt="Dal Makhani" class="carousel-bg">
+                            <div class="carousel-overlay"></div>
+                            <div class="carousel-glare"></div>
+                            <div class="carousel-content">
+                                <span class="carousel-badge badge-choice">Chef's Choice</span>
+                                <h3>Dal Makhani</h3>
+                                <p>A classic North Indian dish slow-cooked with whole black lentils, butter, and cream.</p>
+                                <a href="recipes.html?recipe=dal-makhani" class="cta-btn carousel-btn">View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Punjabi Samosa -->
+                    <div class="carousel-3d-card" data-index="4">
+                        <div class="carousel-3d-card-inner">
+                            <img src="images/samosa.png" alt="Punjabi Samosa" class="carousel-bg">
+                            <div class="carousel-overlay"></div>
+                            <div class="carousel-glare"></div>
+                            <div class="carousel-content">
+                                <span class="carousel-badge badge-classic">Classic</span>
+                                <h3>Punjabi Samosa</h3>
+                                <p>Crispy fried pastry triangles filled with dry spiced potatoes and green peas.</p>
+                                <a href="recipes.html?recipe=samosa" class="cta-btn carousel-btn">View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Carousel Controls -->
+                <button class="carousel-control prev" aria-label="Previous recipe">&lsaquo;</button>
+                <button class="carousel-control next" aria-label="Next recipe">&rsaquo;</button>
+
+                <!-- Indicator Dots -->
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-index="0"></span>
+                    <span class="indicator" data-index="1"></span>
+                    <span class="indicator" data-index="2"></span>
+                    <span class="indicator" data-index="3"></span>
+                    <span class="indicator" data-index="4"></span>
                 </div>
             </div>
         </div>

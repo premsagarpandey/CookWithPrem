@@ -17,16 +17,18 @@ async function init() {
     // Parse URL parameter to check for categories passed from Home Page
     const urlParams = new URLSearchParams(window.location.search);
     const catParam = urlParams.get('cat');
+    const recipeParam = urlParams.get('recipe');
+    
     if (catParam) {
         currentCategory = catParam.toLowerCase();
     }
 
     setupEventListeners();
     initScrollReveal();
-    initTiltEffect();
+    initCarousel3D();
     initHeroParallax();
     await loadCategories();
-    await loadRecipes();
+    await loadRecipes(recipeParam);
 }
 
 // Initialize IntersectionObserver for scroll animations
@@ -121,7 +123,7 @@ async function loadCategories() {
 }
 
 // Fetch recipes from C++ API
-async function loadRecipes() {
+async function loadRecipes(recipeParam) {
     const bookContainer = document.getElementById("recipe-book-container");
     if (!bookContainer) return; // Skip if not on recipes page
     
@@ -129,7 +131,40 @@ async function loadRecipes() {
         const response = await fetch("/api/recipes");
         if (!response.ok) throw new Error("Network error");
         recipes = await response.json();
+        
+        // Handle specific recipe redirection from Home Page
+        if (recipeParam) {
+            const targetRecipe = recipes.find(r => r.slug === recipeParam);
+            if (targetRecipe) {
+                // Set current category to match the recipe category
+                const catObj = categories.find(c => c.name.toLowerCase() === targetRecipe.category.toLowerCase());
+                currentCategory = catObj ? catObj.slug : 'all';
+                
+                // Highlight corresponding filter button
+                const filterButtons = document.querySelectorAll(".filter-btn");
+                filterButtons.forEach(btn => {
+                    if (btn.getAttribute("data-category") === currentCategory) {
+                        btn.classList.add("active");
+                    } else {
+                        btn.classList.remove("active");
+                    }
+                });
+            }
+        }
+
         applyFilters();
+
+        // Set index to target recipe page
+        if (recipeParam) {
+            const index = filteredRecipes.findIndex(r => r.slug === recipeParam);
+            if (index !== -1) {
+                currentRecipeIndex = index;
+                renderBookPage();
+            }
+            
+            // Clean URL query parameters so page refresh/filtering behaves normally
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
     } catch (error) {
         console.error("Error loading recipes:", error);
         const leftPage = document.getElementById("book-left");
@@ -357,33 +392,245 @@ function generateRightPageHtml(recipe) {
     `;
 }
 
-// 3D Tilt Effect for Chef's Special Card
-function initTiltEffect() {
-    const card = document.getElementById('tilt-card');
-    if (!card) return;
+// 3D Rotating Recipe Carousel Logic
+function initCarousel3D() {
+    const viewport = document.querySelector('.carousel-3d-viewport');
+    if (!viewport) return;
 
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left; // x position within the element.
-        const y = e.clientY - rect.top;  // y position within the element.
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = ((y - centerY) / centerY) * -15; // Max rotation 15deg
-        const rotateY = ((x - centerX) / centerX) * 15;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    const stage = viewport.querySelector('.carousel-3d-stage');
+    const cards = viewport.querySelectorAll('.carousel-3d-card');
+    const prevBtn = viewport.querySelector('.carousel-control.prev');
+    const nextBtn = viewport.querySelector('.carousel-control.next');
+    const indicators = viewport.querySelectorAll('.carousel-indicators .indicator');
+
+    let activeIndex = 0;
+    const totalCards = cards.length;
+    const angleIncrement = 360 / totalCards; // 72 degrees for 5 cards
+
+    // Dynamic tilt variable states for the active card
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let targetScale = 1;
+    let currentScale = 1;
+    let targetZ = 30;
+    let currentZ = 30;
+    let isAnimatingTilt = false;
+
+    // Track active card elements for the tilt effect
+    let activeCard = null;
+    let activeBg = null;
+    let activeContent = null;
+    let activeGlare = null;
+
+    function updateCarousel() {
+        // Rotate the stage
+        const rotationAngle = -angleIncrement * activeIndex;
+        stage.style.transform = `rotateY(${rotationAngle}deg)`;
+
+        // Update active card class
+        cards.forEach((card, idx) => {
+            if (idx === activeIndex) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
+            }
+        });
+
+        // Update indicator dots
+        indicators.forEach((indicator, idx) => {
+            if (idx === activeIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+
+        // Update active card references for the tilt effect
+        setupActiveCardTilt();
+    }
+
+    function rotateToIndex(index) {
+        activeIndex = (index + totalCards) % totalCards;
+        updateCarousel();
+    }
+
+    // Attach click events to buttons
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => rotateToIndex(activeIndex - 1));
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => rotateToIndex(activeIndex + 1));
+    }
+
+    // Attach click events to indicators
+    indicators.forEach((indicator) => {
+        indicator.addEventListener('click', () => {
+            const index = parseInt(indicator.getAttribute('data-index'), 10);
+            rotateToIndex(index);
+        });
     });
 
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = `perspective(1000px) rotateX(0) rotateY(0)`;
-        card.style.transition = `transform 0.5s ease-out`;
+    // Touch support (Swiping)
+    let startX = 0;
+    let isDragging = false;
+
+    viewport.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    }, { passive: true });
+
+    viewport.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const currentXPos = e.touches[0].clientX;
+        const diffX = startX - currentXPos;
+
+        if (Math.abs(diffX) > 60) { // Swipe threshold
+            if (diffX > 0) {
+                rotateToIndex(activeIndex + 1); // Swipe left -> next
+            } else {
+                rotateToIndex(activeIndex - 1); // Swipe right -> prev
+            }
+            isDragging = false;
+        }
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', () => {
+        isDragging = false;
     });
-    
-    card.addEventListener('mouseenter', () => {
-        card.style.transition = `transform 0.1s ease-out`;
+
+    // Keyboard controls
+    document.addEventListener('keydown', (e) => {
+        // Only trigger if carousel is inside viewport
+        const rect = viewport.getBoundingClientRect();
+        const inViewport = (rect.top >= -rect.height && rect.bottom <= window.innerHeight + rect.height);
+        if (!inViewport) return;
+
+        if (e.key === 'ArrowLeft') {
+            rotateToIndex(activeIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+            rotateToIndex(activeIndex + 1);
+        }
     });
+
+    // ----------------------------------------------------
+    // Individual Tilt Logic for Active Card (Lerp based)
+    // ----------------------------------------------------
+    function setupActiveCardTilt() {
+        // Reset old active card style
+        if (activeCard) {
+            removeTiltListeners(activeCard);
+            activeCard.style.transition = ''; // Restore transition
+            const prevCardAngle = parseInt(activeCard.getAttribute('data-index'), 10) * angleIncrement;
+            activeCard.style.transform = `rotateY(${prevCardAngle}deg) translateZ(260px)`;
+            if (activeBg) activeBg.style.transform = '';
+            if (activeContent) activeContent.style.transform = '';
+            if (activeGlare) {
+                activeGlare.style.transform = '';
+                activeGlare.style.opacity = '0';
+            }
+        }
+
+        // Setup new active card
+        activeCard = stage.querySelector('.carousel-3d-card.active');
+        if (!activeCard) return;
+
+        activeBg = activeCard.querySelector('.carousel-bg');
+        activeContent = activeCard.querySelector('.carousel-content');
+        activeGlare = activeCard.querySelector('.carousel-glare');
+
+        // Reset variables
+        targetX = 0; targetY = 0; currentX = 0; currentY = 0;
+        targetScale = 1; currentScale = 1; targetZ = 30; currentZ = 30;
+        isAnimatingTilt = false;
+
+        // Attach listeners
+        activeCard.addEventListener('mouseenter', handleMouseEnter);
+        activeCard.addEventListener('mousemove', handleMouseMove);
+        activeCard.addEventListener('mouseleave', handleMouseLeave);
+    }
+
+    function removeTiltListeners(card) {
+        card.removeEventListener('mouseenter', handleMouseEnter);
+        card.removeEventListener('mousemove', handleMouseMove);
+        card.removeEventListener('mouseleave', handleMouseLeave);
+    }
+
+    function handleMouseEnter() {
+        activeCard.style.transition = 'none'; // Prevent conflicts with JS animation
+        targetScale = 1.08;
+        targetZ = 45;
+        if (!isAnimatingTilt) {
+            isAnimatingTilt = true;
+            requestAnimationFrame(updateTiltTransform);
+        }
+    }
+
+    function handleMouseMove(e) {
+        const bounds = activeCard.getBoundingClientRect();
+        const x = e.clientX - bounds.left;
+        const y = e.clientY - bounds.top;
+        const centerX = bounds.width / 2;
+        const centerY = bounds.height / 2;
+
+        targetY = ((y - centerY) / centerY) * -10;
+        targetX = ((x - centerX) / centerX) * 10;
+    }
+
+    function handleMouseLeave() {
+        targetX = 0;
+        targetY = 0;
+        targetScale = 1;
+        targetZ = 30;
+    }
+
+    function updateTiltTransform() {
+        if (!isAnimatingTilt) return;
+
+        currentX += (targetX - currentX) * 0.12;
+        currentY += (targetY - currentY) * 0.12;
+        currentScale += (targetScale - currentScale) * 0.12;
+        currentZ += (targetZ - currentZ) * 0.12;
+
+        // Combine base position rotation on ring + mouse tilt offset applied locally (after translateZ)
+        const cardRingAngle = parseInt(activeCard.getAttribute('data-index'), 10) * angleIncrement;
+        activeCard.style.transform = `rotateY(${cardRingAngle}deg) translateZ(260px) rotateY(${currentX}deg) rotateX(${currentY}deg)`;
+
+        if (activeBg) {
+            activeBg.style.transform = `scale(${currentScale}) translate(${-currentX * 0.4}px, ${-currentY * 0.4}px)`;
+        }
+
+        if (activeContent) {
+            activeContent.style.transform = `translateZ(${currentZ}px) translateX(${currentX * 0.3}px) translateY(${currentY * 0.3}px)`;
+        }
+
+        if (activeGlare) {
+            activeGlare.style.transform = `translate(-50%, -50%) translate(${currentX * 2}px, ${-currentY * 2}px)`;
+            const magnitude = Math.sqrt(currentX * currentX + currentY * currentY);
+            activeGlare.style.opacity = magnitude / 12;
+        }
+
+        // Rest check
+        if (targetX === 0 && targetY === 0 &&
+            Math.abs(currentX) < 0.01 && Math.abs(currentY) < 0.01 &&
+            Math.abs(currentScale - 1) < 0.001 && Math.abs(currentZ - 30) < 0.01) {
+            
+            const cardRingAngle = parseInt(activeCard.getAttribute('data-index'), 10) * angleIncrement;
+            activeCard.style.transform = `rotateY(${cardRingAngle}deg) translateZ(260px)`;
+            activeCard.style.transition = ''; // Restore CSS transition
+            if (activeBg) activeBg.style.transform = `scale(1) translate(0,0)`;
+            if (activeContent) activeContent.style.transform = `translateZ(30px) translateX(0) translateY(0)`;
+            if (activeGlare) activeGlare.style.opacity = '0';
+            isAnimatingTilt = false;
+            return;
+        }
+
+        requestAnimationFrame(updateTiltTransform);
+    }
+
+    // Run initial setup
+    updateCarousel();
 }
 
 // Interactive Hero Parallax Effect
