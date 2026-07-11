@@ -27,6 +27,7 @@ async function init() {
     initScrollReveal();
     initCarousel3D();
     initHeroParallax();
+    initCategory3DTilt();
     await loadCategories();
     await loadRecipes(recipeParam);
 }
@@ -662,3 +663,43 @@ function initHeroParallax() {
         heroImg.style.transition = `transform 0.1s ease-out`;
     });
 }
+
+// Interactive 3D Category Tilt Effect
+function initCategory3DTilt() {
+    const cards = document.querySelectorAll('.card-3d-wrapper');
+    
+    cards.forEach(wrapper => {
+        const card = wrapper.querySelector('.card-3d');
+        const glare = wrapper.querySelector('.card-3d-glare');
+        
+        wrapper.addEventListener('mousemove', (e) => {
+            const bounds = card.getBoundingClientRect();
+            const x = e.clientX - bounds.left;
+            const y = e.clientY - bounds.top;
+            const centerX = bounds.width / 2;
+            const centerY = bounds.height / 2;
+            
+            // Calculate tilt angle
+            const rotateY = ((x - centerX) / centerX) * 15; // Max 15 deg
+            const rotateX = ((y - centerY) / centerY) * -15; // Max 15 deg
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            
+            if (glare) {
+                const glareX = (x / bounds.width) * 100;
+                const glareY = (y / bounds.height) * 100;
+                glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 80%)`;
+            }
+        });
+        
+        wrapper.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+            card.style.transition = 'transform 0.5s ease';
+        });
+        
+        wrapper.addEventListener('mouseenter', () => {
+            card.style.transition = 'none';
+        });
+    });
+}
+
