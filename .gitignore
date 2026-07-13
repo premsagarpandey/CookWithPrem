@@ -3,10 +3,16 @@
 *.out
 *.o
 
-# IDE files
+# IDE & Editor files
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# OS files
+# OS generated files
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Internal config
+.agents/

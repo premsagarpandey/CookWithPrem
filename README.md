@@ -1,19 +1,23 @@
 # CookWithPrem 🍳
+
 > **Step-by-Step Recipes by Prem Sagar Pandey**
 
-A premium, ultra-lightweight cooking recipe platform designed as a beginner-student project. It features a **pure HTML/CSS/JS frontend** served entirely by a custom-written **C++ backend HTTP server**. 
+A premium, ultra-lightweight cooking recipe platform built as a personal project. It features a **pure HTML/CSS/JS frontend** served by a custom **C++ HTTP server** — no frameworks, no bloat.
 
-By replacing heavy frameworks like Next.js, the project disk size has been optimized from **450MB+ down to under 1MB**!
+Total project size: **under 1 MB** (compared to 450MB+ with typical JS frameworks).
 
 ---
 
 ## ✨ Features
 
-- 🍦 **Vanilla Stack**: Built purely using HTML5, CSS3, and standard ES6 JavaScript. No framework overhead.
-- 🎨 **Premium Aesthetics**: Features a beautiful color scheme (Cream, Sage Green & Warm Brown) with responsive grids and interactive detail modals.
-- 📂 **Multi-Page Layout**: Separate sections for Home, Recipes (with Category dynamic filtering and Search), About Us, and Contact Us.
-- ⚡ **Lightweight C++ Server**: Actively handles routing, serves static frontend assets, and handles REST API requests (`/api/recipes`, `/api/categories`).
-- 🌐 **Winsock Socket Server**: Uses native low-level Windows Sockets (`winsock2.h`) and standard POSIX sockets.
+| Feature | Description |
+|---------|-------------|
+| 🍦 **Vanilla Stack** | Built with HTML5, CSS3, and ES6 JavaScript. Zero framework overhead. |
+| 🎨 **Premium UI** | Elegant color palette, responsive grids, 3D card animations, and interactive modals. |
+| 📂 **Multi-Page Layout** | Home, Recipes (with category filtering & fuzzy search), About, and Contact pages. |
+| ⚡ **C++ Backend** | Custom HTTP server handles routing, serves static files, and exposes REST APIs. |
+| 🌐 **Cross-Platform Sockets** | Uses Winsock on Windows and POSIX sockets on Linux/macOS. |
+| 🚀 **One-Click Launch** | VBS script to start the server and open the browser automatically. |
 
 ---
 
@@ -21,68 +25,65 @@ By replacing heavy frameworks like Next.js, the project disk size has been optim
 
 ```
 CookWithPrem/
-├── frontend/                     # ── STATIC FRONTEND LAYER ───────────────
-│   ├── index.html                # Home Landing Page
-│   ├── recipes.html              # Recipes Catalog (with dynamic filtering)
-│   ├── about.html                # About Prem Sagar Pandey & cooking tips
-│   ├── contact.html              # Contact Form (with live success alerts)
-│   ├── style.css                 # Premium style sheets
-│   └── app.js                    # Dynamic fetch operations & modal popups
+├── .gitignore                    # Git ignore rules
+├── README.md                     # Project documentation
+├── Start_CookWithPrem.vbs        # One-click launcher (starts server + opens browser)
 │
-└── backend/                      # ── C++ BACKEND WEB SERVER ──────────────
-    ├── main.cpp                  # C++ HTTP socket server
-    ├── recipes.json              # Recipes JSON database
-    ├── categories.json           # Categories JSON database
-    ├── CMakeLists.txt            # CMake configuration
-    └── cpp_backend.exe           # Compiled backend binary (Windows)
+├── frontend/                     # Static Frontend
+│   ├── index.html                # Home page
+│   ├── recipes.html              # Recipe catalog (dynamic filtering & search)
+│   ├── about.html                # About page
+│   ├── contact.html              # Contact form
+│   ├── style.css                 # Stylesheets
+│   ├── app.js                    # Client-side logic
+│   └── images/                   # Image assets
+│
+└── backend/                      # C++ Web Server
+    ├── main.cpp                  # HTTP socket server source
+    ├── recipes.json              # Recipe database
+    ├── categories.json           # Category database
+    └── CMakeLists.txt            # CMake build configuration
 ```
 
 ---
 
-## 🛠️ How to Compile & Run Locally
+## 🚀 Quick Start
 
-### 1. Compile the Backend (MinGW/GCC)
-Open your command prompt or terminal in the `backend/` directory and run:
+### Option 1: One-Click Launch (Windows)
+Double-click **`Start_CookWithPrem.vbs`** — it starts the server in the background and opens the website automatically.
 
+### Option 2: Manual Setup
+
+**1. Compile the backend:**
 ```bash
-# Compile using g++ compiler linking Winsock
+cd backend
 g++ main.cpp -o cpp_backend.exe -lws2_32
+```
 
-# Run the backend server
+**2. Run the server:**
+```bash
 ./cpp_backend.exe
 ```
 
-### 2. View the Platform
-Once the C++ server is running, open your web browser and visit:
-👉 **[http://localhost:8080](http://localhost:8080)**
+**3. Open in browser:**
+```
+http://localhost:8080
+```
 
 ---
 
-## 🎓 Git Tutorial: How to Commit & Push Changes
+## 🔧 API Endpoints
 
-If you make modifications to this project (e.g., editing HTML files, changing style sheets, or updating C++ code), follow these steps to commit and push your changes to GitHub:
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/api/recipes` | Returns all recipes as JSON |
+| `GET` | `/api/categories` | Returns all categories as JSON |
 
-### Step 1: Check your modified files
-Verify what files have been changed or added:
-```bash
-git status
-```
+---
 
-### Step 2: Stage the changes
-Add all the changed files to the Git staging index:
-```bash
-git add .
-```
-*(Alternatively, stage a specific file using `git add folder/file.html`)*
+## 👨‍💻 Author
 
-### Step 3: Create a local Commit
-Save a snapshot of your changes locally with a descriptive message:
-```bash
-git commit -m "Describe what changes you made (e.g., Updated contact details)"
-```
+**Prem Sagar Pandey**
+B.Tech Student — Bhopal
 
-### Step 4: Push the changes to GitHub
-Upload your local commits to the remote repository on GitHub:
-```bash
-git push origin main
-```
+Built with ❤️ and a lot of cooking experiments.

@@ -28,12 +28,20 @@
 
     <!-- Editorial Hero Section -->
     <header class="homepage-hero" id="hero">
-        <!-- Floating 3D Ingredients -->
+        <!-- Floating Ingredients -->
         <div class="floating-item float-1">🍅</div>
         <div class="floating-item float-2">🌿</div>
         <div class="floating-item float-3">🍋</div>
         <div class="floating-item float-4">🧅</div>
         <div class="floating-item float-5">🌶️</div>
+        <div class="floating-item float-6">🥑</div>
+        <div class="floating-item float-7">🥕</div>
+        <div class="floating-item float-8">🍄</div>
+        <div class="floating-item float-9">🍆</div>
+        <div class="floating-item float-10">🥦</div>
+        <div class="floating-item float-11">🌽</div>
+        <div class="floating-item float-12">🥒</div>
+
 
         <div class="container hero-grid">
             <div class="hero-content reveal">
@@ -91,8 +99,30 @@
                 <h2>Chef's Special</h2>
             </div>
             
-            <!-- 3D Recipe Carousel Viewport -->
-            <div class="carousel-3d-viewport reveal" style="transition-delay: 0.2s;">
+            <!-- Animated Stats & Carousel Layout -->
+            <div class="chef-special-layout">
+
+                <!-- Left: Animated Cooking Stats -->
+                <div class="cooking-stats-panel left-panel reveal" style="transition-delay: 0.1s;">
+                    <div class="stat-card">
+                        <div class="stat-icon">🍽️</div>
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">Recipes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🌱</div>
+                        <div class="stat-number" data-target="35">0</div>
+                        <div class="stat-label">Veg Dishes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Min Avg Time</div>
+                    </div>
+                </div>
+
+                <!-- Center: 3D Recipe Carousel Viewport -->
+                <div class="carousel-3d-viewport reveal" style="transition-delay: 0.2s;">
                 <div class="carousel-3d-stage">
                     
                     <!-- Card 1: Truffle Pasta -->
@@ -184,7 +214,28 @@
                     <span class="indicator" data-index="3"></span>
                     <span class="indicator" data-index="4"></span>
                 </div>
-            </div>
+                </div>
+
+                <!-- Right: Animated Fun Facts -->
+                <div class="cooking-stats-panel right-panel reveal" style="transition-delay: 0.3s;">
+                    <div class="stat-card">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label">Chef's Picks</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🇮🇳</div>
+                        <div class="stat-number" data-target="8">0</div>
+                        <div class="stat-label">Indian States</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">❤️</div>
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">Made with Love</div>
+                    </div>
+                </div>
+
+            </div> <!-- .chef-special-layout -->
         </div>
     </section>
 
@@ -198,8 +249,11 @@
             <p>CookWithPrem is a platform dedicated to students and beginners who want to explore the joy of cooking with simple, foolproof recipes.</p>
             <a href="about.html" class="text-link">Read full story &rarr;</a>
         </div>
-        <div class="reveal" style="transition-delay: 0.2s;">
-            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800" alt="Prem cooking" class="intro-image">
+        <div class="intro-image-container reveal" style="transition-delay: 0.2s;">
+            <div class="magic-frame">
+                <img src="images/indian_student_cooking.png" alt="Indian Student Cooking Story" class="intro-image magic-image">
+                <div class="magic-glow"></div>
+            </div>
         </div>
         </div>
     </section>

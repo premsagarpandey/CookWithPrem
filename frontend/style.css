@@ -196,25 +196,34 @@ h1, h2, h3, .logo, .serif {
     position: relative;
     overflow: hidden;
 }
-
 .floating-item {
     position: absolute;
-    font-size: 32px;
     z-index: 1;
     pointer-events: none; /* Let clicks pass through */
-    animation: floatDrift 8s infinite ease-in-out alternate;
     opacity: 0.8;
+    animation: fallingVeggie linear infinite;
+    top: -15%; /* Start above screen */
 }
-.float-1 { top: 15%; left: 10%; animation-delay: 0s; font-size: 40px; }
-.float-2 { top: 75%; left: 5%; animation-delay: -2s; font-size: 28px; }
-.float-3 { top: 25%; right: 45%; animation-delay: -4s; font-size: 35px; }
-.float-4 { bottom: 15%; right: 55%; animation-delay: -1s; font-size: 24px; }
-.float-5 { top: 60%; right: 10%; animation-delay: -5s; font-size: 38px; }
 
-@keyframes floatDrift {
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(-40px) rotate(20deg); }
+@keyframes fallingVeggie {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.9; }
+    90% { opacity: 0.9; }
+    100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
 }
+
+.float-1 { left: 5%; animation-duration: 12s; animation-delay: 0s; font-size: 40px; }
+.float-2 { left: 15%; animation-duration: 18s; animation-delay: -5s; font-size: 28px; }
+.float-3 { left: 25%; animation-duration: 14s; animation-delay: -2s; font-size: 35px; }
+.float-4 { left: 35%; animation-duration: 16s; animation-delay: -8s; font-size: 24px; }
+.float-5 { left: 45%; animation-duration: 13s; animation-delay: -1s; font-size: 38px; }
+.float-6 { left: 55%; animation-duration: 17s; animation-delay: -6s; font-size: 30px; }
+.float-7 { left: 65%; animation-duration: 15s; animation-delay: -3s; font-size: 36px; }
+.float-8 { left: 75%; animation-duration: 19s; animation-delay: -9s; font-size: 26px; }
+.float-9 { left: 85%; animation-duration: 14s; animation-delay: -4s; font-size: 42px; }
+.float-10 { left: 95%; animation-duration: 16s; animation-delay: -7s; font-size: 32px; }
+.float-11 { left: 20%; animation-duration: 15s; animation-delay: -10s; font-size: 34px; }
+.float-12 { left: 80%; animation-duration: 13s; animation-delay: -11s; font-size: 30px; }
 
 .cooking-animation {
     width: 60px;
@@ -1001,6 +1010,95 @@ h1, h2, h3, .logo, .serif {
 }
 
 /* ==========================================================================
+   Chef's Special Layout with Stats
+   ========================================================================== */
+.chef-special-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.cooking-stats-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-shrink: 0;
+    width: 180px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px 16px;
+    text-align: center;
+    border: 1px solid rgba(139, 69, 19, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+    animation: statPulse 3s ease-in-out infinite;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0s; }
+.stat-card:nth-child(2) { animation-delay: 1s; }
+.stat-card:nth-child(3) { animation-delay: 2s; }
+
+.stat-card:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 16px 40px rgba(139, 69, 19, 0.15);
+}
+
+@keyframes statPulse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.stat-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+.stat-number {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1.1;
+}
+
+.stat-number::after {
+    content: '+';
+    font-size: 1.4rem;
+    color: var(--primary-light);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .chef-special-layout {
+        flex-direction: column;
+    }
+    .cooking-stats-panel {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+    .stat-card {
+        flex: 1;
+        max-width: 140px;
+    }
+}
+
+/* ==========================================================================
    3D Rotating Featured Recipe Carousel
    ========================================================================== */
 .carousel-3d-viewport {
@@ -1349,3 +1447,64 @@ h1, h2, h3, .logo, .serif {
 #threejs-cooking-canvas canvas:active {
     cursor: grabbing;
 }
+/* Magic Frame Animation */
+.intro-image-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.magic-frame {
+    position: relative;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.magic-frame:hover {
+    transform: rotateY(-10deg) rotateX(10deg) scale(1.05);
+    box-shadow: -20px 30px 60px rgba(0,0,0,0.3);
+}
+
+.magic-image {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+    position: relative;
+    z-index: 2;
+    transition: filter 0.5s;
+}
+
+.magic-frame:hover .magic-image {
+    filter: contrast(1.1) saturate(1.2);
+}
+
+/* Dynamic Edge Glow */
+.magic-glow {
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    background: linear-gradient(45deg, #ff4500, #ff8800, #ffcc00, #ff4500);
+    background-size: 400%;
+    z-index: 1;
+    border-radius: 24px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
+    animation: glowMove 3s linear infinite;
+}
+
+.magic-frame:hover .magic-glow {
+    opacity: 0.8;
+}
+
+@keyframes glowMove {
+    0% { background-position: 0 0; }
+    50% { background-position: 100% 0; }
+    100% { background-position: 0 0; }
+}
+

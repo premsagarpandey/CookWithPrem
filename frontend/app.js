@@ -46,6 +46,30 @@ function initScrollReveal() {
     
     // Make a global observer so we can observe dynamic elements later
     window.scrollObserver = observer;
+
+    // Animated number counter for stat cards
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-target'), 10);
+                let current = 0;
+                const duration = 1500;
+                const step = Math.ceil(target / (duration / 30));
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = current;
+                }, 30);
+                counterObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
 }
 
 function setupEventListeners() {
@@ -709,14 +733,15 @@ function initCategory3DTilt() {
 function initThreeJSCookingScene() {
     const container = document.getElementById('threejs-cooking-canvas');
     if (!container || typeof THREE === 'undefined') return;
+    
+    container.innerHTML = '';
 
-    // 1. Setup Scene, Camera, Renderer
     const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(0xfffaf0, 0.005);
     
-    const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.set(0, 30, 45);
-    camera.lookAt(0, 0, 0);
+    const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.set(0, 18, 55); 
+    camera.lookAt(0, -2, 0);
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
@@ -725,38 +750,35 @@ function initThreeJSCookingScene() {
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     container.appendChild(renderer.domElement);
 
-    // 2. Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6); 
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7); 
     scene.add(ambientLight);
 
-    const mainLight = new THREE.DirectionalLight(0xfff5e6, 0.8);
-    mainLight.position.set(10, 30, 15);
+    const mainLight = new THREE.DirectionalLight(0xffeedd, 0.9);
+    mainLight.position.set(15, 35, 20);
     mainLight.castShadow = true;
     mainLight.shadow.mapSize.width = 1024;
     mainLight.shadow.mapSize.height = 1024;
-    mainLight.shadow.camera.near = 0.5;
-    mainLight.shadow.camera.far = 100;
+    mainLight.shadow.bias = -0.001;
     scene.add(mainLight);
 
-    const fillLight = new THREE.DirectionalLight(0xaabbff, 0.4);
-    fillLight.position.set(-15, 10, -10);
-    scene.add(fillLight);
-
-    const fireGlow = new THREE.PointLight(0xff6600, 1.5, 50);
-    fireGlow.position.set(0, -15, 0);
+    const fireGlow = new THREE.PointLight(0xff5500, 2, 60);
+    fireGlow.position.set(0, -10, 0);
     scene.add(fireGlow);
+    
+    const panGlow = new THREE.PointLight(0xff8800, 0.5, 30);
+    panGlow.position.set(0, 5, 0);
+    scene.add(panGlow);
 
     const tiltGroup = new THREE.Group();
     scene.add(tiltGroup);
 
-    // 3. Create Pan
     const panGroup = new THREE.Group();
     
-    const panBaseGeo = new THREE.CylinderGeometry(14, 13, 2, 64);
+    const panBaseGeo = new THREE.CylinderGeometry(14, 13.5, 2, 64);
     const panBaseMat = new THREE.MeshStandardMaterial({ 
-        color: 0x1a1a1a, 
-        roughness: 0.7, 
-        metalness: 0.2 
+        color: 0x111111, 
+        roughness: 0.2, 
+        metalness: 0.5 
     });
     const panBase = new THREE.Mesh(panBaseGeo, panBaseMat);
     panBase.position.y = 0;
@@ -766,32 +788,27 @@ function initThreeJSCookingScene() {
 
     const panRimGeo = new THREE.TorusGeometry(14, 1.2, 16, 64);
     const panRimMat = new THREE.MeshStandardMaterial({ 
-        color: 0xcccccc, 
-        roughness: 0.2, 
+        color: 0x999999, 
+        roughness: 0.3, 
         metalness: 0.8 
     });
     const panRim = new THREE.Mesh(panRimGeo, panRimMat);
-    panRim.position.y = 1;
+    panRim.position.y = 1.2;
     panRim.rotation.x = Math.PI / 2;
     panRim.receiveShadow = true;
     panRim.castShadow = true;
     panGroup.add(panRim);
     
-    const handleGeo = new THREE.CylinderGeometry(1.5, 1.5, 20, 16);
-    const handleMat = new THREE.MeshStandardMaterial({ 
-        color: 0x222222, 
-        roughness: 0.8, 
-        metalness: 0.1 
-    });
+    const handleGeo = new THREE.CylinderGeometry(1.2, 1.2, 22, 16);
+    const handleMat = new THREE.MeshStandardMaterial({ color: 0x222222, roughness: 0.9 });
     const handle = new THREE.Mesh(handleGeo, handleMat);
-    handle.position.set(0, 1.5, 22);
+    handle.position.set(0, 1.5, 24);
     handle.rotation.x = Math.PI / 2;
     handle.castShadow = true;
     panGroup.add(handle);
 
     tiltGroup.add(panGroup);
 
-    // 4. Create Low-Poly Veggies
     const veggies = [];
     const foodGroup = new THREE.Group();
     tiltGroup.add(foodGroup);
@@ -799,18 +816,16 @@ function initThreeJSCookingScene() {
     function createTomato() {
         const group = new THREE.Group();
         const body = new THREE.Mesh(
-            new THREE.SphereGeometry(2.5, 12, 12),
-            new THREE.MeshStandardMaterial({ color: 0xff3333, roughness: 0.3, metalness: 0.1 })
+            new THREE.SphereGeometry(2.2, 16, 16),
+            new THREE.MeshStandardMaterial({ color: 0xe63946, roughness: 0.2, metalness: 0.1 })
         );
-        body.castShadow = true;
-        body.receiveShadow = true;
+        body.castShadow = true; body.receiveShadow = true;
         group.add(body);
-        
         const leaf = new THREE.Mesh(
-            new THREE.ConeGeometry(1, 0.5, 5),
-            new THREE.MeshStandardMaterial({ color: 0x22aa22 })
+            new THREE.ConeGeometry(0.8, 0.4, 5),
+            new THREE.MeshStandardMaterial({ color: 0x2a9d8f })
         );
-        leaf.position.y = 2.5;
+        leaf.position.y = 2.2;
         group.add(leaf);
         return group;
     }
@@ -818,12 +833,11 @@ function initThreeJSCookingScene() {
     function createCarrot() {
         const group = new THREE.Group();
         const body = new THREE.Mesh(
-            new THREE.ConeGeometry(1.2, 5, 8),
-            new THREE.MeshStandardMaterial({ color: 0xff8800, roughness: 0.6 })
+            new THREE.ConeGeometry(1, 4.5, 12),
+            new THREE.MeshStandardMaterial({ color: 0xf4a261, roughness: 0.5 })
         );
         body.rotation.x = Math.PI / 2;
-        body.castShadow = true;
-        body.receiveShadow = true;
+        body.castShadow = true; body.receiveShadow = true;
         group.add(body);
         return group;
     }
@@ -831,62 +845,55 @@ function initThreeJSCookingScene() {
     function createMushroom() {
         const group = new THREE.Group();
         const stem = new THREE.Mesh(
-            new THREE.CylinderGeometry(0.8, 1, 2, 8),
-            new THREE.MeshStandardMaterial({ color: 0xeeeeee, roughness: 0.8 })
+            new THREE.CylinderGeometry(0.7, 0.9, 1.8, 12),
+            new THREE.MeshStandardMaterial({ color: 0xf1faee, roughness: 0.8 })
         );
-        stem.position.y = 1;
+        stem.position.y = 0.9;
         stem.castShadow = true;
         group.add(stem);
-        
         const cap = new THREE.Mesh(
-            new THREE.SphereGeometry(2, 12, 12, 0, Math.PI * 2, 0, Math.PI / 2),
-            new THREE.MeshStandardMaterial({ color: 0xa87c66, roughness: 0.9 })
+            new THREE.SphereGeometry(2, 16, 16, 0, Math.PI * 2, 0, Math.PI / 2),
+            new THREE.MeshStandardMaterial({ color: 0xa87c66, roughness: 0.7 })
         );
-        cap.position.y = 2;
+        cap.position.y = 1.8;
         cap.castShadow = true;
         group.add(cap);
-        
         return group;
     }
 
     function createBroccoli() {
         const group = new THREE.Group();
         const stem = new THREE.Mesh(
-            new THREE.CylinderGeometry(1, 1.2, 3, 8),
+            new THREE.CylinderGeometry(0.8, 1, 2.5, 8),
             new THREE.MeshStandardMaterial({ color: 0x88cc44, roughness: 0.8 })
         );
-        stem.position.y = 1.5;
+        stem.position.y = 1.25;
         stem.castShadow = true;
         group.add(stem);
         
-        const tops = [
-            [0, 3, 0], [1, 2.5, 1], [-1, 2.5, 1], [0, 2.5, -1.5]
-        ];
-        
+        const tops = [[0, 2.5, 0], [1, 2, 0.8], [-1, 2, 0.8], [0, 2, -1.2]];
         tops.forEach(pos => {
             const cap = new THREE.Mesh(
-                new THREE.SphereGeometry(1.5, 6, 6),
-                new THREE.MeshStandardMaterial({ color: 0x228b22, roughness: 0.9 })
+                new THREE.SphereGeometry(1.3, 8, 8),
+                new THREE.MeshStandardMaterial({ color: 0x2b9348, roughness: 0.9 })
             );
             cap.position.set(pos[0], pos[1], pos[2]);
             cap.castShadow = true;
             group.add(cap);
         });
-        
         return group;
     }
 
-    const vegGenerators = [createTomato, createCarrot, createMushroom, createBroccoli, createTomato, createMushroom];
+    const vegGenerators = [createTomato, createCarrot, createMushroom, createBroccoli, createTomato, createMushroom, createCarrot];
     
     vegGenerators.forEach((gen, i) => {
         const v = gen();
-        v.position.x = (Math.random() - 0.5) * 16;
-        v.position.z = (Math.random() - 0.5) * 16;
-        v.position.y = 2;
+        v.position.x = (Math.random() - 0.5) * 18;
+        v.position.z = (Math.random() - 0.5) * 18;
+        v.position.y = 1.5; 
         
         v.rotation.x = Math.random() * Math.PI;
         v.rotation.y = Math.random() * Math.PI;
-        v.rotation.z = Math.random() * Math.PI;
         
         foodGroup.add(v);
         
@@ -894,61 +901,102 @@ function initThreeJSCookingScene() {
             mesh: v,
             baseX: v.position.x,
             baseZ: v.position.z,
-            speed: 0.5 + Math.random() * 0.5,
+            speed: 2 + Math.random() * 2, 
             offset: Math.random() * Math.PI * 2,
-            rotSpeed: {
-                x: (Math.random() - 0.5) * 0.1,
-                y: (Math.random() - 0.5) * 0.1,
-                z: (Math.random() - 0.5) * 0.1
-            }
+            rotSpeed: (Math.random() - 0.5) * 0.2
         });
     });
 
-    // 5. Create Fire Particles
-    const fireParticles = new THREE.Group();
-    scene.add(fireParticles);
+    const fireGroup = new THREE.Group();
+    scene.add(fireGroup);
     
-    const logGeo = new THREE.CylinderGeometry(1, 1, 12, 6);
-    const logMat = new THREE.MeshStandardMaterial({ color: 0x3d2314, roughness: 1.0 });
+    const logGeo = new THREE.CylinderGeometry(1.5, 1.5, 20, 8);
+    const logMat = new THREE.MeshStandardMaterial({ color: 0x4a2a18, roughness: 1.0 });
     
     const log1 = new THREE.Mesh(logGeo, logMat);
-    log1.position.set(0, -10, 0);
+    log1.position.set(0, -15, 0);
     log1.rotation.z = Math.PI / 2;
     log1.rotation.y = 0.5;
-    fireParticles.add(log1);
+    fireGroup.add(log1);
     
     const log2 = new THREE.Mesh(logGeo, logMat);
-    log2.position.set(0, -9.5, 0);
+    log2.position.set(0, -14.5, 0);
     log2.rotation.z = Math.PI / 2;
     log2.rotation.y = -0.5;
-    fireParticles.add(log2);
+    fireGroup.add(log2);
 
-    const flames = [];
-    const flameGeo = new THREE.ConeGeometry(1.5, 4, 6);
+    // Advanced Fire Particles
+    const fireParticleCount = 200;
+    const fireGeo = new THREE.BufferGeometry();
+    const firePos = new Float32Array(fireParticleCount * 3);
+    const fireColors = new Float32Array(fireParticleCount * 3);
+    const fireLife = new Float32Array(fireParticleCount);
+    const fireSpeed = new Float32Array(fireParticleCount);
     
-    for (let i = 0; i < 12; i++) {
-        const flameMat = new THREE.MeshBasicMaterial({ 
-            color: Math.random() > 0.5 ? 0xff5500 : 0xffaa00,
+    // Create soft radial gradient for fire particles
+    const canvas = document.createElement('canvas');
+    canvas.width = 32; canvas.height = 32;
+    const ctx = canvas.getContext('2d');
+    const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+    grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+    grad.addColorStop(0.2, 'rgba(255, 200, 50, 1)');
+    grad.addColorStop(0.5, 'rgba(255, 50, 0, 0.8)');
+    grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 32, 32);
+    const fireTex = new THREE.CanvasTexture(canvas);
+
+    const fireMat = new THREE.PointsMaterial({
+        size: 10,
+        map: fireTex,
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+        vertexColors: true
+    });
+
+    for (let i = 0; i < fireParticleCount; i++) {
+        firePos[i*3] = (Math.random() - 0.5) * 14;
+        firePos[i*3+1] = -14 + Math.random() * 8; 
+        firePos[i*3+2] = (Math.random() - 0.5) * 14;
+        
+        fireColors[i*3] = 1.0;
+        fireColors[i*3+1] = 0.5;
+        fireColors[i*3+2] = 0.0;
+        
+        fireLife[i] = Math.random(); 
+        fireSpeed[i] = 15 + Math.random() * 10;
+    }
+    
+    fireGeo.setAttribute('position', new THREE.BufferAttribute(firePos, 3));
+    fireGeo.setAttribute('color', new THREE.BufferAttribute(fireColors, 3));
+    const fireSystem = new THREE.Points(fireGeo, fireMat);
+    fireGroup.add(fireSystem);
+
+    const steamGroup = new THREE.Group();
+    scene.add(steamGroup);
+    const steamParticles = [];
+    const steamGeo = new THREE.SphereGeometry(1.5, 8, 8);
+    
+    for (let i = 0; i < 15; i++) {
+        const steamMat = new THREE.MeshBasicMaterial({
+            color: 0xffffff,
             transparent: true,
-            opacity: 0.8
+            opacity: 0.2,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false
         });
-        const flame = new THREE.Mesh(flameGeo, flameMat);
+        const steam = new THREE.Mesh(steamGeo, steamMat);
+        steam.position.set((Math.random() - 0.5) * 16, 2 + Math.random() * 10, (Math.random() - 0.5) * 16);
+        steamGroup.add(steam);
         
-        flame.position.x = (Math.random() - 0.5) * 8;
-        flame.position.y = -9 + Math.random() * 2;
-        flame.position.z = (Math.random() - 0.5) * 8;
-        
-        fireParticles.add(flame);
-        
-        flames.push({
-            mesh: flame,
-            baseY: flame.position.y,
+        steamParticles.push({
+            mesh: steam,
             speed: 1 + Math.random() * 2,
             offset: Math.random() * Math.PI * 2
         });
     }
 
-    // Handle Window Resize
     window.addEventListener('resize', () => {
         if (!container) return;
         camera.aspect = container.clientWidth / container.clientHeight;
@@ -956,40 +1004,70 @@ function initThreeJSCookingScene() {
         renderer.setSize(container.clientWidth, container.clientHeight);
     });
 
-    // 6. Animation Loop
     let time = 0;
     
     function animate() {
         requestAnimationFrame(animate);
         time += 0.016; 
         
-        const tiltAmt = Math.sin(time * 1.5) * 0.15;
+        const tiltAmt = Math.sin(time * 5) * 0.03; 
         tiltGroup.rotation.x = tiltAmt;
-        tiltGroup.rotation.z = Math.cos(time * 1.2) * 0.05;
-        tiltGroup.rotation.y = time * 0.5;
+        tiltGroup.rotation.z = Math.cos(time * 4.5) * 0.02;
+        tiltGroup.rotation.y = Math.sin(time * 0.5) * 0.2; 
 
-        veggies.forEach(v => {
-            const jump = Math.abs(Math.sin(time * v.speed * 2 + v.offset));
-            const height = Math.pow(jump, 1.5) * 15;
+        veggies.forEach((v, i) => {
+            const sizzle = Math.abs(Math.sin(time * 15 + v.offset)) * 0.5;
+            const bigJump = (Math.sin(time * v.speed + v.offset) > 0.95) ? 4 : 0; 
             
-            v.mesh.position.y = 2 + height;
+            v.mesh.position.y = 1.5 + sizzle + bigJump;
             
-            v.mesh.rotation.x += v.rotSpeed.x;
-            v.mesh.rotation.y += v.rotSpeed.y;
-            v.mesh.rotation.z += v.rotSpeed.z;
+            v.mesh.position.x = v.baseX + Math.sin(time * 20 + i) * 0.1;
+            v.mesh.position.z = v.baseZ + Math.cos(time * 20 + i) * 0.1;
+
+            if (bigJump > 0) {
+                v.mesh.rotation.x += v.rotSpeed;
+                v.mesh.rotation.z += v.rotSpeed;
+            }
         });
         
-        fireGlow.intensity = 1.5 + Math.random() * 0.5;
+        fireGlow.intensity = 2 + Math.random() * 1;
         
-        flames.forEach(f => {
-            const rise = Math.sin(time * f.speed * 3 + f.offset);
-            f.mesh.position.y = f.baseY + rise * 2;
-            f.mesh.scale.setScalar(1 + rise * 0.2);
-            if (f.mesh.position.y > -7) {
-                f.mesh.material.color.setHex(0xff3300);
-            } else {
-                f.mesh.material.color.setHex(0xffaa00);
+        const positions = fireSystem.geometry.attributes.position.array;
+        const colors = fireSystem.geometry.attributes.color.array;
+        
+        for (let i = 0; i < fireParticleCount; i++) {
+            fireLife[i] += 0.016; 
+            
+            if (fireLife[i] > 1.0 || positions[i*3+1] > -2) {
+                fireLife[i] = 0;
+                positions[i*3] = (Math.random() - 0.5) * 16;
+                positions[i*3+1] = -14; 
+                positions[i*3+2] = (Math.random() - 0.5) * 16;
             }
+            
+            positions[i*3+1] += fireSpeed[i] * 0.016;
+            
+            positions[i*3] -= positions[i*3] * 0.01;
+            positions[i*3+2] -= positions[i*3+2] * 0.01;
+            
+            const life = fireLife[i];
+            colors[i*3] = 1.0; 
+            colors[i*3+1] = Math.max(0, 0.8 - life * 1.5); 
+            colors[i*3+2] = 0.0; 
+        }
+        fireSystem.geometry.attributes.position.needsUpdate = true;
+        fireSystem.geometry.attributes.color.needsUpdate = true;
+
+        steamParticles.forEach(s => {
+            s.mesh.position.y += s.speed * 0.05;
+            s.mesh.position.x += Math.sin(time * s.speed + s.offset) * 0.02;
+            
+            if (s.mesh.position.y > 20) {
+                s.mesh.position.y = 2;
+                s.mesh.position.x = (Math.random() - 0.5) * 16;
+            }
+            
+            s.mesh.material.opacity = Math.max(0, 0.3 - (s.mesh.position.y - 2) * 0.015);
         });
 
         renderer.render(scene, camera);
