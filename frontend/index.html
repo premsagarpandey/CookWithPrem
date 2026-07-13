@@ -77,49 +77,8 @@
                 <p>Cooking isn't just a process; it's an art. See the flip, feel the heat, and explore the mastery of culinary perfection right from your screen.</p>
             </div>
             
-            <div class="cooking-3d-scene-container reveal" style="transition-delay: 0.2s;">
-                <!-- 2D Fire placed perfectly under the 3D scene -->
-                <div class="fire-base">
-                    <!-- Wood Logs -->
-                    <div class="wood-logs">
-                        <div class="log log-1"></div>
-                        <div class="log log-2"></div>
-                        <div class="log log-3"></div>
-                    </div>
-                    <!-- Realistic Flames -->
-                    <div class="flame-container">
-                        <div class="flame real-flame f1"></div>
-                        <div class="flame real-flame f2"></div>
-                        <div class="flame real-flame f3"></div>
-                        <div class="flame real-flame f4"></div>
-                    </div>
-                </div>
-
-                <!-- Tilt Container for tossing motion -->
-                <div class="tilt-container">
-                    <div class="scene-3d">
-                        <!-- Solid Pan Base constructed with layers -->
-                        <div class="pan-layer p-1"></div>
-                        <div class="pan-layer p-2"></div>
-                        <div class="pan-layer p-3"></div>
-                        <div class="pan-layer p-4"></div>
-                        <div class="pan-layer p-5"></div>
-                        
-                        <!-- Solid Handle -->
-                        <div class="pan-handle">
-                            <div class="handle-hole"></div>
-                        </div>
-                        
-                        <!-- Food -->
-                        <div class="food-3d">
-                            <div class="veg veg-1">🥦</div>
-                            <div class="veg veg-2">🥕</div>
-                            <div class="veg veg-3">🍄</div>
-                            <div class="veg veg-4">🍅</div>
-                            <div class="veg veg-5">🧄</div>
-                        </div>
-                    </div>
-                </div>
+            <div id="threejs-cooking-canvas" class="cooking-3d-scene-container reveal" style="transition-delay: 0.2s;">
+                <!-- Three.js will inject the WebGL Canvas here -->
             </div>
         </div>
     </section>
@@ -325,6 +284,9 @@
         </div>
     </section>
 
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
     <!-- App Script -->
     <script src="app.js"></script>
 </body>
