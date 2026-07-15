@@ -106,10 +106,21 @@ async function loadCategories() {
         
         categoryList.innerHTML = "";
         
+        const categoryIcons = {
+            'breakfast': '🍳',
+            'lunch-mains': '🍲',
+            'rice-dishes': '🍚',
+            'snacks': '🥟',
+            'indo-chinese': '🍜',
+            'desserts': '🍰',
+            'beverages': '☕'
+        };
+        
         categories.forEach(cat => {
             const btn = document.createElement("button");
             btn.className = "filter-btn";
-            btn.textContent = cat.name;
+            const icon = categoryIcons[cat.slug.toLowerCase()] || '🍽️';
+            btn.innerHTML = `<span>${icon}</span> ${cat.name}`;
             btn.setAttribute("data-category", cat.slug);
             
             // Set active if it matches the currentCategory URL param
