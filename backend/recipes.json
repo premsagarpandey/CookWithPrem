@@ -6946,5 +6946,599 @@
       "seconds": 1783693488,
       "nanoseconds": 0
     }
+  },
+  {
+    "id": "rec_chole_bhature",
+    "slug": "chole-bhature",
+    "title": "Amritsari Chole Bhature",
+    "description": "Classic Punjabi style spicy chickpea curry (Chole) served with fluffy, deep-fried leavened bread (Bhature).",
+    "heroImage": "https://images.unsplash.com/photo-1626132647523-66f5bf380027?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 45,
+    "prepTime": 15,
+    "totalTime": 60,
+    "difficulty": "Medium",
+    "servings": 3,
+    "calories": 550,
+    "cuisine": "Punjabi",
+    "category": "Lunch & Mains",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Kabuli Chana (Chickpeas)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "All-Purpose Flour (Maida)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Yogurt (Dahi)",
+        "quantity": "0.25",
+        "unit": "cup"
+      },
+      {
+        "name": "Onions (finely chopped)",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "name": "Tomato Puree",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Chole Masala",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Oil (for deep frying)",
+        "quantity": "2",
+        "unit": "cups"
+      }
+    ],
+    "tools": [
+      "Pressure Cooker",
+      "Deep Frying Pan (Kadai)",
+      "Rolling Pin"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Soak & Boil Chana",
+        "description": "Soak chickpeas overnight. Pressure cook with tea bags, salt, and water for 5-6 whistles until soft."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Make Bhature Dough",
+        "description": "Mix maida, yogurt, a pinch of baking soda, salt, and water. Knead into a smooth dough, cover with a damp cloth, and rest for 2 hours."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Cook Chole Gravy",
+        "description": "Sauté chopped onions, ginger-garlic paste, and tomato puree. Add Chole Masala, red chili powder, and cook until oil separates. Stir in the boiled chickpeas with their water and simmer for 20 minutes."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Fry Bhature",
+        "description": "Divide bhature dough into balls, roll into ovals. Deep fry in smoking hot oil until puffed and golden brown on both sides. Serve hot with spicy chole, pickles, and onions."
+      }
+    ],
+    "nutrition": {
+      "calories": 550,
+      "protein": "16g",
+      "carbs": "75g",
+      "fat": "20g",
+      "fiber": "12g",
+      "sugar": "4g"
+    },
+    "faqs": [],
+    "tags": [
+      "Chole Bhature",
+      "Punjabi",
+      "Spicy Curry",
+      "Fried Bread",
+      "Festive"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 180,
+    "createdAt": {
+      "seconds": 1783693488,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_kashmiri_pulao",
+    "slug": "kashmiri-pulao",
+    "title": "Royal Kashmiri Pulao",
+    "description": "A premium, mild, sweet, and aromatic Kashmiri rice dish loaded with dried fruits, nuts, fresh fruits like pomegranate, and saffron-infused milk.",
+    "heroImage": "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 15,
+    "totalTime": 35,
+    "difficulty": "Easy",
+    "servings": 3,
+    "calories": 320,
+    "cuisine": "Kashmiri",
+    "category": "Rice Dishes",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Basmati Rice",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Saffron (Kesar)",
+        "quantity": "15-20",
+        "unit": "threads"
+      },
+      {
+        "name": "Warm Milk",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Ghee",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Mixed Nuts (Almonds, Cashews, Pistachios)",
+        "quantity": "0.25",
+        "unit": "cup"
+      },
+      {
+        "name": "Raisins",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Fresh Fruits (Apple chunks, Pomegranate seeds)",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Whole Spices (Cardamom, Cinnamon, Cloves)",
+        "quantity": "few",
+        "unit": ""
+      }
+    ],
+    "tools": [
+      "Deep Cooking Pot",
+      "Small Frying Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Prepare Saffron Milk & Toast Nuts",
+        "description": "Soak saffron in warm milk. Fry the mixed nuts and raisins in ghee until golden-brown and set aside."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Sauté Rice",
+        "description": "In a pot, heat ghee and add cardamom, cinnamon, and cloves. Add soaked Basmati rice and sauté gently for 1 minute."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Cook Rice",
+        "description": "Add 2 cups of water, saffron milk, and salt. Bring to a boil, cover, and cook on low heat for 12 minutes until fluffy."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Garnish & Serve",
+        "description": "Gently fold in the fried nuts, raisins, fresh apple chunks, and pomegranate seeds before serving warm."
+      }
+    ],
+    "nutrition": {
+      "calories": 320,
+      "protein": "6g",
+      "carbs": "54g",
+      "fat": "9g",
+      "fiber": "3g",
+      "sugar": "10g"
+    },
+    "faqs": [],
+    "tags": [
+      "Kashmiri",
+      "Pulao",
+      "Sweet Rice",
+      "Royal",
+      "Dry Fruits"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 75,
+    "createdAt": {
+      "seconds": 1783693488,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_khaman_dhokla",
+    "slug": "khaman-dhokla",
+    "title": "Khaman Dhokla",
+    "description": "Soft, spongy, and juicy steamed gram flour cakes topped with a sweet and tangy tempering of mustard seeds, green chilies, and curry leaves.",
+    "heroImage": "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 20,
+    "prepTime": 10,
+    "totalTime": 30,
+    "difficulty": "Medium",
+    "servings": 4,
+    "calories": 160,
+    "cuisine": "Gujarati",
+    "category": "Breakfast",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Besan (Gram Flour)",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "name": "Lemon Juice",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Eno (Fruit Salt)",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Mustard Seeds",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Curry Leaves",
+        "quantity": "10-12",
+        "unit": "pcs"
+      },
+      {
+        "name": "Green Chilies (slit)",
+        "quantity": "3",
+        "unit": "pcs"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Dhokla Steamer / Pot",
+      "Mixing Bowl",
+      "Small tempering pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Prepare Batter",
+        "description": "Whisk besan, water, lemon juice, turmeric, salt, and 1 tbsp sugar into a smooth batter."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Steam",
+        "description": "Grease dhokla plate. Stir Eno fruit salt into the batter until frothy. Pour into plate and steam immediately on high heat for 15 minutes."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Make Tempering",
+        "description": "Heat 1 tbsp oil, splutter mustard seeds, green chilies, and curry leaves. Add 1/2 cup of water and 1 tbsp sugar, bring to a boil."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Assemble",
+        "description": "Cut cooled dhokla into squares. Pour the hot tempering liquid evenly over them. Garnish with chopped coriander and grated coconut."
+      }
+    ],
+    "nutrition": {
+      "calories": 160,
+      "protein": "7g",
+      "carbs": "22g",
+      "fat": "5g",
+      "fiber": "3g",
+      "sugar": "8g"
+    },
+    "faqs": [],
+    "tags": [
+      "Dhokla",
+      "Gujarati",
+      "Steamed",
+      "Spongy",
+      "Healthy Breakfast"
+    ],
+    "averageRating": 4.7,
+    "totalRatings": 95,
+    "createdAt": {
+      "seconds": 1783693488,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_sev_puri",
+    "slug": "sev-puri",
+    "title": "Mumbai Sev Puri",
+    "description": "Popular Mumbai street food made of flat-toasted puris loaded with potatoes, onions, three signature chutneys (sweet, spicy, garlic), and topped with fine sev.",
+    "heroImage": "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 15,
+    "totalTime": 25,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 210,
+    "cuisine": "Mumbai Street Food",
+    "category": "Snacks",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Flat Puris (papdi)",
+        "quantity": "12",
+        "unit": "pcs"
+      },
+      {
+        "name": "Boiled Potatoes (mashed)",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "name": "Onion (finely chopped)",
+        "quantity": "1",
+        "unit": "small"
+      },
+      {
+        "name": "Sweet Tamarind Chutney",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Spicy Mint-Coriander Chutney",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Fine Sev (Gram flour noodles)",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Chaat Masala",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Serving Plate"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Arrange Puris",
+        "description": "Arrange 12 flat papdi/puris in a single layer on a serving plate."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Layer Potatoes & Onions",
+        "description": "Place a spoonful of mashed potatoes on each puri, then sprinkle chopped onions over them."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Add Chutneys",
+        "description": "Drizzle tamarind chutney, spicy green chutney, and garlic chutney over each puri."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Top with Sev",
+        "description": "Generously cover the puris with fine sev. Sprinkle chaat masala, red chili powder, lime juice, and chopped coriander. Serve immediately."
+      }
+    ],
+    "nutrition": {
+      "calories": 210,
+      "protein": "4g",
+      "carbs": "32g",
+      "fat": "8g",
+      "fiber": "3g",
+      "sugar": "5g"
+    },
+    "faqs": [],
+    "tags": [
+      "Sev Puri",
+      "Mumbai",
+      "Chaat",
+      "Street Food",
+      "Tangy"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 110,
+    "createdAt": {
+      "seconds": 1783693488,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_kaju_katli",
+    "slug": "kaju-katli",
+    "title": "Premium Kaju Katli",
+    "description": "Classic royal Indian sweet made of premium cashew powder and sugar syrup, rolled into smooth thin fudge, and sliced into diamond shapes.",
+    "heroImage": "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 15,
+    "prepTime": 10,
+    "totalTime": 25,
+    "difficulty": "Medium",
+    "servings": 6,
+    "calories": 180,
+    "cuisine": "Indian Sweets",
+    "category": "Desserts",
+    "isVeg": true,
+    "isFeatured": true,
+    "ingredients": [
+      {
+        "name": "Cashews (Kaju)",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Water",
+        "quantity": "0.25",
+        "unit": "cup"
+      },
+      {
+        "name": "Ghee",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Cardamom Powder",
+        "quantity": "0.25",
+        "unit": "tsp"
+      }
+    ],
+    "tools": [
+      "Mixer Grinder",
+      "Non-stick pan",
+      "Butter Paper",
+      "Rolling Pin"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Grind Cashews",
+        "description": "Grind cashews to a fine powder in a mixer. Pulse to avoid oil release, then sieve to remove chunks."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Boil Syrup",
+        "description": "In a non-stick pan, boil sugar and water until sugar is completely dissolved."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Cook Cashew Paste",
+        "description": "Add cashew powder and cook on low heat, stirring continuously, for 8-10 minutes until it forms a smooth non-sticky dough."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Roll & Cut",
+        "description": "Transfer dough onto greased butter paper. Knead slightly while warm, place another sheet on top, and roll thin. Cut into diamond shapes and cool."
+      }
+    ],
+    "nutrition": {
+      "calories": 180,
+      "protein": "4g",
+      "carbs": "22g",
+      "fat": "9g",
+      "fiber": "1g",
+      "sugar": "15g"
+    },
+    "faqs": [],
+    "tags": [
+      "Kaju Katli",
+      "Cashew Fudge",
+      "Indian Sweets",
+      "Festive",
+      "Royal"
+    ],
+    "averageRating": 4.9,
+    "totalRatings": 200,
+    "createdAt": {
+      "seconds": 1783693488,
+      "nanoseconds": 0
+    }
+  },
+  {
+    "id": "rec_schezwan_fried_rice",
+    "slug": "schezwan-fried-rice",
+    "title": "Schezwan Fried Rice",
+    "description": "Fiery and flavor-packed Indo-Chinese fried rice stir-fried with colorful vegetables, garlic, and bold Schezwan sauce.",
+    "heroImage": "https://images.unsplash.com/photo-1596560548464-f040c5f87484?w=800&auto=format&fit=crop&q=80",
+    "cookTime": 10,
+    "prepTime": 10,
+    "totalTime": 20,
+    "difficulty": "Easy",
+    "servings": 2,
+    "calories": 290,
+    "cuisine": "Indo-Chinese",
+    "category": "Indo-Chinese",
+    "isVeg": true,
+    "isFeatured": false,
+    "ingredients": [
+      {
+        "name": "Cooked Basmati Rice (chilled)",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Schezwan Sauce",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Finely chopped vegetables (carrot, beans, cabbage)",
+        "quantity": "0.75",
+        "unit": "cup"
+      },
+      {
+        "name": "Soy Sauce",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Spring Onion greens (chopped)",
+        "quantity": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "tools": [
+      "Wok or Large Pan"
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "title": "Sauté Aromatics",
+        "description": "Sauté chopped garlic, ginger, and spring onion whites in oil on high heat."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Stir Fry Veggies",
+        "description": "Add chopped vegetables and stir fry on high flame for 2 minutes to keep them crunchy."
+      },
+      {
+        "stepNumber": 3,
+        "title": "Season & Mix",
+        "description": "Stir in Schezwan sauce, soy sauce, vinegar, and salt. Add chilled rice, toss vigorously for 2 minutes, garnish with spring onion greens, and serve hot."
+      }
+    ],
+    "nutrition": {
+      "calories": 290,
+      "protein": "5g",
+      "carbs": "46g",
+      "fat": "9g",
+      "fiber": "2g",
+      "sugar": "2g"
+    },
+    "faqs": [],
+    "tags": [
+      "Fried Rice",
+      "Schezwan",
+      "Spicy Chinese",
+      "Wok Tossed",
+      "Indo-Chinese"
+    ],
+    "averageRating": 4.8,
+    "totalRatings": 85,
+    "createdAt": {
+      "seconds": 1783693488,
+      "nanoseconds": 0
+    }
   }
 ]
