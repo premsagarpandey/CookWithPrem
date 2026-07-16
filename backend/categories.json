@@ -14,7 +14,7 @@
     "slug": "lunch-mains",
     "description": "Hearty and satisfying main course curries and sabzis.",
     "imageUrl": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&auto=format&fit=crop&q=80",
-    "recipeCount": 23,
+    "recipeCount": 22,
     "order": 2
   },
   {
@@ -59,7 +59,7 @@
     "slug": "beverages",
     "description": "Refreshing cold shakes, juices, and hot chai.",
     "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&auto=format&fit=crop&q=80",
-    "recipeCount": 10,
+    "recipeCount": 11,
     "order": 7
   }
 ]

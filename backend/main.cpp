@@ -21,15 +21,36 @@
 
 const int PORT = 8080;
 
-// Helper to read file content
+// Helper to read file content with fallback paths for robust execution directories
 std::string readFile(const std::string& filepath) {
     std::ifstream file(filepath, std::ios::binary);
-    if (!file.is_open()) {
-        return "";
+    if (file.is_open()) {
+        std::stringstream buffer;
+        buffer << file.rdbuf();
+        return buffer.str();
     }
-    std::stringstream buffer;
-    buffer << file.rdbuf();
-    return buffer.str();
+
+    // Fallback 1: if filepath starts with "../frontend/", try "frontend/"
+    if (filepath.rfind("../frontend/", 0) == 0) {
+        std::string fallbackPath = filepath.substr(3); // Remove "../" prefix
+        std::ifstream fallbackFile(fallbackPath, std::ios::binary);
+        if (fallbackFile.is_open()) {
+            std::stringstream buffer;
+            buffer << fallbackFile.rdbuf();
+            return buffer.str();
+        }
+    }
+
+    // Fallback 2: try prefixing with "backend/" (useful for categories.json, recipes.json if run from root)
+    std::string fallbackPath2 = "backend/" + filepath;
+    std::ifstream fallbackFile2(fallbackPath2, std::ios::binary);
+    if (fallbackFile2.is_open()) {
+        std::stringstream buffer;
+        buffer << fallbackFile2.rdbuf();
+        return buffer.str();
+    }
+
+    return "";
 }
 
 std::string getMimeType(const std::string& path) {
@@ -68,7 +89,12 @@ void handleClient(SOCKET clientSocket) {
     std::string contentType = "text/plain";
     std::string status = "200 OK";
 
-    if (method == "GET") {
+    // Prevent path traversal attacks (check if cleanPath contains "..")
+    if (cleanPath.find("..") != std::string::npos) {
+        status = "400 Bad Request";
+        contentType = "text/plain";
+        responseBody = "Bad Request: Path traversal not allowed.";
+    } else if (method == "GET") {
         if (cleanPath == "/") {
             cleanPath = "/index.html";
         }
