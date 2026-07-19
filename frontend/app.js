@@ -92,6 +92,24 @@ function setupEventListeners() {
     if (nextBtn) {
         nextBtn.addEventListener("click", () => turnPage(1));
     }
+
+    // Navbar Toggle (Mobile Hamburger Menu)
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    if (navToggle && navLinks) {
+        navToggle.addEventListener("click", () => {
+            navToggle.classList.toggle("open");
+            navLinks.classList.toggle("open");
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll(".nav-link").forEach(link => {
+            link.addEventListener("click", () => {
+                navToggle.classList.remove("open");
+                navLinks.classList.remove("open");
+            });
+        });
+    }
 }
 
 // Fetch categories from C++ API
@@ -290,7 +308,7 @@ function turnPage(direction) {
     const leftPage = document.getElementById("book-left");
     const rightPage = document.getElementById("book-right");
     
-    if (!spread || !leftPage || !rightPage) {
+    if (!spread || !leftPage || !rightPage || window.innerWidth <= 1024) {
         currentRecipeIndex = newIndex;
         renderBookPage();
         return;

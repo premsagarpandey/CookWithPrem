@@ -1747,3 +1747,291 @@ h1, h2, h3, .logo, .serif {
     }
 }
 
+/* ==========================================================================
+   Mobile Optimization Overrides
+   ========================================================================== */
+
+/* Navbar Hamburger Menu default hidden */
+.nav-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* Navbar styling on mobile */
+    .navbar {
+        padding: 15px 0;
+    }
+    
+    .navbar-container {
+        position: relative;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    /* Hamburger bar toggle styling */
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 26px;
+        height: 18px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 110;
+        padding: 0;
+        outline: none;
+    }
+
+    .hamburger-bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-dark);
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* Transform hamburger into X on click */
+    .nav-toggle.open .hamburger-bar:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .nav-toggle.open .hamburger-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.open .hamburger-bar:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    /* Collapsible Navigation links */
+    .nav-links {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: calc(100% + 16px);
+        left: -30px;
+        right: -30px;
+        background-color: rgba(249, 248, 246, 0.98);
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        padding: 15px 0;
+        z-index: 99;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-links.open {
+        display: flex; /* Shown when toggled active */
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(93, 64, 55, 0.05);
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    /* Grid stack overrides */
+    .grid-2 {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    /* Homepage Hero */
+    .homepage-hero {
+        padding: 60px 0 40px;
+    }
+    
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        margin: 0 auto 30px auto;
+        font-size: 16px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 15px !important;
+    }
+
+    .cta-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 30px;
+    }
+
+    .hero-image-wrapper img {
+        height: 350px;
+        border-radius: 120px 120px 0 0;
+    }
+    
+    /* Stats and Carousel sections */
+    .section-header h2 {
+        font-size: 32px;
+    }
+    
+    .intro-text h2, .cooking-3d-text h2 {
+        font-size: 32px;
+    }
+    
+    .intro-image {
+        height: 300px;
+    }
+    
+    /* Story Section on About page */
+    .story-section {
+        padding: 35px 25px !important;
+    }
+
+    /* Contact Details layout */
+    .contact-info, .contact-form-card {
+        padding: 25px !important;
+    }
+}
+
+/* 3D Carousel adjustments on small phone screens to prevent overflow */
+@media (max-width: 600px) {
+    .carousel-3d-viewport {
+        height: 420px;
+    }
+    
+    .carousel-3d-stage {
+        width: 260px;
+        height: 370px;
+    }
+    
+    .carousel-3d-card {
+        width: 260px;
+        height: 370px;
+    }
+    
+    .carousel-3d-card[data-index="0"] { transform: rotateY(0deg) translateZ(190px); }
+    .carousel-3d-card[data-index="1"] { transform: rotateY(72deg) translateZ(190px); }
+    .carousel-3d-card[data-index="2"] { transform: rotateY(144deg) translateZ(190px); }
+    .carousel-3d-card[data-index="3"] { transform: rotateY(216deg) translateZ(190px); }
+    .carousel-3d-card[data-index="4"] { transform: rotateY(288deg) translateZ(190px); }
+    
+    .carousel-content {
+        bottom: 25px;
+        left: 20px;
+        right: 20px;
+    }
+    
+    .carousel-content h3 {
+        font-size: 20px;
+    }
+    
+    .carousel-content p {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .carousel-btn {
+        padding: 6px 14px;
+        font-size: 11px;
+    }
+}
+
+/* About Page styles */
+.about-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@media (max-width: 800px) {
+    .about-text {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .about-text h2 {
+        font-size: 32px !important;
+    }
+}
+
+/* Recipe Book tweaks under 600px */
+@media (max-width: 600px) {
+    .book-page {
+        padding: 25px 20px !important;
+    }
+    
+    .flip-front, .flip-back {
+        padding: 25px 20px !important;
+    }
+    
+    .book-recipe-title {
+        font-size: 24px;
+    }
+    
+    .detail-badge {
+        font-size: 11px;
+        padding: 3px 10px;
+    }
+    
+    .book-meta-grid {
+        gap: 5px;
+        padding: 10px 0;
+    }
+    
+    .book-meta-label {
+        font-size: 9px;
+    }
+    
+    .book-meta-value {
+        font-size: 13px;
+    }
+    
+    .book-section-title {
+        font-size: 18px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .book-ingredients li {
+        font-size: 14px;
+        padding: 6px 0;
+    }
+    
+    .book-step-content h4 {
+        font-size: 14px;
+    }
+    
+    .book-step-content p {
+        font-size: 13px;
+    }
+    
+    .book-step-num {
+        font-size: 20px;
+        min-width: 20px;
+    }
+    
+    .category-buttons-row {
+        padding: 6px 10px;
+    }
+    
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+}
+
