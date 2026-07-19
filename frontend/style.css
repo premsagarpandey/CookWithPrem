@@ -1806,9 +1806,9 @@ h1, h2, h3, .logo, .serif {
         transform: translateY(-7.5px) rotate(-45deg);
     }
 
-    /* Collapsible Navigation links */
+    /* Collapsible Navigation links with smooth height/fade drop-down */
     .nav-links {
-        display: none; /* Hidden by default on mobile */
+        display: flex; /* Always display flex, control height */
         flex-direction: column;
         gap: 0;
         position: absolute;
@@ -1818,13 +1818,19 @@ h1, h2, h3, .logo, .serif {
         background-color: rgba(249, 248, 246, 0.98);
         border-top: 1px solid var(--border-color);
         border-bottom: 1px solid var(--border-color);
-        padding: 15px 0;
+        padding: 0;
         z-index: 99;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, padding 0.4s ease;
     }
 
     .nav-links.open {
-        display: flex; /* Shown when toggled active */
+        max-height: 300px;
+        opacity: 1;
+        padding: 10px 0;
     }
 
     .nav-link {
@@ -1833,6 +1839,14 @@ h1, h2, h3, .logo, .serif {
         padding: 15px 0;
         font-size: 13px;
         border-bottom: 1px solid rgba(93, 64, 55, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    .nav-link.active {
+        border-left: 4px solid var(--primary);
+        background-color: rgba(139, 69, 19, 0.04);
+        font-weight: 600;
+        padding-left: 20px; /* Slight indent accent */
     }
 
     .nav-link:last-child {
@@ -1904,6 +1918,55 @@ h1, h2, h3, .logo, .serif {
     .contact-info, .contact-form-card {
         padding: 25px !important;
     }
+
+    /* Reduce falling emojis to prevent cluttering text */
+    .floating-item {
+        opacity: 0.15 !important;
+    }
+    .float-4, .float-5, .float-6, .float-7, .float-8, .float-9, .float-10, .float-11, .float-12 {
+        display: none !important;
+    }
+
+    /* Horizontal scrollable category row layout on phone views */
+    #category-list.category-buttons-row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        -webkit-overflow-scrolling: touch;
+        padding: 4px 0 !important;
+        gap: 10px !important;
+        scrollbar-width: none;
+    }
+    #category-list.category-buttons-row::-webkit-scrollbar {
+        display: none;
+    }
+    .category-buttons-row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        -webkit-overflow-scrolling: touch;
+        padding: 8px 12px !important;
+        gap: 10px !important;
+        scrollbar-width: none;
+    }
+    .category-buttons-row::-webkit-scrollbar {
+        display: none;
+    }
+    .filter-btn {
+        flex: 0 0 auto !important;
+    }
+    .category-filters {
+        width: 100%;
+        align-items: stretch !important;
+    }
+    .filter-label {
+        text-align: center;
+        margin-bottom: 5px;
+    }
 }
 
 /* 3D Carousel adjustments on small phone screens to prevent overflow */
@@ -1966,6 +2029,22 @@ h1, h2, h3, .logo, .serif {
     
     .about-text h2 {
         font-size: 32px !important;
+    }
+}
+
+/* Responsive Book Layout adjustments */
+@media (max-width: 1024px) {
+    .book-page.left-page {
+        border-bottom: 2px dashed rgba(139, 69, 19, 0.12) !important;
+        border-radius: 12px 12px 0 0 !important;
+        border-right: none !important;
+    }
+    .book-page.right-page {
+        border-radius: 0 0 12px 12px !important;
+        border-left: none !important;
+    }
+    .book-spine {
+        display: none !important;
     }
 }
 
