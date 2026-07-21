@@ -109,6 +109,73 @@ function setupEventListeners() {
                 navLinks.classList.remove("open");
             });
         });
+
+        // Close menu when clicking outside of it
+        document.addEventListener("click", (e) => {
+            if (navToggle.classList.contains("open") && !navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navToggle.classList.remove("open");
+                navLinks.classList.remove("open");
+            }
+        });
+    }
+
+    // Mobile Tabs for Recipe Book
+    const tabBtns = document.querySelectorAll(".mobile-tab-btn");
+    const bookSpreadEl = document.getElementById("book-spread");
+    if (tabBtns.length > 0 && bookSpreadEl) {
+        // Ensure it has default show-left class
+        bookSpreadEl.classList.add("show-left");
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const targetTab = btn.getAttribute("data-tab");
+                tabBtns.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                
+                if (targetTab === "left") {
+                    bookSpreadEl.classList.remove("show-right");
+                    bookSpreadEl.classList.add("show-left");
+                } else {
+                    bookSpreadEl.classList.remove("show-left");
+                    bookSpreadEl.classList.add("show-right");
+                }
+            });
+        });
+    }
+
+    // Touch Swipe Support for Recipe Book Spread
+    if (bookSpreadEl) {
+        let bookStartX = 0;
+        let bookStartY = 0;
+        let bookIsDragging = false;
+
+        bookSpreadEl.addEventListener('touchstart', (e) => {
+            bookStartX = e.touches[0].clientX;
+            bookStartY = e.touches[0].clientY;
+            bookIsDragging = true;
+        }, { passive: true });
+
+        bookSpreadEl.addEventListener('touchmove', (e) => {
+            if (!bookIsDragging) return;
+            const currentX = e.touches[0].clientX;
+            const currentY = e.touches[0].clientY;
+            const diffX = bookStartX - currentX;
+            const diffY = bookStartY - currentY;
+
+            // Threshold of 70px horizontal vs vertical scroll check
+            if (Math.abs(diffX) > 70 && Math.abs(diffX) > Math.abs(diffY)) {
+                if (diffX > 0) {
+                    turnPage(1); // Swipe left -> next recipe
+                } else {
+                    turnPage(-1); // Swipe right -> prev recipe
+                }
+                bookIsDragging = false;
+            }
+        }, { passive: true });
+
+        bookSpreadEl.addEventListener('touchend', () => {
+            bookIsDragging = false;
+        });
     }
 }
 
@@ -371,6 +438,22 @@ function updatePaginationButtons() {
     if (nextBtn) nextBtn.disabled = currentRecipeIndex === filteredRecipes.length - 1;
 }
 
+function resetBookMobileTabs() {
+    const tabBtns = document.querySelectorAll(".mobile-tab-btn");
+    const bookSpreadEl = document.getElementById("book-spread");
+    if (tabBtns.length > 0 && bookSpreadEl) {
+        tabBtns.forEach(btn => {
+            if (btn.getAttribute("data-tab") === "left") {
+                btn.classList.add("active");
+            } else {
+                btn.classList.remove("active");
+            }
+        });
+        bookSpreadEl.classList.remove("show-right");
+        bookSpreadEl.classList.add("show-left");
+    }
+}
+
 // Render the current recipe into the book spread (initial load)
 function renderBookPage() {
     const leftPage = document.getElementById("book-left");
@@ -389,6 +472,7 @@ function renderBookPage() {
     leftPage.innerHTML = generateLeftPageHtml(recipe);
     rightPage.innerHTML = generateRightPageHtml(recipe);
     updatePaginationButtons();
+    resetBookMobileTabs();
 }
 
 function generateLeftPageHtml(recipe) {
@@ -398,7 +482,10 @@ function generateLeftPageHtml(recipe) {
     `).join('');
 
     return `
-        <h2 class="book-recipe-title">${recipe.title}</h2>
+        <div class="book-recipe-header">
+            <h2 class="book-recipe-title">${recipe.title}</h2>
+            <span class="recipe-index-indicator">${currentRecipeIndex + 1} / ${filteredRecipes.length}</span>
+        </div>
         <div class="book-recipe-badges">
             <span class="detail-badge">${recipe.category}</span>
             <span class="detail-badge">${recipe.isVeg ? 'Veg 🌱' : 'Non-Veg 🍗'}</span>
@@ -768,15 +855,28 @@ function initThreeJSCookingScene() {
     const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(0xfffaf0, 0.005);
     
-    const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.set(0, 18, 55); 
+    const isMobile = window.innerWidth <= 768;
+
+    const camera = new THREE.PerspectiveCamera(
+        isMobile ? 55 : 40, 
+        container.clientWidth / container.clientHeight, 
+        0.1, 
+        1000
+    );
+    if (isMobile) {
+        camera.position.set(0, 22, 65); // Move camera further back and slightly higher
+    } else {
+        camera.position.set(0, 18, 55); 
+    }
     camera.lookAt(0, -2, 0);
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: !isMobile });
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.setPixelRatio(isMobile ? Math.min(1.5, window.devicePixelRatio) : window.devicePixelRatio);
+    renderer.shadowMap.enabled = !isMobile;
+    if (!isMobile) {
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    }
     container.appendChild(renderer.domElement);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.7); 
@@ -955,7 +1055,7 @@ function initThreeJSCookingScene() {
     fireGroup.add(log2);
 
     // Advanced Fire Particles
-    const fireParticleCount = 200;
+    const fireParticleCount = isMobile ? 60 : 200;
     const fireGeo = new THREE.BufferGeometry();
     const firePos = new Float32Array(fireParticleCount * 3);
     const fireColors = new Float32Array(fireParticleCount * 3);
@@ -1006,8 +1106,9 @@ function initThreeJSCookingScene() {
     scene.add(steamGroup);
     const steamParticles = [];
     const steamGeo = new THREE.SphereGeometry(1.5, 8, 8);
+    const steamCount = isMobile ? 6 : 15;
     
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < steamCount; i++) {
         const steamMat = new THREE.MeshBasicMaterial({
             color: 0xffffff,
             transparent: true,
