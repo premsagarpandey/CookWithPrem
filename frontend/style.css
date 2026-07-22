@@ -540,6 +540,10 @@ h1, h2, h3, .logo, .serif {
 /* ==========================================================================
    Recipes Catalog Controls
    ========================================================================== */
+.main-content {
+    padding-bottom: 60px;
+}
+
 .controls-panel {
     display: flex;
     flex-direction: column;
@@ -549,6 +553,14 @@ h1, h2, h3, .logo, .serif {
     margin-bottom: 50px;
     padding-bottom: 30px;
     border-bottom: 1px solid var(--border-color);
+}
+
+.filter-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .category-filters {
@@ -1460,32 +1472,6 @@ h1, h2, h3, .logo, .serif {
     justify-content: center;
     align-items: center;
     perspective: 1200px;
-}
-
-.scene-3d {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    transform-style: preserve-3d;
-    animation: sceneRotate 15s infinite linear;
-}
-
-/* ==========================================================================
-   3D Automatic Cooking Animation
-   ========================================================================== */
-.cooking-3d-showcase {
-    background-color: var(--bg-card);
-    overflow: hidden;
-    padding: 100px 0;
-}
-
-.cooking-3d-scene-container {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1200px;
     position: relative;
 }
 
@@ -2205,3 +2191,93 @@ h1, h2, h3, .logo, .serif {
     }
 }
 
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+    background-color: #3E2723;
+    color: #D7CCC8;
+    padding: 60px 0 30px;
+    margin-top: 60px;
+    border-top: 4px solid var(--primary);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.footer-brand .logo {
+    color: #FFF8F0;
+    font-size: 22px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: #A1887F;
+    line-height: 1.7;
+    max-width: 320px;
+}
+
+.footer-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 16px;
+    color: #EFEBE9;
+    margin-bottom: 18px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #A1887F;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #FFF8F0;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #8D6E63;
+}
+
+.footer-bottom a {
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #FFF8F0;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        text-align: center;
+    }
+    .footer-brand p {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}

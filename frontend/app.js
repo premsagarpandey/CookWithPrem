@@ -800,7 +800,10 @@ function initHeroParallax() {
     });
     
     hero.addEventListener('mouseenter', () => {
-        heroImg.style.transition = `transform 0.1s ease-out`;
+        heroImg.style.transition = 'none';
+        // Force reflow before setting fast transition
+        heroImg.offsetHeight;
+        heroImg.style.transition = 'transform 0.1s ease-out';
     });
 }
 
