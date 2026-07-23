@@ -176,6 +176,18 @@ function setupEventListeners() {
         bookSpreadEl.addEventListener('touchend', () => {
             bookIsDragging = false;
         });
+
+        // Keyboard Left/Right Arrow navigation for Recipe Book
+        document.addEventListener("keydown", (e) => {
+            const activeEl = document.activeElement;
+            if (activeEl && (activeEl.tagName === "INPUT" || activeEl.tagName === "TEXTAREA")) return;
+            
+            if (e.key === "ArrowLeft") {
+                turnPage(-1);
+            } else if (e.key === "ArrowRight") {
+                turnPage(1);
+            }
+        });
     }
 }
 

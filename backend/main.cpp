@@ -137,7 +137,7 @@ void handleClient(SOCKET clientSocket) {
              << responseBody;
 
     std::string responseStr = response.str();
-    send(clientSocket, responseStr.c_str(), responseStr.length(), 0);
+    send(clientSocket, responseStr.data(), responseStr.length(), 0);
     closesocket(clientSocket);
 }
 
