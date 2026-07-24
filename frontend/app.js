@@ -1222,7 +1222,353 @@ function initThreeJSCookingScene() {
 }
 
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initThreeJSCookingScene);
+    document.addEventListener('DOMContentLoaded', () => {
+        initThreeJSCookingScene();
+        initAdminPortal();
+    });
 } else {
     initThreeJSCookingScene();
+    initAdminPortal();
 }
+
+// ==========================================================================
+// CookWithPrem — Secure Admin Control Panel & XSS Security Module
+// ==========================================================================
+
+function escapeHTML(str) {
+    if (typeof str !== 'string') return '';
+    return str.replace(/[&<>"']/g, function(m) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+    });
+}
+
+function initAdminPortal() {
+    // Add Admin Portal link to footer bottom if not already present
+    const footerBottom = document.querySelector('.footer-bottom p');
+    if (footerBottom && !document.getElementById('admin-login-btn')) {
+        const adminBtn = document.createElement('a');
+        adminBtn.id = 'admin-login-btn';
+        adminBtn.href = '#';
+        adminBtn.style.cssText = 'opacity: 0.6; font-size: 0.85rem; margin-left: 12px; text-decoration: none;';
+        adminBtn.innerHTML = '🔒 Admin Portal';
+        adminBtn.title = 'Open Admin Control Panel (Alt + A)';
+        adminBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openAdminModal();
+        });
+        footerBottom.appendChild(adminBtn);
+    }
+
+    // Keyboard shortcut Alt + A
+    document.addEventListener('keydown', (e) => {
+        if (e.altKey && (e.key === 'a' || e.key === 'A')) {
+            e.preventDefault();
+            openAdminModal();
+        }
+    });
+
+    // Create Admin Modal Overlay in DOM if missing
+    if (!document.getElementById('admin-modal-overlay')) {
+        const overlay = document.createElement('div');
+        overlay.id = 'admin-modal-overlay';
+        overlay.className = 'admin-modal-overlay';
+        overlay.innerHTML = `
+            <div class="admin-modal-card">
+                <div class="admin-modal-header">
+                    <h2>🔒 Admin Control Panel</h2>
+                    <button class="admin-close-btn" id="admin-modal-close">&times;</button>
+                </div>
+                <div id="admin-status-area"></div>
+                <div id="admin-modal-body"></div>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        document.getElementById('admin-modal-close').addEventListener('click', closeAdminModal);
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeAdminModal();
+        });
+    }
+}
+
+function openAdminModal() {
+    const overlay = document.getElementById('admin-modal-overlay');
+    if (!overlay) return;
+    overlay.classList.add('open');
+
+    const adminKey = sessionStorage.getItem('COOK_ADMIN_KEY');
+    if (adminKey) {
+        verifyAndShowAdminDashboard(adminKey);
+    } else {
+        renderAdminLoginForm();
+    }
+}
+
+function closeAdminModal() {
+    const overlay = document.getElementById('admin-modal-overlay');
+    if (overlay) overlay.classList.remove('open');
+}
+
+function renderAdminLoginForm() {
+    const body = document.getElementById('admin-modal-body');
+    if (!body) return;
+
+    body.innerHTML = `
+        <p style="color: #A1887F; margin-bottom: 20px;">Enter your <strong>COOK_ADMIN_KEY</strong> to unlock complete update & edit control over CookWithPrem recipes.</p>
+        <form id="admin-login-form">
+            <div class="admin-form-group">
+                <label for="admin-key-input">Admin Secret Key</label>
+                <input type="password" id="admin-key-input" class="admin-input" placeholder="Enter your secret key..." required autocomplete="off">
+            </div>
+            <button type="submit" class="admin-btn-primary">🔓 Unlock Admin Dashboard</button>
+        </form>
+    `;
+
+    document.getElementById('admin-login-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const key = document.getElementById('admin-key-input').value.trim();
+        if (!key) return;
+
+        showAdminStatus('Verifying Admin Secret Key...', 'info');
+        const isValid = await verifyAdminKey(key);
+        if (isValid) {
+            sessionStorage.setItem('COOK_ADMIN_KEY', key);
+            showAdminStatus('Admin Authentication Successful!', 'success');
+            setTimeout(() => renderAdminDashboard(), 600);
+        } else {
+            showAdminStatus('Invalid Admin Secret Key! Access Denied.', 'error');
+        }
+    });
+}
+
+async function verifyAdminKey(key) {
+    try {
+        const response = await fetch('/api/admin/verify', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Admin-Key': key
+            },
+            body: JSON.stringify({ key: key })
+        });
+        return response.ok;
+    } catch (err) {
+        console.error('Admin verification error:', err);
+        return false;
+    }
+}
+
+function showAdminStatus(msg, type = 'info') {
+    const area = document.getElementById('admin-status-area');
+    if (!area) return;
+    area.innerHTML = `<div class="admin-status-msg ${type}">${escapeHTML(msg)}</div>`;
+}
+
+async function renderAdminDashboard() {
+    const body = document.getElementById('admin-modal-body');
+    if (!body) return;
+
+    showAdminStatus('Loading recipes database...', 'info');
+
+    try {
+        const res = await fetch('/api/recipes');
+        let currentRecipes = await res.json();
+        if (!Array.isArray(currentRecipes)) currentRecipes = recipes;
+
+        const area = document.getElementById('admin-status-area');
+        if (area) area.innerHTML = '';
+
+        let tableRows = currentRecipes.map((rec, idx) => `
+            <tr>
+                <td><strong>${escapeHTML(rec.title || 'Untitled')}</strong></td>
+                <td><span style="color: #FF8800; font-size: 0.85rem;">${escapeHTML(rec.category || 'General')}</span></td>
+                <td>${escapeHTML(rec.prepTime || 'N/A')}</td>
+                <td>
+                    <button class="admin-btn-secondary" onclick="editRecipeInAdmin(${idx})">✏️ Edit</button>
+                    <button class="admin-btn-danger" onclick="deleteRecipeInAdmin(${idx})">🗑️ Delete</button>
+                </td>
+            </tr>
+        `).join('');
+
+        body.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <span style="color: #A5D6A7; font-weight: 500;">Authenticated Admin Session</span>
+                <div>
+                    <button class="admin-btn-primary" onclick="renderAddRecipeForm()">➕ Add New Recipe</button>
+                    <button class="admin-btn-secondary" onclick="logoutAdmin()">🔒 Lock Dashboard</button>
+                </div>
+            </div>
+            
+            <div style="overflow-x: auto;">
+                <table class="admin-recipe-table">
+                    <thead>
+                        <tr>
+                            <th>Recipe Title</th>
+                            <th>Category</th>
+                            <th>Prep Time</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${tableRows || '<tr><td colspan="4">No recipes found. Click Add New Recipe above.</td></tr>'}
+                    </tbody>
+                </table>
+            </div>
+        `;
+
+        window.adminCurrentRecipes = currentRecipes;
+    } catch (err) {
+        showAdminStatus('Failed to load recipes: ' + err.message, 'error');
+    }
+}
+
+window.logoutAdmin = function() {
+    sessionStorage.removeItem('COOK_ADMIN_KEY');
+    renderAdminLoginForm();
+    showAdminStatus('Logged out of Admin Panel.', 'info');
+};
+
+window.renderAddRecipeForm = function(editIdx = null) {
+    const body = document.getElementById('admin-modal-body');
+    if (!body) return;
+
+    const isEdit = editIdx !== null && window.adminCurrentRecipes && window.adminCurrentRecipes[editIdx];
+    const rec = isEdit ? window.adminCurrentRecipes[editIdx] : {
+        title: '', slug: '', category: 'breakfast', prepTime: '15 mins', cookTime: '20 mins', servings: '2-3',
+        image: 'images/samosa.png', description: '', ingredients: [], method: [], tips: []
+    };
+
+    body.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3>${isEdit ? '✏️ Edit Recipe' : '➕ Add New Recipe'}</h3>
+            <button class="admin-btn-secondary" onclick="renderAdminDashboard()">&larr; Back to List</button>
+        </div>
+
+        <form id="admin-recipe-form">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="admin-form-group">
+                    <label>Title</label>
+                    <input type="text" id="rec-title" class="admin-input" value="${escapeHTML(rec.title)}" required placeholder="e.g. Paneer Tikka">
+                </div>
+                <div class="admin-form-group">
+                    <label>Category Slug</label>
+                    <select id="rec-category" class="admin-select">
+                        <option value="breakfast" ${rec.category === 'breakfast' ? 'selected' : ''}>Breakfast</option>
+                        <option value="lunch-mains" ${rec.category === 'lunch-mains' ? 'selected' : ''}>Lunch & Mains</option>
+                        <option value="rice-dishes" ${rec.category === 'rice-dishes' ? 'selected' : ''}>Rice Dishes</option>
+                        <option value="snacks" ${rec.category === 'snacks' ? 'selected' : ''}>Snacks</option>
+                        <option value="indo-chinese" ${rec.category === 'indo-chinese' ? 'selected' : ''}>Indo-Chinese</option>
+                        <option value="desserts" ${rec.category === 'desserts' ? 'selected' : ''}>Desserts</option>
+                        <option value="beverages" ${rec.category === 'beverages' ? 'selected' : ''}>Beverages</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
+                <div class="admin-form-group">
+                    <label>Prep Time</label>
+                    <input type="text" id="rec-prep" class="admin-input" value="${escapeHTML(rec.prepTime)}" placeholder="e.g. 15 mins">
+                </div>
+                <div class="admin-form-group">
+                    <label>Cook Time</label>
+                    <input type="text" id="rec-cook" class="admin-input" value="${escapeHTML(rec.cookTime)}" placeholder="e.g. 20 mins">
+                </div>
+                <div class="admin-form-group">
+                    <label>Servings</label>
+                    <input type="text" id="rec-servings" class="admin-input" value="${escapeHTML(rec.servings)}" placeholder="e.g. 2-4">
+                </div>
+            </div>
+
+            <div class="admin-form-group">
+                <label>Image URL or Path</label>
+                <input type="text" id="rec-image" class="admin-input" value="${escapeHTML(rec.image)}" placeholder="e.g. images/samosa.png or https://...">
+            </div>
+
+            <div class="admin-form-group">
+                <label>Short Description</label>
+                <textarea id="rec-desc" class="admin-textarea" placeholder="Brief summary...">${escapeHTML(rec.description)}</textarea>
+            </div>
+
+            <div class="admin-form-group">
+                <label>Ingredients (One per line)</label>
+                <textarea id="rec-ingredients" class="admin-textarea" placeholder="1 cup paneer&#10;2 tbsp oil">${Array.isArray(rec.ingredients) ? escapeHTML(rec.ingredients.join('\n')) : ''}</textarea>
+            </div>
+
+            <div class="admin-form-group">
+                <label>Method Steps (One step per line)</label>
+                <textarea id="rec-method" class="admin-textarea" placeholder="Step 1: Heat oil in a pan&#10;Step 2: Add spices">${Array.isArray(rec.method) ? escapeHTML(rec.method.join('\n')) : ''}</textarea>
+            </div>
+
+            <button type="submit" class="admin-btn-primary">💾 ${isEdit ? 'Save Changes' : 'Publish Recipe'}</button>
+        </form>
+    `;
+
+    document.getElementById('admin-recipe-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const title = document.getElementById('rec-title').value.trim();
+        const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        const category = document.getElementById('rec-category').value;
+        const prepTime = document.getElementById('rec-prep').value.trim();
+        const cookTime = document.getElementById('rec-cook').value.trim();
+        const servings = document.getElementById('rec-servings').value.trim();
+        const image = document.getElementById('rec-image').value.trim();
+        const description = document.getElementById('rec-desc').value.trim();
+        const ingredients = document.getElementById('rec-ingredients').value.split('\n').map(s => s.trim()).filter(Boolean);
+        const method = document.getElementById('rec-method').value.split('\n').map(s => s.trim()).filter(Boolean);
+
+        const newRecipeObj = {
+            id: isEdit ? rec.id : (Date.now().toString()),
+            slug: slug || 'recipe-' + Date.now(),
+            title, category, prepTime, cookTime, servings, image, description, ingredients, method, tips: rec.tips || []
+        };
+
+        if (isEdit) {
+            window.adminCurrentRecipes[editIdx] = newRecipeObj;
+        } else {
+            window.adminCurrentRecipes.unshift(newRecipeObj);
+        }
+
+        await saveRecipesToBackend(window.adminCurrentRecipes);
+    });
+};
+
+window.editRecipeInAdmin = function(idx) {
+    renderAddRecipeForm(idx);
+};
+
+window.deleteRecipeInAdmin = async function(idx) {
+    if (!confirm('Are you sure you want to delete this recipe?')) return;
+    if (window.adminCurrentRecipes && window.adminCurrentRecipes[idx]) {
+        window.adminCurrentRecipes.splice(idx, 1);
+        await saveRecipesToBackend(window.adminCurrentRecipes);
+    }
+};
+
+async function saveRecipesToBackend(recipesArray) {
+    const key = sessionStorage.getItem('COOK_ADMIN_KEY');
+    showAdminStatus('Saving database changes to server...', 'info');
+
+    try {
+        const response = await fetch('/api/admin/update-recipes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Admin-Key': key
+            },
+            body: JSON.stringify(recipesArray, null, 2)
+        });
+
+        const result = await response.json();
+        if (response.ok && result.status === 'ok') {
+            showAdminStatus('Success! Recipes database updated and locked.', 'success');
+            recipes = recipesArray; // Update live memory
+            setTimeout(() => renderAdminDashboard(), 800);
+        } else {
+            showAdminStatus('Error saving: ' + (result.message || 'Unauthorized'), 'error');
+        }
+    } catch (err) {
+        showAdminStatus('Server connection failed: ' + err.message, 'error');
+    }
+}
+
