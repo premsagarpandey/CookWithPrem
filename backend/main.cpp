@@ -112,12 +112,14 @@ bool writeFile(const std::string& filepath, const std::string& content) {
         file.close();
     }
 
-    // Also write to backend/ copy if it exists to maintain sync
-    std::string secondaryPath = "backend/" + filepath;
-    std::ofstream file2(secondaryPath, std::ios::binary | std::ios::trunc);
-    if (file2.is_open()) {
-        file2 << content;
-        file2.close();
+    // Also write to secondary path if not already prefixed with backend/
+    if (filepath.rfind("backend/", 0) != 0) {
+        std::string secondaryPath = "backend/" + filepath;
+        std::ofstream file2(secondaryPath, std::ios::binary | std::ios::trunc);
+        if (file2.is_open()) {
+            file2 << content;
+            file2.close();
+        }
     }
     return true;
 }
