@@ -27,6 +27,7 @@ Total project size: **under 1 MB** (compared to 450MB+ with typical JS framework
 CookWithPrem/
 ├── .gitignore                    # Git ignore rules
 ├── README.md                     # Project documentation
+├── SECURITY_GUIDE.md             # Security deployment guidelines
 ├── Start_CookWithPrem.vbs        # One-click launcher (starts server + opens browser)
 │
 ├── frontend/                     # Static Frontend
@@ -34,8 +35,10 @@ CookWithPrem/
 │   ├── recipes.html              # Recipe catalog (dynamic filtering & search)
 │   ├── about.html                # About page
 │   ├── contact.html              # Contact form
-│   ├── style.css                 # Stylesheets
-│   ├── app.js                    # Client-side logic
+│   ├── css/                      # Stylesheets
+│   │   └── style.css
+│   ├── js/                       # Client-side scripts & WebGL animations
+│   │   └── app.js
 │   └── images/                   # Image assets
 │
 └── backend/                      # C++ Web Server
