@@ -43,33 +43,6 @@ function initScrollReveal() {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    
-    // Make a global observer so we can observe dynamic elements later
-    window.scrollObserver = observer;
-
-    // Animated number counter for stat cards
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const target = parseInt(el.getAttribute('data-target'), 10);
-                let current = 0;
-                const duration = 1500;
-                const step = Math.ceil(target / (duration / 30));
-                const timer = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    el.textContent = current;
-                }, 30);
-                counterObserver.unobserve(el);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
 }
 
 function setupEventListeners() {
@@ -489,58 +462,85 @@ function renderBookPage() {
 
 function generateLeftPageHtml(recipe) {
     if (!recipe) return '';
-    const ingredientsHtml = recipe.ingredients.map(ing => `
-        <li><span>${ing.name}</span> <span class="qty">${ing.quantity} ${ing.unit}</span></li>
-    `).join('');
+    const ingredientsHtml = (recipe.ingredients || []).map(ing => {
+        if (typeof ing === 'string') {
+            return `<li><span>${escapeHTML(ing)}</span> <span class="qty"></span></li>`;
+        }
+        const name = ing.name || ing.title || '';
+        const qty = ing.quantity || ing.qty || '';
+        const unit = ing.unit || '';
+        return `<li><span>${escapeHTML(name)}</span> <span class="qty">${escapeHTML(qty)} ${escapeHTML(unit)}</span></li>`;
+    }).join('');
+
+    const prepVal = typeof recipe.prepTime === 'number' ? `${recipe.prepTime}m` : (recipe.prepTime || 'N/A');
+    const cookVal = typeof recipe.cookTime === 'number' ? `${recipe.cookTime}m` : (recipe.cookTime || 'N/A');
+    const isVegLabel = recipe.isVeg === false ? 'Non-Veg 🍗' : 'Veg 🌱';
 
     return `
         <div class="book-recipe-header">
-            <h2 class="book-recipe-title">${recipe.title}</h2>
+            <h2 class="book-recipe-title">${escapeHTML(recipe.title || 'Untitled')}</h2>
             <span class="recipe-index-indicator">${currentRecipeIndex + 1} / ${filteredRecipes.length}</span>
         </div>
         <div class="book-recipe-badges">
-            <span class="detail-badge">${recipe.category}</span>
-            <span class="detail-badge">${recipe.isVeg ? 'Veg 🌱' : 'Non-Veg 🍗'}</span>
+            <span class="detail-badge">${escapeHTML(recipe.category || 'General')}</span>
+            <span class="detail-badge">${isVegLabel}</span>
         </div>
         
         <div class="book-meta-grid">
             <div class="book-meta-item">
                 <span class="book-meta-label">Prep:</span>
-                <span class="book-meta-value">${recipe.prepTime}m</span>
+                <span class="book-meta-value">${escapeHTML(String(prepVal))}</span>
             </div>
             <div class="book-meta-item">
                 <span class="book-meta-label">Cook:</span>
-                <span class="book-meta-value">${recipe.cookTime}m</span>
+                <span class="book-meta-value">${escapeHTML(String(cookVal))}</span>
             </div>
             <div class="book-meta-item">
                 <span class="book-meta-label">Servings:</span>
-                <span class="book-meta-value">${recipe.servings || 4}</span>
+                <span class="book-meta-value">${escapeHTML(String(recipe.servings || 4))}</span>
             </div>
         </div>
 
         <h3 class="book-section-title">Ingredients</h3>
         <ul class="book-ingredients">
-            ${ingredientsHtml}
+            ${ingredientsHtml || '<li><span>No ingredients listed.</span></li>'}
         </ul>
     `;
 }
 
 function generateRightPageHtml(recipe) {
     if (!recipe) return '';
-    const stepsHtml = recipe.steps.map(step => `
-        <div class="book-step">
-            <div class="book-step-num">${step.stepNumber}</div>
-            <div class="book-step-content">
-                <h4>${step.title}</h4>
-                <p>${step.description || step.instruction}</p>
+    const rawSteps = recipe.steps || recipe.method || [];
+    const stepsHtml = rawSteps.map((step, idx) => {
+        if (typeof step === 'string') {
+            return `
+                <div class="book-step">
+                    <div class="book-step-num">${idx + 1}</div>
+                    <div class="book-step-content">
+                        <h4>Step ${idx + 1}</h4>
+                        <p>${escapeHTML(step)}</p>
+                    </div>
+                </div>
+            `;
+        }
+        const stepNum = step.stepNumber || (idx + 1);
+        const title = step.title || `Step ${stepNum}`;
+        const desc = step.instruction || step.description || '';
+        return `
+            <div class="book-step">
+                <div class="book-step-num">${stepNum}</div>
+                <div class="book-step-content">
+                    <h4>${escapeHTML(title)}</h4>
+                    <p>${escapeHTML(desc)}</p>
+                </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 
     return `
         <h3 class="book-section-title">Preparation Method</h3>
         <div class="book-steps">
-            ${stepsHtml}
+            ${stepsHtml || '<p style="color: var(--text-muted); font-style: italic;">No steps specified.</p>'}
         </div>
     `;
 }
@@ -1434,9 +1434,26 @@ window.renderAddRecipeForm = function(editIdx = null) {
 
     const isEdit = editIdx !== null && window.adminCurrentRecipes && window.adminCurrentRecipes[editIdx];
     const rec = isEdit ? window.adminCurrentRecipes[editIdx] : {
-        title: '', slug: '', category: 'breakfast', prepTime: '15 mins', cookTime: '20 mins', servings: '2-3',
-        image: 'images/samosa.png', description: '', ingredients: [], method: [], tips: []
+        title: '', slug: '', category: 'breakfast', prepTime: '15', cookTime: '20', servings: '2-3',
+        image: 'images/samosa.png', description: '', ingredients: [], steps: [], method: []
     };
+
+    let ingredientsText = '';
+    if (Array.isArray(rec.ingredients)) {
+        ingredientsText = rec.ingredients.map(ing => {
+            if (typeof ing === 'string') return ing;
+            const q = ing.quantity ? ing.quantity + ' ' : '';
+            const u = ing.unit ? ing.unit + ' ' : '';
+            return `${q}${u}${ing.name || ''}`.trim();
+        }).join('\n');
+    }
+
+    let methodText = '';
+    if (Array.isArray(rec.steps) && rec.steps.length > 0) {
+        methodText = rec.steps.map(s => typeof s === 'string' ? s : (s.instruction || s.description || s.title || '')).join('\n');
+    } else if (Array.isArray(rec.method)) {
+        methodText = rec.method.map(s => typeof s === 'string' ? s : (s.instruction || s.description || '')).join('\n');
+    }
 
     body.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
@@ -1448,18 +1465,18 @@ window.renderAddRecipeForm = function(editIdx = null) {
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                 <div class="admin-form-group">
                     <label>Title</label>
-                    <input type="text" id="rec-title" class="admin-input" value="${escapeHTML(rec.title)}" required placeholder="e.g. Paneer Tikka">
+                    <input type="text" id="rec-title" class="admin-input" value="${escapeHTML(rec.title || '')}" required placeholder="e.g. Paneer Tikka">
                 </div>
                 <div class="admin-form-group">
                     <label>Category Slug</label>
                     <select id="rec-category" class="admin-select">
-                        <option value="breakfast" ${rec.category === 'breakfast' ? 'selected' : ''}>Breakfast</option>
-                        <option value="lunch-mains" ${rec.category === 'lunch-mains' ? 'selected' : ''}>Lunch & Mains</option>
-                        <option value="rice-dishes" ${rec.category === 'rice-dishes' ? 'selected' : ''}>Rice Dishes</option>
-                        <option value="snacks" ${rec.category === 'snacks' ? 'selected' : ''}>Snacks</option>
-                        <option value="indo-chinese" ${rec.category === 'indo-chinese' ? 'selected' : ''}>Indo-Chinese</option>
-                        <option value="desserts" ${rec.category === 'desserts' ? 'selected' : ''}>Desserts</option>
-                        <option value="beverages" ${rec.category === 'beverages' ? 'selected' : ''}>Beverages</option>
+                        <option value="breakfast" ${rec.category === 'breakfast' || rec.category === 'Breakfast' ? 'selected' : ''}>Breakfast</option>
+                        <option value="lunch-mains" ${rec.category === 'lunch-mains' || rec.category === 'Lunch & Mains' ? 'selected' : ''}>Lunch & Mains</option>
+                        <option value="rice-dishes" ${rec.category === 'rice-dishes' || rec.category === 'Rice Dishes' ? 'selected' : ''}>Rice Dishes</option>
+                        <option value="snacks" ${rec.category === 'snacks' || rec.category === 'Snacks' ? 'selected' : ''}>Snacks</option>
+                        <option value="indo-chinese" ${rec.category === 'indo-chinese' || rec.category === 'Indo-Chinese' ? 'selected' : ''}>Indo-Chinese</option>
+                        <option value="desserts" ${rec.category === 'desserts' || rec.category === 'Desserts' ? 'selected' : ''}>Desserts</option>
+                        <option value="beverages" ${rec.category === 'beverages' || rec.category === 'Beverages' ? 'selected' : ''}>Beverages</option>
                     </select>
                 </div>
             </div>
@@ -1467,36 +1484,36 @@ window.renderAddRecipeForm = function(editIdx = null) {
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
                 <div class="admin-form-group">
                     <label>Prep Time</label>
-                    <input type="text" id="rec-prep" class="admin-input" value="${escapeHTML(rec.prepTime)}" placeholder="e.g. 15 mins">
+                    <input type="text" id="rec-prep" class="admin-input" value="${escapeHTML(String(rec.prepTime || '15'))}" placeholder="e.g. 15">
                 </div>
                 <div class="admin-form-group">
                     <label>Cook Time</label>
-                    <input type="text" id="rec-cook" class="admin-input" value="${escapeHTML(rec.cookTime)}" placeholder="e.g. 20 mins">
+                    <input type="text" id="rec-cook" class="admin-input" value="${escapeHTML(String(rec.cookTime || '20'))}" placeholder="e.g. 20">
                 </div>
                 <div class="admin-form-group">
                     <label>Servings</label>
-                    <input type="text" id="rec-servings" class="admin-input" value="${escapeHTML(rec.servings)}" placeholder="e.g. 2-4">
+                    <input type="text" id="rec-servings" class="admin-input" value="${escapeHTML(String(rec.servings || '2'))}" placeholder="e.g. 2">
                 </div>
             </div>
 
             <div class="admin-form-group">
                 <label>Image URL or Path</label>
-                <input type="text" id="rec-image" class="admin-input" value="${escapeHTML(rec.image)}" placeholder="e.g. images/samosa.png or https://...">
+                <input type="text" id="rec-image" class="admin-input" value="${escapeHTML(rec.heroImage || rec.image || 'images/samosa.png')}" placeholder="e.g. images/samosa.png or https://...">
             </div>
 
             <div class="admin-form-group">
                 <label>Short Description</label>
-                <textarea id="rec-desc" class="admin-textarea" placeholder="Brief summary...">${escapeHTML(rec.description)}</textarea>
+                <textarea id="rec-desc" class="admin-textarea" placeholder="Brief summary...">${escapeHTML(rec.description || '')}</textarea>
             </div>
 
             <div class="admin-form-group">
-                <label>Ingredients (One per line)</label>
-                <textarea id="rec-ingredients" class="admin-textarea" placeholder="1 cup paneer&#10;2 tbsp oil">${Array.isArray(rec.ingredients) ? escapeHTML(rec.ingredients.join('\n')) : ''}</textarea>
+                <label>Ingredients (One per line, e.g. "250 g Paneer" or "1 cup Milk")</label>
+                <textarea id="rec-ingredients" class="admin-textarea" placeholder="250 g Paneer&#10;2 tbsp Oil">${escapeHTML(ingredientsText)}</textarea>
             </div>
 
             <div class="admin-form-group">
                 <label>Method Steps (One step per line)</label>
-                <textarea id="rec-method" class="admin-textarea" placeholder="Step 1: Heat oil in a pan&#10;Step 2: Add spices">${Array.isArray(rec.method) ? escapeHTML(rec.method.join('\n')) : ''}</textarea>
+                <textarea id="rec-method" class="admin-textarea" placeholder="Heat oil in a pan&#10;Add spices and paneer">${escapeHTML(methodText)}</textarea>
             </div>
 
             <button type="submit" class="admin-btn-primary">💾 ${isEdit ? 'Save Changes' : 'Publish Recipe'}</button>
@@ -1514,13 +1531,48 @@ window.renderAddRecipeForm = function(editIdx = null) {
         const servings = document.getElementById('rec-servings').value.trim();
         const image = document.getElementById('rec-image').value.trim();
         const description = document.getElementById('rec-desc').value.trim();
-        const ingredients = document.getElementById('rec-ingredients').value.split('\n').map(s => s.trim()).filter(Boolean);
-        const method = document.getElementById('rec-method').value.split('\n').map(s => s.trim()).filter(Boolean);
+        
+        const rawIngredients = document.getElementById('rec-ingredients').value.split('\n').map(s => s.trim()).filter(Boolean);
+        const ingredients = rawIngredients.map(line => {
+            const parts = line.split(/\s+/);
+            if (parts.length >= 3 && !isNaN(parseFloat(parts[0]))) {
+                return {
+                    quantity: parts[0],
+                    unit: parts[1],
+                    name: parts.slice(2).join(' ')
+                };
+            } else if (parts.length >= 2 && !isNaN(parseFloat(parts[0]))) {
+                return {
+                    quantity: parts[0],
+                    unit: '',
+                    name: parts.slice(1).join(' ')
+                };
+            }
+            return { name: line, quantity: '', unit: '' };
+        });
+
+        const rawMethod = document.getElementById('rec-method').value.split('\n').map(s => s.trim()).filter(Boolean);
+        const steps = rawMethod.map((instruction, idx) => ({
+            stepNumber: idx + 1,
+            title: `Step ${idx + 1}`,
+            instruction: instruction
+        }));
 
         const newRecipeObj = {
-            id: isEdit ? rec.id : (Date.now().toString()),
-            slug: slug || 'recipe-' + Date.now(),
-            title, category, prepTime, cookTime, servings, image, description, ingredients, method, tips: rec.tips || []
+            id: isEdit ? rec.id : ('rec_' + Date.now()),
+            slug: slug || ('recipe-' + Date.now()),
+            title,
+            category,
+            prepTime: isNaN(parseInt(prepTime)) ? prepTime : parseInt(prepTime),
+            cookTime: isNaN(parseInt(cookTime)) ? cookTime : parseInt(cookTime),
+            servings: isNaN(parseInt(servings)) ? servings : parseInt(servings),
+            heroImage: image || 'images/samosa.png',
+            image: image || 'images/samosa.png',
+            description,
+            isVeg: rec.isVeg !== undefined ? rec.isVeg : true,
+            ingredients,
+            steps,
+            method: rawMethod
         };
 
         if (isEdit) {

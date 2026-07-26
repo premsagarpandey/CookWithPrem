@@ -10,7 +10,9 @@
 #ifdef _WIN32
     #include <winsock2.h>
     #include <ws2tcpip.h>
-    #pragma comment(lib, "Ws2_32.lib")
+    #ifdef _MSC_VER
+        #pragma comment(lib, "Ws2_32.lib")
+    #endif
     typedef int socklen_t;
 #else
     #include <sys/socket.h>
@@ -112,13 +114,16 @@ bool writeFile(const std::string& filepath, const std::string& content) {
         file.close();
     }
 
-    // Also write to secondary path if not already prefixed with backend/
+    // Also write to secondary path if running from root and backend/ exists
     if (filepath.rfind("backend/", 0) != 0) {
-        std::string secondaryPath = "backend/" + filepath;
-        std::ofstream file2(secondaryPath, std::ios::binary | std::ios::trunc);
-        if (file2.is_open()) {
-            file2 << content;
-            file2.close();
+        std::ifstream checkBackendDir("backend");
+        if (checkBackendDir.good()) {
+            std::string secondaryPath = "backend/" + filepath;
+            std::ofstream file2(secondaryPath, std::ios::binary | std::ios::trunc);
+            if (file2.is_open()) {
+                file2 << content;
+                file2.close();
+            }
         }
     }
     return true;
