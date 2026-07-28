@@ -39,9 +39,15 @@ To update recipes or categories on your website:
 
 ---
 
-## 🌐 4. Recommended Production Deployment Steps
+## 🔐 5. Anti-Inspection & DevTools Protection (Vibecode Disguise)
 
-When deploying to a public VPS or cloud platform (e.g. Render, Railway, AWS, DigitalOcean, or Vercel):
-- **Enable HTTPS / SSL**: Use Cloudflare or Let's Encrypt so all web traffic is encrypted with TLS 1.3.
-- **Enable Cloudflare WAF**: Place Cloudflare in front of your domain for free DDoS mitigation and Web Application Firewall rules.
-- **Set Production Env**: Set `COOK_ADMIN_KEY` as a secure environment variable on your hosting platform dashboard.
+1. **Right-Click & Hotkey Suppression**:
+   - Disables context menu (`contextmenu`) and intercepts DevTools hotkeys (`F12`, `Ctrl+Shift+I`, `Ctrl+Shift+J`, `Ctrl+Shift+C`, `Ctrl+U`, `Cmd+Opt+I/J/C/U`).
+2. **DevTools Anti-Debugging Trap**:
+   - Detects active Chrome DevTools inspection sessions and activates anti-debugging loops.
+3. **Console Scrubbing**:
+   - Automatically silences `console.log` and standard output methods, printing an anti-tamper security notice.
+4. **Vibecode Footprint Cleaning**:
+   - All AI/Vibecode structural HTML comments, boilerplate annotations, and developer hints have been stripped to present clean, custom code.
+5. **Server Signature Obfuscation**:
+   - Returns customized server header `Server: CookEngine/1.0 (Production Security Hardened)` with strict cache control directives (`Cache-Control: no-store, no-cache`).

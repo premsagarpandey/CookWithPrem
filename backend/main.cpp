@@ -363,18 +363,21 @@ void handleClient(SOCKET clientSocket, const std::string& clientIP) {
         responseBody = "<h1>405 Method Not Allowed</h1>";
     }
 
-    // Build Full Response with Mandatory Security Headers
+    // Build Full Response with Mandatory Security Headers & Server Signature Obfuscation
     std::stringstream response;
     response << "HTTP/1.1 " << status << "\r\n"
+             << "Server: CookEngine/1.0 (Production Security Hardened)\r\n"
              << "Content-Type: " << contentType << "\r\n"
              << "Content-Length: " << responseBody.length() << "\r\n"
              << "Access-Control-Allow-Origin: *\r\n"
              << "Access-Control-Allow-Methods: GET, POST, OPTIONS\r\n"
              << "Access-Control-Allow-Headers: Content-Type, X-Admin-Key\r\n"
-             // Security Headers
+             // Security & Anti-Inspection Headers
              << "X-Content-Type-Options: nosniff\r\n"
              << "X-Frame-Options: SAMEORIGIN\r\n"
              << "X-XSS-Protection: 1; mode=block\r\n"
+             << "Cache-Control: no-cache, no-store, must-revalidate\r\n"
+             << "Pragma: no-cache\r\n"
              << "Referrer-Policy: strict-origin-when-cross-origin\r\n"
              << "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self';\r\n"
              << "Connection: close\r\n\r\n"
