@@ -32,17 +32,98 @@ async function init() {
     await loadRecipes(recipeParam);
 }
 
-// Initialize IntersectionObserver for scroll animations
+// Initialize IntersectionObserver for smooth scroll & text reveal animations
 function initScrollReveal() {
+    const revealSelector = '.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-zoom, .reveal-blur, .reveal-text, .section-header, .sub-heading';
+    const revealElements = document.querySelectorAll(revealSelector);
+
+    if (!revealElements.length) return;
+
+    const observerOptions = {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
+                
+                // Stagger child reveal elements if container is observed
+                const childReveals = entry.target.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-zoom, .reveal-blur');
+                childReveals.forEach((child, index) => {
+                    if (!child.style.transitionDelay && !child.classList.contains('delay-100') && !child.classList.contains('delay-200') && !child.classList.contains('delay-300')) {
+                        child.style.transitionDelay = `${(index % 6) * 0.12}s`;
+                    }
+                    child.classList.add('active');
+                });
+
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, observerOptions);
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    revealElements.forEach(el => observer.observe(el));
+}
+
+// Parallax scroll effect for floating items and hero elements
+function initHeroParallax() {
+    const floatingItems = document.querySelectorAll('.floating-item');
+    const heroImg = document.getElementById('hero-img');
+    const heroSection = document.getElementById('hero');
+
+    if (!floatingItems.length && !heroImg) return;
+
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.pageYOffset;
+                const heroHeight = heroSection ? heroSection.offsetHeight : 600;
+
+                if (scrolled <= heroHeight + 100) {
+                    floatingItems.forEach((item, index) => {
+                        const speed = 0.05 + (index % 4) * 0.03;
+                        const direction = index % 2 === 0 ? 1 : -1;
+                        const yPos = scrolled * speed * direction;
+                        const rotateDeg = scrolled * 0.05 * (index % 3 + 1);
+                        item.style.transform = `translate3d(0, ${yPos}px, 0) rotate(${rotateDeg}deg)`;
+                    });
+
+                    if (heroImg) {
+                        heroImg.style.transform = `translate3d(0, ${scrolled * 0.06}px, 0)`;
+                    }
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
+// 3D perspective tilt effect for category cards
+function initCategory3DTilt() {
+    const cards = document.querySelectorAll('.card-3d');
+    if (!cards.length) return;
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotX = ((y - centerY) / centerY) * -12;
+            const rotY = ((x - centerX) / centerX) * 12;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.04, 1.04, 1.04)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        });
+    });
 }
 
 function setupEventListeners() {

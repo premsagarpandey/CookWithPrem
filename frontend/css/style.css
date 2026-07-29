@@ -68,15 +68,134 @@ h1, h2, h3, .logo, .serif {
 /* ==========================================================================
    Animations
    ========================================================================== */
-.reveal {
+.reveal, .reveal-up {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform: translateY(35px) scale(0.98);
+    filter: blur(4px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+                filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
 }
 
-.reveal.active {
+/* Directional Reveal Variations */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-45px) rotate(-1deg);
+    filter: blur(4px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+                filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(45px) rotate(1deg);
+    filter: blur(4px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+                filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-zoom {
+    opacity: 0;
+    transform: scale(0.88);
+    filter: blur(6px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+                filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-blur {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(15px);
+    transition: opacity 0.8s ease-out, filter 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Active State for all Reveal classes */
+.reveal.active, 
+.reveal-up.active, 
+.reveal-left.active, 
+.reveal-right.active, 
+.reveal-zoom.active, 
+.reveal-blur.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    filter: blur(0px);
+}
+
+/* Dynamic Stagger Delays */
+.delay-100 { transition-delay: 0.1s !important; }
+.delay-200 { transition-delay: 0.2s !important; }
+.delay-300 { transition-delay: 0.3s !important; }
+.delay-400 { transition-delay: 0.4s !important; }
+.delay-500 { transition-delay: 0.5s !important; }
+
+/* Subheading Animated Underline Beam */
+.sub-heading {
+    position: relative;
+    display: inline-block;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+}
+
+.sub-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border-radius: 2px;
+    transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.reveal.active .sub-heading::after,
+.reveal-left.active .sub-heading::after,
+.reveal-up.active .sub-heading::after,
+.sub-heading.active::after {
+    width: 100%;
+}
+
+/* Text Focus Shimmer Glow */
+.text-shimmer {
+    background: linear-gradient(120deg, #3E2723 0%, #8B4513 40%, #C4956A 50%, #8B4513 60%, #3E2723 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: background-position 1.2s ease;
+}
+
+.reveal.active .text-shimmer,
+.reveal-up.active .text-shimmer,
+.reveal-left.active .text-shimmer,
+.reveal-right.active .text-shimmer,
+.text-shimmer.active {
+    animation: textShimmerGlow 3s infinite alternate ease-in-out;
+}
+
+@keyframes textShimmerGlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-zoom, .reveal-blur {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+    }
 }
 
 /* ==========================================================================

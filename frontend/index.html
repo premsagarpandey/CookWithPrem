@@ -49,11 +49,11 @@
 
 
         <div class="container hero-grid">
-            <div class="hero-content reveal">
-                <h1>The Art of <br><i>Simple Cooking</i></h1>
-                <p>Curated, foolproof recipes for beginners and students who want to explore the joy of cooking without the overwhelming complexity.</p>
+            <div class="hero-content reveal-left">
+                <h1 class="text-shimmer">The Art of <br><i>Simple Cooking</i></h1>
+                <p class="reveal-up delay-100">Curated, foolproof recipes for beginners and students who want to explore the joy of cooking without the overwhelming complexity.</p>
                 
-                <div class="hero-actions" style="display: flex; align-items: center; gap: 20px;">
+                <div class="hero-actions reveal-up delay-200" style="display: flex; align-items: center; gap: 20px;">
                     <a href="recipes.html" class="cta-btn">Explore Recipes</a>
                     
                     <!-- Animated Boiling Pot SVG -->
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-image-wrapper reveal" style="transition-delay: 0.2s;">
+            <div class="hero-image-wrapper reveal-right delay-200">
                 <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800" alt="Beautiful fresh ingredients" id="hero-img">
             </div>
         </div>
@@ -84,13 +84,13 @@
     <!-- 3D Automatic Cooking Animation Section -->
     <section class="section cooking-3d-showcase">
         <div class="container grid-2" style="align-items: center;">
-            <div class="cooking-3d-text reveal">
+            <div class="cooking-3d-text reveal-left">
                 <span class="sub-heading">The Magic</span>
-                <h2>Watch the Magic Happen</h2>
-                <p>Cooking isn't just a process; it's an art. See the flip, feel the heat, and explore the mastery of culinary perfection right from your screen.</p>
+                <h2 class="text-shimmer">Watch the Magic Happen</h2>
+                <p class="reveal-up delay-100">Cooking isn't just a process; it's an art. See the flip, feel the heat, and explore the mastery of culinary perfection right from your screen.</p>
             </div>
             
-            <div id="threejs-cooking-canvas" class="cooking-3d-scene-container reveal" style="transition-delay: 0.2s;">
+            <div id="threejs-cooking-canvas" class="cooking-3d-scene-container reveal-right delay-200">
                 <!-- Three.js will inject the WebGL Canvas here -->
             </div>
         </div>
@@ -178,9 +178,9 @@
             </div>
         </div>
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header reveal-up text-center">
                 <span class="sub-heading">Featured</span>
-                <h2>Chef's Special</h2>
+                <h2 class="text-shimmer">Chef's Special</h2>
             </div>
             
             <!-- Animated Stats & Carousel Layout -->
@@ -188,7 +188,7 @@
 
 
                 <!-- Center: 3D Recipe Carousel Viewport -->
-                <div class="carousel-3d-viewport reveal" style="transition-delay: 0.2s;">
+                <div class="carousel-3d-viewport reveal-zoom delay-200">
                 <div class="carousel-3d-stage">
                     
                     <!-- Card 1: Truffle Pasta -->
@@ -290,32 +290,34 @@
     <!-- Introduction Section -->
     <section class="section intro-section">
         <div class="container grid-2">
-            <div class="intro-text reveal">
-            <span class="sub-heading">My Story</span>
-            <h2>How Cooking Changed My Life</h2>
-            <p>I started cooking as a complete beginner. Through trial and error, I discovered that creating delicious meals doesn't require a professional kitchen—it just takes passion.</p>
-            <p>CookWithPrem is a platform dedicated to students and beginners who want to explore the joy of cooking with simple, foolproof recipes.</p>
-            <a href="about.html" class="text-link">Read full story &rarr;</a>
-        </div>
-        <div class="intro-image-container reveal" style="transition-delay: 0.2s;">
-            <div class="magic-frame">
-                <img src="images/indian_student_cooking.png" alt="Indian Student Cooking Story" class="intro-image magic-image">
-                <div class="magic-glow"></div>
+            <div class="intro-text reveal-left">
+                <span class="sub-heading">My Story</span>
+                <h2 class="text-shimmer">How Cooking Changed My Life</h2>
+                <p class="reveal-up delay-100">I started cooking as a complete beginner. Through trial and error, I discovered that creating delicious meals doesn't require a professional kitchen—it just takes passion.</p>
+                <p class="reveal-up delay-200">CookWithPrem is a platform dedicated to students and beginners who want to explore the joy of cooking with simple, foolproof recipes.</p>
+                <a href="about.html" class="text-link reveal-up delay-300">Read full story &rarr;</a>
             </div>
-        </div>
+            <div class="intro-image-container reveal-right delay-200">
+                <div class="magic-frame">
+                    <img src="images/indian_student_cooking.png" alt="Indian Student Cooking Story" class="intro-image magic-image">
+                    <div class="magic-glow"></div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Category Highlights Section -->
     <section class="section categories-showcase-3d">
         <div class="container text-center">
-            <span class="sub-heading">Menu Categories</span>
-            <h2>Explore Categories</h2>
+            <div class="section-header reveal-up">
+                <span class="sub-heading">Menu Categories</span>
+                <h2 class="text-shimmer">Explore Categories</h2>
+            </div>
             
             <div class="category-3d-deck">
                 
                 <!-- Category 1: Breakfast -->
-                <a href="recipes.html?cat=breakfast" class="card-3d-wrapper reveal" style="transition-delay: 0.1s;">
+                <a href="recipes.html?cat=breakfast" class="card-3d-wrapper reveal-up delay-100">
                     <div class="card-3d">
                         <div class="card-3d-bg"></div>
                         <div class="card-3d-glare"></div>
@@ -332,7 +334,7 @@
                 </a>
 
                 <!-- Category 2: Lunch -->
-                <a href="recipes.html?cat=lunch-mains" class="card-3d-wrapper reveal" style="transition-delay: 0.2s;">
+                <a href="recipes.html?cat=lunch-mains" class="card-3d-wrapper reveal-up delay-200">
                     <div class="card-3d">
                         <div class="card-3d-bg"></div>
                         <div class="card-3d-glare"></div>
@@ -349,7 +351,7 @@
                 </a>
 
                 <!-- Category 3: Dinner -->
-                <a href="recipes.html?cat=rice-dishes" class="card-3d-wrapper reveal" style="transition-delay: 0.3s;">
+                <a href="recipes.html?cat=rice-dishes" class="card-3d-wrapper reveal-up delay-300">
                     <div class="card-3d">
                         <div class="card-3d-bg"></div>
                         <div class="card-3d-glare"></div>
@@ -366,7 +368,7 @@
                 </a>
 
                 <!-- Category 4: Dessert -->
-                <a href="recipes.html?cat=desserts" class="card-3d-wrapper reveal" style="transition-delay: 0.4s;">
+                <a href="recipes.html?cat=desserts" class="card-3d-wrapper reveal-up delay-400">
                     <div class="card-3d">
                         <div class="card-3d-bg"></div>
                         <div class="card-3d-glare"></div>
@@ -387,16 +389,16 @@
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer reveal-blur">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand">
+                <div class="footer-brand reveal-left">
                     <a href="index.html" class="logo">
                         <span class="logo-icon">🍳</span> CookWithPrem
                     </a>
                     <p>Curated, foolproof recipes for beginners and students who want to explore the joy of cooking without the overwhelming complexity.</p>
                 </div>
-                <div>
+                <div class="reveal-up delay-100">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
@@ -405,7 +407,7 @@
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
-                <div>
+                <div class="reveal-up delay-200">
                     <h4 class="footer-heading">Categories</h4>
                     <ul class="footer-links">
                         <li><a href="recipes.html?cat=breakfast">Breakfast</a></li>
@@ -418,7 +420,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="footer-bottom reveal-up delay-300">
                 <p>&copy; 2025 CookWithPrem — Made with ❤️ by <a href="about.html">Prem Sagar Pandey</a></p>
             </div>
         </div>
