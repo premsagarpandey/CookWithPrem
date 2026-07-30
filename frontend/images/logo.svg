@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Color Gradients -->
+    <linearGradient id="bronzeBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BA8865"/>
+      <stop offset="50%" stop-color="#8B5E3C"/>
+      <stop offset="100%" stop-color="#674125"/>
+    </linearGradient>
+
+    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E8621D"/>
+      <stop offset="50%" stop-color="#F28527"/>
+      <stop offset="100%" stop-color="#F9AD43"/>
+    </linearGradient>
+
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8CB944"/>
+      <stop offset="60%" stop-color="#608F2B"/>
+      <stop offset="100%" stop-color="#466B1D"/>
+    </linearGradient>
+
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4E362F"/>
+      <stop offset="100%" stop-color="#34221C"/>
+    </linearGradient>
+
+    <!-- Arc Path for Curved Text "COOK WITH PREM" -->
+    <path id="textArc" d="M 85 250 A 165 165 0 1 1 415 250" fill="none"/>
+  </defs>
+
+  <!-- Background Circle (Off-White Warm Clean) -->
+  <circle cx="250" cy="250" r="235" fill="#FAF8F5"/>
+
+  <!-- Outer Double Bronze Rings -->
+  <circle cx="250" cy="250" r="215" fill="none" stroke="url(#bronzeBorder)" stroke-width="6"/>
+  <circle cx="250" cy="250" r="198" fill="none" stroke="url(#bronzeBorder)" stroke-width="3"/>
+
+  <!-- Curved Top Text: COOK WITH PREM -->
+  <text font-family="'Inter', 'Arial Black', sans-serif" font-weight="900" font-size="34" fill="#3D3735" letter-spacing="4">
+    <textPath href="#textArc" startOffset="50%" text-anchor="middle">
+      COOK WITH PREM
+    </textPath>
+  </text>
+
+  <!-- Center Icon Group (Flame + Leaf P) -->
+  <g transform="translate(160, 115) scale(0.95)">
+    <!-- Orange Flame (Top Right of P) -->
+    <path d="M 95 30 C 95 30, 110 5, 115 -10 C 120 -25, 115 -45, 100 -55 C 100 -55, 115 -35, 125 -15 C 135 5, 140 30, 125 55 C 115 70, 95 75, 95 75 C 95 75, 110 55, 105 40 C 100 25, 95 30, 95 30 Z" fill="url(#flameGrad)" />
+
+    <path d="M 75 40 C 75 40, 85 15, 90 0 C 95 -15, 90 -35, 75 -50 C 85 -35, 95 -15, 95 5 C 95 25, 85 40, 75 40 Z" fill="#F49533" opacity="0.85"/>
+
+    <!-- Green Leaf 'P' Stem & Loop -->
+    <path d="M 40 160 C 40 160, 40 100, 40 70 C 40 30, 65 10, 100 10 C 135 10, 160 30, 160 65 C 160 95, 135 120, 95 120 C 75 120, 65 110, 65 110 L 65 160 Z" fill="url(#leafGrad)" />
+
+    <!-- Inner Cutout of 'P' -->
+    <path d="M 68 38 C 85 36, 130 40, 130 65 C 130 88, 95 95, 68 90 Z" fill="#FAF8F5" />
+    
+    <!-- Smooth Leaf Accent Curve inside P -->
+    <path d="M 40 115 C 60 85, 95 70, 130 68 C 110 85, 75 100, 40 160 Z" fill="#4B731F" opacity="0.4"/>
+  </g>
+
+  <!-- Bottom Dark Ribbon Banner for "VEG RECIPES" -->
+  <g transform="translate(0, 10)">
+    <!-- Ribbon Shadow/Fold End Left -->
+    <polygon points="80,340 110,320 110,360" fill="#231510" />
+    <!-- Ribbon Shadow/Fold End Right -->
+    <polygon points="420,340 390,320 390,360" fill="#231510" />
+
+    <!-- Main Curved Ribbon Path -->
+    <path d="M 100 335 Q 250 375 400 335 L 390 380 Q 250 420 110 380 Z" fill="url(#ribbonGrad)" />
+
+    <!-- Ribbon Text: VEG RECIPES -->
+    <path id="ribbonTextArc" d="M 115 352 Q 250 390 385 352" fill="none" />
+    <text font-family="'Inter', 'Arial Black', sans-serif" font-weight="800" font-size="28" fill="#FFFFFF" letter-spacing="3">
+      <textPath href="#ribbonTextArc" startOffset="50%" text-anchor="middle">
+        VEG RECIPES
+      </textPath>
+    </text>
+  </g>
+
+  <!-- Bottom Culinary Emblems (Whisk, Spoon, Leaf Accent) -->
+  <g transform="translate(250, 435) scale(0.85)" text-anchor="middle">
+    <!-- Crossed Whisk & Spoon -->
+    <path d="M -25 -10 L 25 15 M -20 15 L 20 -10" stroke="#7A563A" stroke-width="4" stroke-linecap="round"/>
+    <!-- Whisk Head -->
+    <ellipse cx="-25" cy="-12" rx="8" ry="14" fill="none" stroke="#7A563A" stroke-width="3" transform="rotate(-30 -25 -12)"/>
+    <!-- Spoon Head -->
+    <ellipse cx="23" cy="-12" rx="7" ry="11" fill="#7A563A" transform="rotate(30 23 -12)"/>
+
+    <!-- Green Center Leaf -->
+    <path d="M 0 -22 C 12 -22, 18 -10, 0 5 C -18 -10, -12 -22, 0 -22 Z" fill="#5B8C36"/>
+    <path d="M 0 -20 L 0 2" stroke="#FAF8F5" stroke-width="1.5"/>
+
+    <!-- Bottom Curved Accent Lines -->
+    <path d="M -60 10 Q 0 25 60 10" fill="none" stroke="#BA8865" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+</svg>
