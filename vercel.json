@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "outputDirectory": "frontend",
+  "cleanUrls": true,
+  "trailingSlash": false
+}
