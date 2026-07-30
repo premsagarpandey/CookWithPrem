@@ -2,5 +2,9 @@
   "version": 2,
   "outputDirectory": "frontend",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/api/categories", "destination": "/api/categories.json" },
+    { "source": "/api/recipes", "destination": "/api/recipes.json" }
+  ]
 }

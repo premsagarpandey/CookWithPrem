@@ -290,11 +290,17 @@ function setupEventListeners() {
     }
 }
 
-// Fetch categories from C++ API
+// Fetch categories from C++ API or static JSON fallback
 async function loadCategories() {
     try {
-        const response = await fetch("/api/categories");
-        if (!response.ok) throw new Error("Network error");
+        let response = await fetch("/api/categories").catch(() => null);
+        if (!response || !response.ok) {
+            response = await fetch("api/categories.json").catch(() => null);
+        }
+        if (!response || !response.ok) {
+            response = await fetch("categories.json").catch(() => null);
+        }
+        if (!response || !response.ok) throw new Error("Network error loading categories");
         categories = await response.json();
         
         const categoryList = document.getElementById("category-list");
@@ -354,14 +360,20 @@ async function loadCategories() {
     }
 }
 
-// Fetch recipes from C++ API
+// Fetch recipes from C++ API or static JSON fallback
 async function loadRecipes(recipeParam) {
     const bookContainer = document.getElementById("recipe-book-container");
     if (!bookContainer) return; // Skip if not on recipes page
     
     try {
-        const response = await fetch("/api/recipes");
-        if (!response.ok) throw new Error("Network error");
+        let response = await fetch("/api/recipes").catch(() => null);
+        if (!response || !response.ok) {
+            response = await fetch("api/recipes.json").catch(() => null);
+        }
+        if (!response || !response.ok) {
+            response = await fetch("recipes.json").catch(() => null);
+        }
+        if (!response || !response.ok) throw new Error("Network error loading recipes");
         recipes = await response.json();
         
         // Handle specific recipe redirection from Home Page
