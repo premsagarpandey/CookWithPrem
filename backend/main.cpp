@@ -71,7 +71,7 @@ std::string loadAdminKey() {
 
     // 3. Secure Fallback Key (Log warning if used)
     std::cout << "[SECURITY WARNING] COOK_ADMIN_KEY not found in environment or .env! Using default secure key." << std::endl;
-    return "CookWithPrem_Admin_2026_SecretKey!";
+    return "premsag0726y";
 }
 
 static const std::string ADMIN_SECRET_KEY = loadAdminKey();
