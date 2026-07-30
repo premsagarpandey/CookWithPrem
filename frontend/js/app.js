@@ -66,63 +66,108 @@ function initScrollReveal() {
     revealElements.forEach(el => observer.observe(el));
 }
 
-// Parallax scroll effect for floating items and hero elements
+// Parallax scroll & mouse 3D tilt effect for hero section
 function initHeroParallax() {
     const floatingItems = document.querySelectorAll('.floating-item');
     const heroImg = document.getElementById('hero-img');
     const heroSection = document.getElementById('hero');
 
-    if (!floatingItems.length && !heroImg) return;
+    if (!heroSection && !heroImg && !floatingItems.length) return;
 
-    let ticking = false;
+    // 1. Scroll-based parallax for floating ingredients
+    if (floatingItems.length || heroImg) {
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const heroHeight = heroSection ? heroSection.offsetHeight : 600;
 
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                const scrolled = window.pageYOffset;
-                const heroHeight = heroSection ? heroSection.offsetHeight : 600;
-
-                if (scrolled <= heroHeight + 100) {
-                    floatingItems.forEach((item, index) => {
-                        const speed = 0.05 + (index % 4) * 0.03;
-                        const direction = index % 2 === 0 ? 1 : -1;
-                        const yPos = scrolled * speed * direction;
-                        const rotateDeg = scrolled * 0.05 * (index % 3 + 1);
-                        item.style.transform = `translate3d(0, ${yPos}px, 0) rotate(${rotateDeg}deg)`;
-                    });
-
-                    if (heroImg) {
-                        heroImg.style.transform = `translate3d(0, ${scrolled * 0.06}px, 0)`;
+                    if (scrolled <= heroHeight + 100) {
+                        floatingItems.forEach((item, index) => {
+                            const speed = 0.05 + (index % 4) * 0.03;
+                            const direction = index % 2 === 0 ? 1 : -1;
+                            const yPos = scrolled * speed * direction;
+                            const rotateDeg = scrolled * 0.05 * (index % 3 + 1);
+                            item.style.transform = `translate3d(0, ${yPos}px, 0) rotate(${rotateDeg}deg)`;
+                        });
                     }
-                }
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    }
+
+    // 2. Interactive mousemove 3D tilt effect on hero image
+    if (heroSection && heroImg) {
+        heroSection.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth - 0.5;
+            const y = e.clientY / window.innerHeight - 0.5;
+            const rotateX = y * 15;
+            const rotateY = x * -15;
+            const translateX = x * -30;
+            const translateY = y * -30;
+            heroImg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateX(${translateX}px) translateY(${translateY}px) scale(1.05)`;
+        });
+
+        heroSection.addEventListener('mouseleave', () => {
+            heroImg.style.transform = `perspective(1000px) rotateX(0) rotateY(0) translateX(0) translateY(0) scale(1)`;
+            heroImg.style.transition = `transform 0.5s ease-out`;
+        });
+
+        heroSection.addEventListener('mouseenter', () => {
+            heroImg.style.transition = 'none';
+            heroImg.offsetHeight;
+            heroImg.style.transition = 'transform 0.1s ease-out';
+        });
+    }
 }
 
-// 3D perspective tilt effect for category cards
+// Interactive 3D Category Card Tilt Effect
 function initCategory3DTilt() {
-    const cards = document.querySelectorAll('.card-3d');
-    if (!cards.length) return;
+    const wrappers = document.querySelectorAll('.card-3d-wrapper');
+    const standaloneCards = document.querySelectorAll('.card-3d:not(.card-3d-wrapper .card-3d)');
 
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotX = ((y - centerY) / centerY) * -12;
-            const rotY = ((x - centerX) / centerX) * 12;
+    const attachTilt = (triggerEl, cardEl, glareEl) => {
+        if (!cardEl) return;
+        triggerEl.addEventListener('mousemove', (e) => {
+            const bounds = cardEl.getBoundingClientRect();
+            const x = e.clientX - bounds.left;
+            const y = e.clientY - bounds.top;
+            const centerX = bounds.width / 2;
+            const centerY = bounds.height / 2;
+            const rotateY = ((x - centerX) / centerX) * 15;
+            const rotateX = ((y - centerY) / centerY) * -15;
 
-            card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.04, 1.04, 1.04)`;
+            cardEl.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.04, 1.04, 1.04)`;
+
+            if (glareEl) {
+                const glareX = (x / bounds.width) * 100;
+                const glareY = (y / bounds.height) * 100;
+                glareEl.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 80%)`;
+            }
         });
 
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        triggerEl.addEventListener('mouseleave', () => {
+            cardEl.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            cardEl.style.transition = 'transform 0.5s ease';
         });
+
+        triggerEl.addEventListener('mouseenter', () => {
+            cardEl.style.transition = 'none';
+        });
+    };
+
+    wrappers.forEach(wrapper => {
+        const card = wrapper.querySelector('.card-3d');
+        const glare = wrapper.querySelector('.card-3d-glare');
+        attachTilt(wrapper, card, glare);
+    });
+
+    standaloneCards.forEach(card => {
+        const glare = card.querySelector('.card-3d-glare');
+        attachTilt(card, card, glare);
     });
 }
 
@@ -867,77 +912,7 @@ function initCarousel3D() {
     updateCarousel();
 }
 
-// Interactive Hero Parallax Effect
-function initHeroParallax() {
-    const hero = document.getElementById('hero');
-    const heroImg = document.getElementById('hero-img');
-    
-    if (!hero || !heroImg) return;
 
-    hero.addEventListener('mousemove', (e) => {
-        const x = e.clientX / window.innerWidth - 0.5;
-        const y = e.clientY / window.innerHeight - 0.5;
-        
-        // Subtle 3D movement for the hero image
-        const rotateX = y * 15; // Max 15 deg rotation
-        const rotateY = x * -15;
-        const translateX = x * -30; // Slight shift
-        const translateY = y * -30;
-        
-        heroImg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateX(${translateX}px) translateY(${translateY}px) scale(1.05)`;
-    });
-
-    hero.addEventListener('mouseleave', () => {
-        heroImg.style.transform = `perspective(1000px) rotateX(0) rotateY(0) translateX(0) translateY(0) scale(1)`;
-        heroImg.style.transition = `transform 0.5s ease-out`;
-    });
-    
-    hero.addEventListener('mouseenter', () => {
-        heroImg.style.transition = 'none';
-        // Force reflow before setting fast transition
-        heroImg.offsetHeight;
-        heroImg.style.transition = 'transform 0.1s ease-out';
-    });
-}
-
-// Interactive 3D Category Tilt Effect
-function initCategory3DTilt() {
-    const cards = document.querySelectorAll('.card-3d-wrapper');
-    
-    cards.forEach(wrapper => {
-        const card = wrapper.querySelector('.card-3d');
-        const glare = wrapper.querySelector('.card-3d-glare');
-        
-        wrapper.addEventListener('mousemove', (e) => {
-            const bounds = card.getBoundingClientRect();
-            const x = e.clientX - bounds.left;
-            const y = e.clientY - bounds.top;
-            const centerX = bounds.width / 2;
-            const centerY = bounds.height / 2;
-            
-            // Calculate tilt angle
-            const rotateY = ((x - centerX) / centerX) * 15; // Max 15 deg
-            const rotateX = ((y - centerY) / centerY) * -15; // Max 15 deg
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            
-            if (glare) {
-                const glareX = (x / bounds.width) * 100;
-                const glareY = (y / bounds.height) * 100;
-                glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 80%)`;
-            }
-        });
-        
-        wrapper.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
-            card.style.transition = 'transform 0.5s ease';
-        });
-        
-        wrapper.addEventListener('mouseenter', () => {
-            card.style.transition = 'none';
-        });
-    });
-}
 
 /* ==========================================================================
    Three.js 3D Cooking Animation
@@ -1382,6 +1357,18 @@ function openAdminModal() {
         verifyAndShowAdminDashboard(adminKey);
     } else {
         renderAdminLoginForm();
+    }
+}
+
+async function verifyAndShowAdminDashboard(key) {
+    showAdminStatus('Verifying Admin Session...', 'info');
+    const isValid = await verifyAdminKey(key);
+    if (isValid) {
+        renderAdminDashboard();
+    } else {
+        sessionStorage.removeItem('COOK_ADMIN_KEY');
+        renderAdminLoginForm();
+        showAdminStatus('Session expired or invalid secret key.', 'error');
     }
 }
 
