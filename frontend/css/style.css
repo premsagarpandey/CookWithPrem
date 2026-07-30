@@ -2520,3 +2520,93 @@ h1, h2, h3, .logo, .serif {
     color: #A5D6A7;
 }
 
+/* ==========================================================================
+   Profile Card Social Buttons (Theme Optimized)
+   ========================================================================== */
+.profile-social-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 18px;
+    max-width: 360px;
+}
+
+.social-connect-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 22px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-color);
+    color: var(--text-dark);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    letter-spacing: 0.02em;
+}
+
+.social-connect-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.12);
+}
+
+.social-connect-btn .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+/* Instagram Theme Optimized */
+.social-connect-btn.social-instagram {
+    border-color: #D7CCC8;
+    color: var(--text-dark);
+}
+
+.social-connect-btn.social-instagram:hover {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    color: #FFFFFF;
+    border-color: transparent;
+    box-shadow: 0 10px 25px rgba(225, 48, 108, 0.35);
+}
+
+.social-connect-btn.social-instagram:hover svg {
+    stroke: #FFFFFF !important;
+}
+
+/* LinkedIn Theme Optimized */
+.social-connect-btn.social-linkedin {
+    border-color: #D7CCC8;
+    color: var(--text-dark);
+}
+
+.social-connect-btn.social-linkedin:hover {
+    background: #0A66C2;
+    color: #FFFFFF;
+    border-color: transparent;
+    box-shadow: 0 10px 25px rgba(10, 102, 194, 0.35);
+}
+
+.social-connect-btn.social-linkedin:hover svg path {
+    fill: #FFFFFF !important;
+}
+
+/* Email Display Pill */
+.social-connect-btn.social-email {
+    border-color: #D7CCC8;
+    color: var(--text-dark);
+    cursor: default;
+}
+
+.social-connect-btn.social-email:hover {
+    transform: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+
