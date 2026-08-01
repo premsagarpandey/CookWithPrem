@@ -68,48 +68,33 @@ function initScrollReveal() {
 
 // Parallax scroll & mouse 3D tilt effect for hero section
 function initHeroParallax() {
-    const floatingItems = document.querySelectorAll('.floating-item');
     const heroImg = document.getElementById('hero-img');
     const heroSection = document.getElementById('hero');
 
-    if (!heroSection && !heroImg && !floatingItems.length) return;
+    // Only setup the mouse 3D tilt on hero image (floating items use CSS-only animation
+    // to avoid JS + CSS animation conflict which causes scroll jitter)
+    if (heroSection && heroImg) {
+        let mouseTicking = false;
+        let lastMouseX = 0, lastMouseY = 0;
 
-    // 1. Scroll-based parallax for floating ingredients
-    if (floatingItems.length || heroImg) {
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
+        // 2. Interactive mousemove 3D tilt — throttled via RAF to prevent scroll jank
+        heroSection.addEventListener('mousemove', (e) => {
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+            if (!mouseTicking) {
                 window.requestAnimationFrame(() => {
-                    const scrolled = window.pageYOffset;
-                    const heroHeight = heroSection ? heroSection.offsetHeight : 600;
-
-                    if (scrolled <= heroHeight + 100) {
-                        floatingItems.forEach((item, index) => {
-                            const speed = 0.05 + (index % 4) * 0.03;
-                            const direction = index % 2 === 0 ? 1 : -1;
-                            const yPos = scrolled * speed * direction;
-                            const rotateDeg = scrolled * 0.05 * (index % 3 + 1);
-                            item.style.transform = `translate3d(0, ${yPos}px, 0) rotate(${rotateDeg}deg)`;
-                        });
-                    }
-                    ticking = false;
+                    const x = lastMouseX / window.innerWidth - 0.5;
+                    const y = lastMouseY / window.innerHeight - 0.5;
+                    const rotateX = y * 15;
+                    const rotateY = x * -15;
+                    const translateX = x * -30;
+                    const translateY = y * -30;
+                    heroImg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateX(${translateX}px) translateY(${translateY}px) scale(1.05)`;
+                    mouseTicking = false;
                 });
-                ticking = true;
+                mouseTicking = true;
             }
         }, { passive: true });
-    }
-
-    // 2. Interactive mousemove 3D tilt effect on hero image
-    if (heroSection && heroImg) {
-        heroSection.addEventListener('mousemove', (e) => {
-            const x = e.clientX / window.innerWidth - 0.5;
-            const y = e.clientY / window.innerHeight - 0.5;
-            const rotateX = y * 15;
-            const rotateY = x * -15;
-            const translateX = x * -30;
-            const translateY = y * -30;
-            heroImg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateX(${translateX}px) translateY(${translateY}px) scale(1.05)`;
-        });
 
         heroSection.addEventListener('mouseleave', () => {
             heroImg.style.transform = `perspective(1000px) rotateX(0) rotateY(0) translateX(0) translateY(0) scale(1)`;
@@ -117,8 +102,6 @@ function initHeroParallax() {
         });
 
         heroSection.addEventListener('mouseenter', () => {
-            heroImg.style.transition = 'none';
-            heroImg.offsetHeight;
             heroImg.style.transition = 'transform 0.1s ease-out';
         });
     }
@@ -131,31 +114,46 @@ function initCategory3DTilt() {
 
     const attachTilt = (triggerEl, cardEl, glareEl) => {
         if (!cardEl) return;
-        triggerEl.addEventListener('mousemove', (e) => {
-            const bounds = cardEl.getBoundingClientRect();
-            const x = e.clientX - bounds.left;
-            const y = e.clientY - bounds.top;
-            const centerX = bounds.width / 2;
-            const centerY = bounds.height / 2;
-            const rotateY = ((x - centerX) / centerX) * 15;
-            const rotateX = ((y - centerY) / centerY) * -15;
+        let tiltTicking = false;
+        let lastX = 0, lastY = 0;
+        let cachedBounds = null;
 
-            cardEl.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.04, 1.04, 1.04)`;
-
-            if (glareEl) {
-                const glareX = (x / bounds.width) * 100;
-                const glareY = (y / bounds.height) * 100;
-                glareEl.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 80%)`;
-            }
+        // Cache bounds on enter, refresh only when needed (avoids layout thrash per pixel)
+        triggerEl.addEventListener('mouseenter', () => {
+            cachedBounds = cardEl.getBoundingClientRect();
+            cardEl.style.transition = 'none';
         });
+
+        triggerEl.addEventListener('mousemove', (e) => {
+            lastX = e.clientX;
+            lastY = e.clientY;
+            if (!tiltTicking) {
+                window.requestAnimationFrame(() => {
+                    if (!cachedBounds) cachedBounds = cardEl.getBoundingClientRect();
+                    const x = lastX - cachedBounds.left;
+                    const y = lastY - cachedBounds.top;
+                    const centerX = cachedBounds.width / 2;
+                    const centerY = cachedBounds.height / 2;
+                    const rotateY = ((x - centerX) / centerX) * 15;
+                    const rotateX = ((y - centerY) / centerY) * -15;
+
+                    cardEl.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.04, 1.04, 1.04)`;
+
+                    if (glareEl) {
+                        const glareX = (x / cachedBounds.width) * 100;
+                        const glareY = (y / cachedBounds.height) * 100;
+                        glareEl.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 80%)`;
+                    }
+                    tiltTicking = false;
+                });
+                tiltTicking = true;
+            }
+        }, { passive: true });
 
         triggerEl.addEventListener('mouseleave', () => {
+            cachedBounds = null;
             cardEl.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
             cardEl.style.transition = 'transform 0.5s ease';
-        });
-
-        triggerEl.addEventListener('mouseenter', () => {
-            cardEl.style.transition = 'none';
         });
     };
 

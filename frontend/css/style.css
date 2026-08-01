@@ -410,6 +410,8 @@ h1, h2, h3, .logo, .serif {
     opacity: 0.8;
     animation: fallingVeggie linear infinite;
     top: -15%; /* Start above screen */
+    will-change: transform, opacity; /* GPU compositing — keeps off main thread */
+    contain: layout style; /* Isolated from page layout for performance */
 }
 
 @keyframes fallingVeggie {
@@ -2701,7 +2703,13 @@ h1, h2, h3, .logo, .serif {
    ========================================================================== */
 
 /* Prevent horizontal scroll bleed on mobile & enable fast touch */
-html, body {
+html {
+    /* NOTE: Do NOT set overflow-x: hidden on html — it traps mouse scroll */
+    width: 100%;
+    scroll-behavior: auto; /* Let browser handle scroll natively for smooth mouse wheel */
+}
+
+body {
     overflow-x: hidden;
     width: 100%;
     -webkit-tap-highlight-color: transparent;
@@ -2709,9 +2717,6 @@ html, body {
 
 body.nav-open {
     overflow: hidden !important;
-    position: fixed;
-    width: 100%;
-    height: 100%;
 }
 
 /* Category Filter Bar - Horizontal Touch Scroll for Mobile */
