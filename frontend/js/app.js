@@ -196,26 +196,59 @@ function setupEventListeners() {
     const navToggle = document.getElementById("nav-toggle");
     const navLinks = document.querySelector(".nav-links");
     if (navToggle && navLinks) {
-        navToggle.addEventListener("click", () => {
-            navToggle.classList.toggle("open");
-            navLinks.classList.toggle("open");
+        // Create backdrop element dynamically if not present
+        let backdrop = document.querySelector(".nav-backdrop");
+        if (!backdrop) {
+            backdrop = document.createElement("div");
+            backdrop.className = "nav-backdrop";
+            document.body.appendChild(backdrop);
+        }
+
+        const closeMobileMenu = () => {
+            navToggle.classList.remove("open");
+            navLinks.classList.remove("open");
+            if (backdrop) backdrop.classList.remove("open");
+            document.body.classList.remove("nav-open");
+        };
+
+        const openMobileMenu = () => {
+            navToggle.classList.add("open");
+            navLinks.classList.add("open");
+            if (backdrop) backdrop.classList.add("open");
+            document.body.classList.add("nav-open");
+        };
+
+        navToggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (navToggle.classList.contains("open")) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
-        
+
+        if (backdrop) {
+            backdrop.addEventListener("click", closeMobileMenu);
+        }
+
         // Close menu when clicking on a link
         document.querySelectorAll(".nav-link").forEach(link => {
-            link.addEventListener("click", () => {
-                navToggle.classList.remove("open");
-                navLinks.classList.remove("open");
-            });
+            link.addEventListener("click", closeMobileMenu);
         });
 
         // Close menu when clicking outside of it
         document.addEventListener("click", (e) => {
             if (navToggle.classList.contains("open") && !navToggle.contains(e.target) && !navLinks.contains(e.target)) {
-                navToggle.classList.remove("open");
-                navLinks.classList.remove("open");
+                closeMobileMenu();
             }
         });
+
+        // Close menu if resized back to desktop breakpoint
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768 && navToggle.classList.contains("open")) {
+                closeMobileMenu();
+            }
+        }, { passive: true });
     }
 
     // Mobile Tabs for Recipe Book
