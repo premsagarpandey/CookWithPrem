@@ -800,6 +800,17 @@ h1, h2, h3, .logo, .serif {
     padding: 0;
     gap: 12px;
     box-shadow: none;
+    /* Always horizontal scrollable — never wrap */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    padding-bottom: 4px;
+}
+
+#category-list.category-buttons-row::-webkit-scrollbar {
+    display: none;
 }
 
 .filter-btn {
@@ -899,6 +910,11 @@ h1, h2, h3, .logo, .serif {
     gap: 20px;
     margin: 40px auto;
     max-width: 1200px;
+}
+
+/* On desktop: buttons appear left/right of the book as flex siblings */
+.book-nav-btns-row {
+    display: contents;
 }
 
 .book-nav-btn {
@@ -1252,15 +1268,12 @@ h1, h2, h3, .logo, .serif {
 /* Responsive Book Layout */
 @media(max-width: 1024px) {
     .book-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
-            "cover cover"
-            "prev next";
-        gap: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
     }
     .book-cover {
-        grid-area: cover;
         width: 100%;
         padding: 8px;
     }
@@ -1277,16 +1290,28 @@ h1, h2, h3, .logo, .serif {
             rgba(0,0,0,0.1) 50%, 
             rgba(0,0,0,0.05) 100%);
     }
+    /* Prev/Next buttons: side by side, centered, equal width */
+    #prev-page,
+    #next-page {
+        flex: 1;
+        height: 52px;
+        justify-content: center;
+        font-size: 16px;
+        min-width: 0;
+    }
     .book-nav-btn {
         width: 100%;
-        height: 50px;
+        height: 52px;
         justify-content: center;
     }
-    #prev-page {
-        grid-area: prev;
+    /* Wrap both nav buttons in a centered row */
+    .book-container > #prev-page,
+    .book-container > #next-page {
+        order: 2;
     }
-    #next-page {
-        grid-area: next;
+    .book-container > .book-cover {
+        order: 1;
+        width: 100%;
     }
 }
 
@@ -2946,16 +2971,38 @@ body.nav-open {
         font-size: 24px;
     }
 
-    /* Floating / Prev Next Navigation Buttons on Mobile */
+    /* Prev/Next buttons — centered row below book on mobile */
+    .book-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .book-nav-btns-row {
+        display: flex;
+        gap: 12px;
+        width: 100%;
+    }
+
     .book-nav-btn {
-        width: 44px;
-        height: 44px;
-        font-size: 16px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        flex: 1;
+        height: 50px;
+        font-size: 15px;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        padding: 0 12px;
+        white-space: nowrap;
+    }
+
+    #prev-page,
+    #next-page {
+        position: static;
+        width: 100%;
     }
 
     .book-nav-btn.prev {
-        left: 0px;
+        left: unset;
     }
 
     .book-nav-btn.next {
