@@ -866,6 +866,11 @@ h1, h2, h3, .logo, .serif {
     animation: buttonPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.search-box {
+    width: 100%;
+    max-width: 600px;
+}
+
 .search-box input {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -873,16 +878,14 @@ h1, h2, h3, .logo, .serif {
     font-size: 17px;
     border-radius: var(--radius-full);
     outline: none;
-    width: 500px;
-    max-width: 100%;
+    width: 100%;
     font-family: inherit;
-    transition: border-color 0.3s, width 0.4s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s, box-shadow 0.3s ease;
     box-shadow: var(--shadow-sm);
 }
 
 .search-box input:focus {
     border-color: var(--secondary);
-    width: 600px;
     box-shadow: var(--shadow-hover);
 }
 
@@ -2828,6 +2831,23 @@ body.nav-open {
     select {
         font-size: 16px !important; /* Prevents auto-zoom on mobile focus */
         padding: 14px 18px;
+    }
+
+    /* Controls Panel & Search Box — full-width on mobile */
+    .controls-panel {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .search-box input {
+        width: 100% !important;
+        box-sizing: border-box;
     }
 
     /* Hero Section Mobile Responsive Scaling */
