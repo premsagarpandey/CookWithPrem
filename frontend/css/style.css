@@ -2807,8 +2807,7 @@ body.nav-open {
         height: 100vh;
         height: 100dvh;
         background: rgba(255, 252, 247, 0.98);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+
         flex-direction: column;
         justify-content: center;
         align-items: center;
