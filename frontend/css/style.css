@@ -2850,7 +2850,7 @@ body.nav-open {
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s ease;
-        z-index: 110;
+        z-index: 90;
     }
 
     .nav-backdrop.open {
