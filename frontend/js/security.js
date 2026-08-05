@@ -1,7 +1,7 @@
 /**
  * CookWithPrem Security & Anti-Inspection Guard
  * Protects website against Chrome Inspect Element, hotkey inspection,
- * anti-debugging, and hides internal engine / vibecode signatures.
+ * anti-debugging, and protects source code integrity.
  */
 
 (function () {

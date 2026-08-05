@@ -39,7 +39,7 @@ To update recipes or categories on your website:
 
 ---
 
-## 🔐 5. Anti-Inspection & DevTools Protection (Vibecode Disguise)
+## 🔐 5. Anti-Inspection & DevTools Protection
 
 1. **Right-Click & Hotkey Suppression**:
    - Disables context menu (`contextmenu`) and intercepts DevTools hotkeys (`F12`, `Ctrl+Shift+I`, `Ctrl+Shift+J`, `Ctrl+Shift+C`, `Ctrl+U`, `Cmd+Opt+I/J/C/U`).
@@ -47,7 +47,7 @@ To update recipes or categories on your website:
    - Detects active Chrome DevTools inspection sessions and activates anti-debugging loops.
 3. **Console Scrubbing**:
    - Automatically silences `console.log` and standard output methods, printing an anti-tamper security notice.
-4. **Vibecode Footprint Cleaning**:
-   - All AI/Vibecode structural HTML comments, boilerplate annotations, and developer hints have been stripped to present clean, custom code.
+4. **Source Code Hygiene**:
+   - All structural HTML comments, boilerplate annotations, and developer hints have been stripped to present clean, production-ready code.
 5. **Server Signature Obfuscation**:
    - Returns customized server header `Server: CookEngine/1.0 (Production Security Hardened)` with strict cache control directives (`Cache-Control: no-store, no-cache`).
