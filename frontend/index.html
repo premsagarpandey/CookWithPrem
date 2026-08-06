@@ -9,9 +9,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="manifest" href="manifest.json">
     <title>CookWithPrem — Digital Recipe Book | Khana Kaise Banaye, Easy Indian Recipes</title>
-    <meta name="description" content="CookWithPrem par dekhiye easy step-by-step recipes: Khana kaise banaye, Chai kaise banaye, Paneer kaise banaye, Biryani, Samosa aur beginner student cooking recipes by Prem Sagar Pandey.">
-    <meta name="keywords" content="CookWithPrem, Cook With Prem, Recipe Book, Digital Recipe Book, Khana kaise banaye, Chai kaise banaye, Paneer kaise banaye, Samosa kaise banaye, Biryani kaise banaye, Khana banana sikhe, Prem Sagar Pandey, Indian Recipes, Cooking for Beginners, Student Recipes">
+    <meta name="description" content="Official CookWithPrem site by Prem Sagar Pandey. Learn Khana kaise banaye, Chai kaise banaye, Paneer, Biryani, Samosa and student recipes on Cook With Prem (coock with prem).">
+    <meta name="keywords" content="CookWithPrem, Cook With Prem, coock with prem, coockwithprem, cookwithprem, Recipe Book, Digital Recipe Book, Khana kaise banaye, Chai kaise banaye, Paneer kaise banaye, Samosa kaise banaye, Biryani kaise banaye, Khana banana sikhe, Prem Sagar Pandey, Indian Recipes, Cooking for Beginners, Student Recipes">
     <meta name="author" content="Prem Sagar Pandey">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://cook-with-prem.vercel.app/">
     <meta name="google-site-verification" content="google34f11aa0dbe2f8c0" />
     <!-- Favicon / Browser Tab Logo Icon -->
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
@@ -20,21 +22,65 @@
 
     <!-- Open Graph / Social Media Sharing -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="CookWithPrem — Digital Recipe Book & Easy Indian Recipes">
-    <meta property="og:description" content="Khana kaise banaye, chai kaise banaye, paneer kaise banaye — Easy recipes for beginners & students by Prem Sagar Pandey.">
+    <meta property="og:title" content="CookWithPrem (Cook With Prem) — Digital Recipe Book & Easy Indian Recipes">
+    <meta property="og:description" content="Khana kaise banaye, chai kaise banaye, paneer kaise banaye — Easy recipes for beginners & students by Prem Sagar Pandey at CookWithPrem.">
     <meta property="og:url" content="https://cook-with-prem.vercel.app/">
     <meta property="og:image" content="https://cook-with-prem.vercel.app/images/samosa.png">
 
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CookWithPrem — Digital Recipe Book">
+    <meta name="twitter:description" content="Learn khana kaise banaye with easy recipes by Prem Sagar Pandey on CookWithPrem (Cook With Prem).">
+    <meta name="twitter:image" content="https://cook-with-prem.vercel.app/images/samosa.png">
+
     <!-- Schema.org Structured Data for Google Search -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "CookWithPrem",
-      "alternateName": ["Cook With Prem", "Recipe Book", "CookWithPrem Recipe Book", "Prem Sagar Pandey Recipes"],
-      "url": "https://cook-with-prem.vercel.app/",
-      "description": "Digital Recipe Book for beginners and students. Learn khana kaise banaye, chai kaise banaye, paneer kaise banaye with easy recipes by Prem Sagar Pandey."
-    }
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "CookWithPrem",
+        "alternateName": ["Cook With Prem", "coock with prem", "cookwithprem", "coockwithprem", "Prem Sagar Pandey Recipes"],
+        "url": "https://cook-with-prem.vercel.app/",
+        "description": "Digital Recipe Book for beginners and students. Learn khana kaise banaye, chai kaise banaye, paneer kaise banaye with easy recipes by Prem Sagar Pandey."
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CookWithPrem",
+        "url": "https://cook-with-prem.vercel.app/",
+        "logo": "https://cook-with-prem.vercel.app/images/logo.svg",
+        "founder": {
+          "@type": "Person",
+          "name": "Prem Sagar Pandey"
+        },
+        "sameAs": [
+          "https://cook-with-prem.vercel.app/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is CookWithPrem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CookWithPrem (Cook With Prem) is an official digital recipe platform created by Prem Sagar Pandey offering step-by-step easy Indian recipes for beginners and students."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who created CookWithPrem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CookWithPrem was created by Prem Sagar Pandey, a developer and home cook dedicated to simplifying cooking for beginners."
+            }
+          }
+        ]
+      }
+    ]
     </script>
 
     <script src="js/security.js"></script>
@@ -83,7 +129,7 @@
 
         <div class="container hero-grid">
             <div class="hero-content reveal-left">
-                <h1 class="text-shimmer">The Art of <br><i>Simple Cooking</i></h1>
+                <h1 class="text-shimmer">CookWithPrem — <br><i>The Art of Simple Cooking</i></h1>
                 <p class="reveal-up delay-100">Curated, foolproof recipes for beginners and students who want to explore the joy of cooking without the overwhelming complexity.</p>
                 
                 <div class="hero-actions reveal-up delay-200" style="display: flex; align-items: center; gap: 20px;">
