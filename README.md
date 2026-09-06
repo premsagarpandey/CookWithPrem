@@ -29,7 +29,6 @@ By eliminating large dependencies like `node_modules`, **CookWithPrem delivers a
 - **Responsive UI:** Clean, modern design featuring dark mode, custom CSS variables, and seamless micro-interactions.
 - **Interactive Recipe Catalog:** Real-time filtering and search by category, prep time, and ingredients.
 - **Security Built-In:** Defenses against Path Traversal, custom Security Headers, and basic IP Rate Limiting.
-- **Admin Panel:** Content management via a secure `COOK_ADMIN_KEY` for browser-based recipe editing.
 - **One-Click Windows Launcher:** A convenient `.vbs` script compiles the server and launches your browser automatically.
 
 ---
@@ -92,7 +91,6 @@ Navigate to **`http://localhost:8080`**.
 
 ## 🔒 Security
 
-- **Admin Access:** Press `Alt + A` on the website to access the Admin Panel. Secure this with the `COOK_ADMIN_KEY` in `.env`.
 - **Security Guide:** See [`SECURITY_GUIDE.md`](SECURITY_GUIDE.md) for details on security headers and deployment.
 
 ---

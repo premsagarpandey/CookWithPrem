@@ -37,44 +37,6 @@ struct ClientRateLimit {
 
 static std::map<std::string, ClientRateLimit> rateLimitMap;
 
-// Trim helper
-std::string trim(const std::string& str) {
-    size_t first = str.find_first_not_of(" \t\r\n");
-    if (std::string::npos == first) return "";
-    size_t last = str.find_last_not_of(" \t\r\n");
-    return str.substr(first, (last - first + 1));
-}
-
-// Load COOK_ADMIN_KEY from Environment Variable or .env file
-std::string loadAdminKey() {
-    // 1. Try system environment variable
-    const char* envKey = std::getenv("COOK_ADMIN_KEY");
-    if (envKey && std::string(envKey).length() > 0) {
-        return trim(std::string(envKey));
-    }
-
-    // 2. Try loading from .env file (current dir or parent dir)
-    std::vector<std::string> envPaths = {".env", "../.env", "backend/.env"};
-    for (const auto& path : envPaths) {
-        std::ifstream file(path);
-        if (file.is_open()) {
-            std::string line;
-            while (std::getline(file, line)) {
-                line = trim(line);
-                if (line.rfind("COOK_ADMIN_KEY=", 0) == 0) {
-                    std::string key = trim(line.substr(15));
-                    if (!key.empty()) return key;
-                }
-            }
-        }
-    }
-
-    // 3. Secure Fallback Key (Log warning if used)
-    std::cout << "[SECURITY WARNING] COOK_ADMIN_KEY not found in environment or .env! Using default secure key." << std::endl;
-    return "CookWithPrem_Default_ChangeMe_In_Env";
-}
-
-static const std::string ADMIN_SECRET_KEY = loadAdminKey();
 
 // Helper to read file content with fallback paths
 std::string readFile(const std::string& filepath) {
@@ -106,28 +68,7 @@ std::string readFile(const std::string& filepath) {
     return "";
 }
 
-// Helper to write file content safely
-bool writeFile(const std::string& filepath, const std::string& content) {
-    std::ofstream file(filepath, std::ios::binary | std::ios::trunc);
-    if (file.is_open()) {
-        file << content;
-        file.close();
-    }
 
-    // Also write to secondary path if running from root and backend/ exists
-    if (filepath.rfind("backend/", 0) != 0) {
-        std::ifstream checkBackendDir("backend");
-        if (checkBackendDir.good()) {
-            std::string secondaryPath = "backend/" + filepath;
-            std::ofstream file2(secondaryPath, std::ios::binary | std::ios::trunc);
-            if (file2.is_open()) {
-                file2 << content;
-                file2.close();
-            }
-        }
-    }
-    return true;
-}
 
 std::string getMimeType(const std::string& path) {
     if (path.find(".html") != std::string::npos) return "text/html";
@@ -188,35 +129,6 @@ bool checkRateLimit(const std::string& clientIP) {
     return true;
 }
 
-// Extract Header Value from HTTP Request
-std::string getHeaderValue(const std::string& rawRequest, const std::string& headerName) {
-    std::string target = headerName + ":";
-    size_t pos = rawRequest.find(target);
-    if (pos == std::string::npos) {
-        // Try case-insensitive search
-        std::string lowerRaw = rawRequest;
-        std::string lowerTarget = target;
-        std::transform(lowerRaw.begin(), lowerRaw.end(), lowerRaw.begin(), ::tolower);
-        std::transform(lowerTarget.begin(), lowerTarget.end(), lowerTarget.begin(), ::tolower);
-        pos = lowerRaw.find(lowerTarget);
-        if (pos == std::string::npos) return "";
-    }
-
-    size_t start = pos + target.length();
-    size_t end = rawRequest.find("\r\n", start);
-    if (end == std::string::npos) end = rawRequest.length();
-
-    return trim(rawRequest.substr(start, end - start));
-}
-
-// Extract Body from HTTP Request
-std::string getRequestBody(const std::string& rawRequest) {
-    size_t pos = rawRequest.find("\r\n\r\n");
-    if (pos != std::string::npos) {
-        return rawRequest.substr(pos + 4);
-    }
-    return "";
-}
 
 void handleClient(SOCKET clientSocket, const std::string& clientIP) {
     char buffer[16384] = {0};
@@ -291,75 +203,12 @@ void handleClient(SOCKET clientSocket, const std::string& clientIP) {
             }
         }
     } 
-    // Handle POST Requests (Admin Authentication Required)
-    else if (method == "POST") {
-        std::string adminKeyHeader = getHeaderValue(request, "X-Admin-Key");
-        std::string body = getRequestBody(request);
-
-        // Check if Admin Key matches
-        bool isAuthorized = (!adminKeyHeader.empty() && adminKeyHeader == ADMIN_SECRET_KEY);
-        if (!isAuthorized && !body.empty()) {
-            if (body.find("\"key\":\"" + ADMIN_SECRET_KEY + "\"") != std::string::npos ||
-                body.find("\"key\": \"" + ADMIN_SECRET_KEY + "\"") != std::string::npos) {
-                isAuthorized = true;
-            }
-        }
-
-        if (cleanPath == "/api/admin/verify") {
-            contentType = "application/json";
-            if (isAuthorized) {
-                status = "200 OK";
-                responseBody = "{\"status\":\"ok\",\"message\":\"Admin authentication successful\"}";
-            } else {
-                status = "403 Forbidden";
-                responseBody = "{\"status\":\"error\",\"message\":\"Invalid Admin Secret Key\"}";
-            }
-        } 
-        else if (cleanPath == "/api/admin/update-recipes") {
-            contentType = "application/json";
-            if (!isAuthorized) {
-                status = "403 Forbidden";
-                responseBody = "{\"status\":\"error\",\"message\":\"Unauthorized: Valid Admin Secret Key required to update recipes.\"}";
-            } else {
-                if (!body.empty() && (body.front() == '[' || body.front() == '{')) {
-                    writeFile("recipes.json", body);
-                    status = "200 OK";
-                    responseBody = "{\"status\":\"ok\",\"message\":\"Recipes successfully updated & saved.\"}";
-                    std::cout << "[ADMIN ACTION] Recipes database updated by Admin." << std::endl;
-                } else {
-                    status = "400 Bad Request";
-                    responseBody = "{\"status\":\"error\",\"message\":\"Invalid JSON data payload.\"}";
-                }
-            }
-        } 
-        else if (cleanPath == "/api/admin/update-categories") {
-            contentType = "application/json";
-            if (!isAuthorized) {
-                status = "403 Forbidden";
-                responseBody = "{\"status\":\"error\",\"message\":\"Unauthorized: Valid Admin Secret Key required to update categories.\"}";
-            } else {
-                if (!body.empty() && (body.front() == '[' || body.front() == '{')) {
-                    writeFile("categories.json", body);
-                    status = "200 OK";
-                    responseBody = "{\"status\":\"ok\",\"message\":\"Categories successfully updated & saved.\"}";
-                    std::cout << "[ADMIN ACTION] Categories database updated by Admin." << std::endl;
-                } else {
-                    status = "400 Bad Request";
-                    responseBody = "{\"status\":\"error\",\"message\":\"Invalid JSON data payload.\"}";
-                }
-            }
-        } 
-        else {
-            status = "403 Forbidden";
-            contentType = "application/json";
-            responseBody = "{\"status\":\"error\",\"message\":\"Public write operations are blocked for security.\"}";
-        }
-    } 
     else if (method == "OPTIONS") {
         status = "204 No Content";
     } 
     else {
         status = "405 Method Not Allowed";
+        contentType = "text/html";
         responseBody = "<h1>405 Method Not Allowed</h1>";
     }
 
@@ -370,8 +219,8 @@ void handleClient(SOCKET clientSocket, const std::string& clientIP) {
              << "Content-Type: " << contentType << "\r\n"
              << "Content-Length: " << responseBody.length() << "\r\n"
              << "Access-Control-Allow-Origin: *\r\n"
-             << "Access-Control-Allow-Methods: GET, POST, OPTIONS\r\n"
-             << "Access-Control-Allow-Headers: Content-Type, X-Admin-Key\r\n"
+             << "Access-Control-Allow-Methods: GET, OPTIONS\r\n"
+             << "Access-Control-Allow-Headers: Content-Type\r\n"
              // Security & Anti-Inspection Headers
              << "X-Content-Type-Options: nosniff\r\n"
              << "X-Frame-Options: SAMEORIGIN\r\n"
@@ -439,7 +288,7 @@ int main() {
     std::cout << "====================================================" << std::endl;
     std::cout << "CookWithPrem — Secure C++ Server running on port " << PORT << std::endl;
     std::cout << "Security Mode: ACTIVE (Headers, Path-Sanitization, Rate Limit)" << std::endl;
-    std::cout << "Admin API Protection: ENABLED (Environment/Key Protected)" << std::endl;
+
     std::cout << "Access Website at: http://localhost:" << PORT << std::endl;
     std::cout << "====================================================" << std::endl;
 

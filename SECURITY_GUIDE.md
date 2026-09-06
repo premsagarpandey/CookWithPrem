@@ -1,28 +1,18 @@
 # 🛡️ CookWithPrem Security & Deployment Guide
 
-This document explains the security architecture of **CookWithPrem**, how to deploy it safely to production, and how to safely update website content.
+This document explains the security architecture of **CookWithPrem** and how to deploy it safely to production.
 
 ---
 
 ## 🚀 1. GitHub & Public Repository Security
 
-- **Never Commit `.env`**: The `.env` file contains your private `COOK_ADMIN_KEY`. It is listed in `.gitignore` and must **never** be pushed to GitHub.
+- **Never Commit `.env`**: The `.env` file contains your private environment variables. It is listed in `.gitignore` and must **never** be pushed to GitHub.
 - **Environment Template**: Use `.env.example` as a template for environment configuration.
-- **Read-Only Public Access**: By default, public visitors only have `GET` access to website files and recipes. Any unauthorized attempt to modify data via `POST`, `PUT`, or `DELETE` is blocked by the C++ backend (`403 Forbidden`).
+- **Read-Only Public Access**: By default, public visitors only have `GET` access to website files and recipes. Any attempt to modify data via `POST`, `PUT`, or `DELETE` is blocked by the C++ backend (`405 Method Not Allowed`).
 
 ---
 
-## 🔑 2. Admin Authentication & Content Management
-
-To update recipes or categories on your website:
-1. Set a strong `COOK_ADMIN_KEY` in your `.env` file or server environment variables.
-2. In the CookWithPrem website interface, click the **🔒 Admin Login** link (or press `Alt + A`).
-3. Enter your `COOK_ADMIN_KEY`.
-4. You will get access to the **Admin Control Panel** where you can add new recipes, edit existing recipes, and manage categories directly from the browser!
-
----
-
-## 🔒 3. Server Security Features Implemented
+## 🔒 2. Server Security Features Implemented
 
 1. **Security Headers**:
    - `X-Content-Type-Options: nosniff` (Prevents MIME-sniffing attacks)
@@ -39,7 +29,7 @@ To update recipes or categories on your website:
 
 ---
 
-## 🔐 5. Anti-Inspection & DevTools Protection
+## 🔐 3. Anti-Inspection & DevTools Protection
 
 1. **Right-Click & Hotkey Suppression**:
    - Disables context menu (`contextmenu`) and intercepts DevTools hotkeys (`F12`, `Ctrl+Shift+I`, `Ctrl+Shift+J`, `Ctrl+Shift+C`, `Ctrl+U`, `Cmd+Opt+I/J/C/U`).
@@ -51,3 +41,4 @@ To update recipes or categories on your website:
    - All structural HTML comments, boilerplate annotations, and developer hints have been stripped to present clean, production-ready code.
 5. **Server Signature Obfuscation**:
    - Returns customized server header `Server: CookEngine/1.0 (Production Security Hardened)` with strict cache control directives (`Cache-Control: no-store, no-cache`).
+
