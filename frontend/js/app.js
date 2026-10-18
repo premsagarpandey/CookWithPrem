@@ -321,8 +321,94 @@ function setupEventListeners() {
     }
 }
 
-// Fetch categories from C++ API or static JSON fallback
+// HTML Escaping Utility to prevent XSS and rendering errors
+function escapeHTML(str) {
+    if (str === null || str === undefined) return '';
+    if (typeof str !== 'string') str = String(str);
+    return str.replace(/[&<>"']/g, function(m) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+    });
+}
+
+// Default categories guarantee (used if neither recipes-data.js nor API are available)
+const DEFAULT_CATEGORIES = [
+    { "id": "cat_1", "slug": "breakfast", "name": "Breakfast" },
+    { "id": "cat_2", "slug": "lunch-mains", "name": "Lunch & Mains" },
+    { "id": "cat_3", "slug": "rice-dishes", "name": "Rice Dishes" },
+    { "id": "cat_4", "slug": "snacks", "name": "Snacks" },
+    { "id": "cat_5", "slug": "indo-chinese", "name": "Indo-Chinese" },
+    { "id": "cat_6", "slug": "desserts", "name": "Desserts" },
+    { "id": "cat_7", "slug": "beverages", "name": "Beverages" }
+];
+
+// Render Category Filter Buttons
+function renderCategoryButtons() {
+    const categoryList = document.getElementById("category-list");
+    if (!categoryList) return; // Skip if not on recipes page
+    
+    categoryList.innerHTML = "";
+    
+    const categoryIcons = {
+        'breakfast': '🍳',
+        'lunch-mains': '🍲',
+        'rice-dishes': '🍚',
+        'snacks': '🥟',
+        'indo-chinese': '🍜',
+        'desserts': '🍰',
+        'beverages': '☕'
+    };
+    
+    categories.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.className = "filter-btn";
+        const icon = categoryIcons[cat.slug.toLowerCase()] || '🍽️';
+        btn.innerHTML = `<span>${icon}</span> ${escapeHTML(cat.name)}`;
+        btn.setAttribute("data-category", cat.slug);
+        
+        // Set active if it matches the currentCategory URL param
+        if (currentCategory === cat.slug.toLowerCase()) {
+            btn.classList.add("active");
+            // Remove active from 'All Dishes' button
+            const allBtn = document.querySelector("[data-category='all']");
+            if (allBtn) allBtn.classList.remove("active");
+        }
+        
+        btn.addEventListener("click", () => {
+            // Toggle active button
+            document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            
+            currentCategory = cat.slug;
+            applyFilters();
+        });
+        
+        categoryList.appendChild(btn);
+    });
+    
+    // Listen to "All Dishes" click
+    const allBtn = document.querySelector("[data-category='all']");
+    if (allBtn) {
+        allBtn.onclick = () => {
+            document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+            allBtn.classList.add("active");
+            currentCategory = 'all';
+            applyFilters();
+        };
+    }
+}
+
+// Fetch categories with instant permanent fallback
 async function loadCategories() {
+    // Tier 1: Immediately use preloaded window.COOK_WITH_PREM_CATEGORIES if available
+    if (Array.isArray(window.COOK_WITH_PREM_CATEGORIES) && window.COOK_WITH_PREM_CATEGORIES.length > 0) {
+        categories = window.COOK_WITH_PREM_CATEGORIES;
+    } else if (!categories || categories.length === 0) {
+        categories = DEFAULT_CATEGORIES;
+    }
+    
+    renderCategoryButtons();
+
+    // Tier 2: Background sync from API / JSON if running with web server
     try {
         let response = await fetch("/api/categories").catch(() => null);
         if (!response || !response.ok) {
@@ -331,91 +417,30 @@ async function loadCategories() {
         if (!response || !response.ok) {
             response = await fetch("categories.json").catch(() => null);
         }
-        if (!response || !response.ok) throw new Error("Network error loading categories");
-        categories = await response.json();
-        
-        const categoryList = document.getElementById("category-list");
-        if (!categoryList) return; // Skip if not on recipes page
-        
-        categoryList.innerHTML = "";
-        
-        const categoryIcons = {
-            'breakfast': '🍳',
-            'lunch-mains': '🍲',
-            'rice-dishes': '🍚',
-            'snacks': '🥟',
-            'indo-chinese': '🍜',
-            'desserts': '🍰',
-            'beverages': '☕'
-        };
-        
-        categories.forEach(cat => {
-            const btn = document.createElement("button");
-            btn.className = "filter-btn";
-            const icon = categoryIcons[cat.slug.toLowerCase()] || '🍽️';
-            btn.innerHTML = `<span>${icon}</span> ${cat.name}`;
-            btn.setAttribute("data-category", cat.slug);
-            
-            // Set active if it matches the currentCategory URL param
-            if (currentCategory === cat.slug.toLowerCase()) {
-                btn.classList.add("active");
-                // Remove active from 'All Dishes' button
-                const allBtn = document.querySelector("[data-category='all']");
-                if (allBtn) allBtn.classList.remove("active");
+        if (response && response.ok) {
+            const data = await response.json();
+            if (Array.isArray(data) && data.length > 0) {
+                categories = data;
+                renderCategoryButtons();
             }
-            
-            btn.addEventListener("click", () => {
-                // Toggle active button
-                document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-                btn.classList.add("active");
-                
-                currentCategory = cat.slug;
-                applyFilters();
-            });
-            
-            categoryList.appendChild(btn);
-        });
-        
-        // Listen to "All Dishes" click
-        const allBtn = document.querySelector("[data-category='all']");
-        if (allBtn) {
-            allBtn.addEventListener("click", () => {
-                document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-                allBtn.classList.add("active");
-                currentCategory = 'all';
-                applyFilters();
-            });
         }
     } catch (error) {
-        console.error("Error loading categories:", error);
+        // Silently use preloaded categories
     }
 }
 
-// Fetch recipes from C++ API or static JSON fallback
+// Fetch recipes: Permanent, instant load with multi-tier fallback
 async function loadRecipes(recipeParam) {
     const bookContainer = document.getElementById("recipe-book-container");
     if (!bookContainer) return; // Skip if not on recipes page
     
-    try {
-        let response = await fetch("/api/recipes").catch(() => null);
-        if (!response || !response.ok) {
-            response = await fetch("api/recipes.json").catch(() => null);
-        }
-        if (!response || !response.ok) {
-            response = await fetch("recipes.json").catch(() => null);
-        }
-        if (!response || !response.ok) throw new Error("Network error loading recipes");
-        recipes = await response.json();
-        
-        // Handle specific recipe redirection from Home Page
+    const applyRecipeParamAndRender = () => {
         if (recipeParam) {
             const targetRecipe = recipes.find(r => r.slug === recipeParam);
             if (targetRecipe) {
-                // Set current category to match the recipe category
                 const catObj = categories.find(c => c.name.toLowerCase() === targetRecipe.category.toLowerCase());
                 currentCategory = catObj ? catObj.slug : 'all';
                 
-                // Highlight corresponding filter button
                 const filterButtons = document.querySelectorAll(".filter-btn");
                 filterButtons.forEach(btn => {
                     if (btn.getAttribute("data-category") === currentCategory) {
@@ -429,21 +454,73 @@ async function loadRecipes(recipeParam) {
 
         applyFilters();
 
-        // Set index to target recipe page
         if (recipeParam) {
             const index = filteredRecipes.findIndex(r => r.slug === recipeParam);
             if (index !== -1) {
                 currentRecipeIndex = index;
                 renderBookPage();
             }
-            
-            // Clean URL query parameters so page refresh/filtering behaves normally
             window.history.replaceState({}, document.title, window.location.pathname);
         }
-    } catch (error) {
-        console.error("Error loading recipes:", error);
+    };
+
+    // Tier 1: Immediately use permanent window.COOK_WITH_PREM_RECIPES
+    if (Array.isArray(window.COOK_WITH_PREM_RECIPES) && window.COOK_WITH_PREM_RECIPES.length > 0) {
+        recipes = window.COOK_WITH_PREM_RECIPES;
+        applyRecipeParamAndRender();
+    }
+
+    // Tier 2: Try fetching from API / static JSON files (for live backend sync)
+    try {
+        let response = await fetch("/api/recipes").catch(() => null);
+        if (!response || !response.ok) {
+            response = await fetch("api/recipes.json").catch(() => null);
+        }
+        if (!response || !response.ok) {
+            response = await fetch("recipes.json").catch(() => null);
+        }
+        if (!response || !response.ok) {
+            response = await fetch("./recipes.json").catch(() => null);
+        }
+
+        if (response && response.ok) {
+            const data = await response.json();
+            if (Array.isArray(data) && data.length > 0) {
+                recipes = data;
+                applyRecipeParamAndRender();
+                try {
+                    localStorage.setItem("COOK_RECIPES_CACHE", JSON.stringify(recipes));
+                } catch (e) {}
+                return;
+            }
+        }
+    } catch (fetchErr) {
+        // Fetch failed (file:// protocol or server offline)
+    }
+
+    // Tier 3: If recipes array is still empty, check localStorage
+    if (!recipes || recipes.length === 0) {
+        try {
+            const cached = localStorage.getItem("COOK_RECIPES_CACHE");
+            if (cached) {
+                const parsed = JSON.parse(cached);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                    recipes = parsed;
+                    applyRecipeParamAndRender();
+                    return;
+                }
+            }
+        } catch (e) {}
+
         const leftPage = document.getElementById("book-left");
-        if (leftPage) leftPage.innerHTML = `<div class="empty-book">Error loading database.</div>`;
+        const rightPage = document.getElementById("book-right");
+        if (leftPage) leftPage.innerHTML = `<div class="empty-book">No recipes found. Please refresh the page.</div>`;
+        if (rightPage) rightPage.innerHTML = ``;
+    } else {
+        // Cache to localStorage for offline resilience
+        try {
+            localStorage.setItem("COOK_RECIPES_CACHE", JSON.stringify(recipes));
+        } catch (e) {}
     }
 }
 
@@ -615,16 +692,25 @@ function renderBookPage() {
     
     if (!leftPage || !rightPage) return;
 
-    if (filteredRecipes.length === 0) {
+    if (!filteredRecipes || filteredRecipes.length === 0) {
         leftPage.innerHTML = `<div class="empty-book">No recipes found. Try a different search.</div>`;
-        rightPage.innerHTML = ``;
+        rightPage.innerHTML = `<div class="empty-book" style="font-size: 0.95rem; color: var(--text-muted);">Please clear search or select another category.</div>`;
         updatePaginationButtons();
         return;
     }
 
+    if (currentRecipeIndex < 0) currentRecipeIndex = 0;
+    if (currentRecipeIndex >= filteredRecipes.length) currentRecipeIndex = filteredRecipes.length - 1;
+
     const recipe = filteredRecipes[currentRecipeIndex];
-    leftPage.innerHTML = generateLeftPageHtml(recipe);
-    rightPage.innerHTML = generateRightPageHtml(recipe);
+    try {
+        leftPage.innerHTML = generateLeftPageHtml(recipe);
+        rightPage.innerHTML = generateRightPageHtml(recipe);
+    } catch (renderErr) {
+        console.error("Error rendering recipe page:", renderErr);
+        leftPage.innerHTML = `<div class="empty-book">Error displaying recipe.</div>`;
+        rightPage.innerHTML = ``;
+    }
     updatePaginationButtons();
     resetBookMobileTabs();
 }

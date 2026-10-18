@@ -14,16 +14,20 @@ Set processes = WMI.ExecQuery(query)
 
 If processes.Count = 0 Then
     ' Server is not running, start it silently
-    WshShell.CurrentDirectory = "c:\CookWithPrem\backend"
-    
     Set fso = CreateObject("Scripting.FileSystemObject")
-    If fso.FileExists("c:\CookWithPrem\backend\cpp_backend_secured.exe") Then
-        WshShell.Run "cpp_backend_secured.exe", 0, False
-    Else
-        WshShell.Run "cpp_backend.exe", 0, False
+    scriptDir = fso.GetParentFolderName(WScript.ScriptFullName)
+    backendDir = scriptDir & "\backend"
+    
+    If fso.FolderExists(backendDir) Then
+        WshShell.CurrentDirectory = backendDir
+        If fso.FileExists(backendDir & "\cpp_backend_secured.exe") Then
+            WshShell.Run "cpp_backend_secured.exe", 0, False
+        ElseIf fso.FileExists(backendDir & "\cpp_backend.exe") Then
+            WshShell.Run "cpp_backend.exe", 0, False
+        End If
+        ' Wait for server to initialize
+        WScript.Sleep 1000
     End If
-    ' Wait for server to initialize
-    WScript.Sleep 1000
 End If
 
 ' Open the website in the default browser
