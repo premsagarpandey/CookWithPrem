@@ -19,6 +19,40 @@
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
     <link rel="shortcut icon" type="image/svg+xml" href="images/logo.svg">
     <link rel="apple-touch-icon" href="images/logo.svg">
+
+    <!-- Open Graph / Social Media Sharing -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="About Prem Sagar Pandey — CookWithPrem Founder & Story">
+    <meta property="og:description" content="Read the story of Prem Sagar Pandey, creator of CookWithPrem. How a B.Tech student built a recipe platform for beginners.">
+    <meta property="og:url" content="https://cook-with-prem.vercel.app/about">
+    <meta property="og:image" content="https://cook-with-prem.vercel.app/images/prem-profile.jpg">
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Prem Sagar Pandey — CookWithPrem">
+    <meta name="twitter:description" content="Read how CookWithPrem was born from student life and beginner cooking journeys.">
+    <meta name="twitter:image" content="https://cook-with-prem.vercel.app/images/prem-profile.jpg">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About CookWithPrem and Prem Sagar Pandey",
+      "url": "https://cook-with-prem.vercel.app/about",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Prem Sagar Pandey",
+        "jobTitle": "Developer & Culinary Creator",
+        "email": "premsagarpandeycse@gmail.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/prem-sagar-pandey-2b0022382/",
+          "https://www.instagram.com/premsagar__1/"
+        ]
+      }
+    }
+    </script>
+
     <script src="js/security.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +63,7 @@
     <!-- Navbar -->
     <header class="navbar">
         <div class="container navbar-container">
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 <img src="images/logo.svg" alt="CookWithPrem Logo" class="logo-img"> CookWithPrem
             </a>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
@@ -38,10 +72,10 @@
                 <span class="hamburger-bar"></span>
             </button>
             <nav class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="recipes.html" class="nav-link">Recipes</a>
-                <a href="about.html" class="nav-link active">About Us</a>
-                <a href="contact.html" class="nav-link">Contact Us</a>
+                <a href="/" class="nav-link">Home</a>
+                <a href="/recipes" class="nav-link">Recipes</a>
+                <a href="/about" class="nav-link active">About Us</a>
+                <a href="/contact" class="nav-link">Contact Us</a>
             </nav>
         </div>
     </header>
@@ -120,7 +154,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">
+                    <a href="/" class="logo">
                         <img src="images/logo.svg" alt="CookWithPrem Logo" class="logo-img"> CookWithPrem
                     </a>
                     <p>Curated, foolproof recipes for beginners and students who want to explore the joy of cooking without the overwhelming complexity.</p>
@@ -128,27 +162,27 @@
                 <div>
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="recipes.html">Recipes</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/recipes">Recipes</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="footer-heading">Categories</h4>
                     <ul class="footer-links">
-                        <li><a href="recipes.html?cat=breakfast">Breakfast</a></li>
-                        <li><a href="recipes.html?cat=lunch-mains">Lunch &amp; Mains</a></li>
-                        <li><a href="recipes.html?cat=rice-dishes">Rice Dishes</a></li>
-                        <li><a href="recipes.html?cat=snacks">Snacks</a></li>
-                        <li><a href="recipes.html?cat=indo-chinese">Indo-Chinese</a></li>
-                        <li><a href="recipes.html?cat=desserts">Desserts</a></li>
-                        <li><a href="recipes.html?cat=beverages">Beverages</a></li>
+                        <li><a href="/recipes?cat=breakfast">Breakfast</a></li>
+                        <li><a href="/recipes?cat=lunch-mains">Lunch &amp; Mains</a></li>
+                        <li><a href="/recipes?cat=rice-dishes">Rice Dishes</a></li>
+                        <li><a href="/recipes?cat=snacks">Snacks</a></li>
+                        <li><a href="/recipes?cat=indo-chinese">Indo-Chinese</a></li>
+                        <li><a href="/recipes?cat=desserts">Desserts</a></li>
+                        <li><a href="/recipes?cat=beverages">Beverages</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 CookWithPrem — Made with ❤️ by <a href="about.html">Prem Sagar Pandey</a> | <a href="https://www.instagram.com/premsagar__1/" target="_blank" style="color: #E1306C; font-weight: 500; text-decoration: none;">📸 Instagram</a></p>
+                <p>&copy; 2026 CookWithPrem — Made with ❤️ by <a href="/about">Prem Sagar Pandey</a> | <a href="https://www.instagram.com/premsagar__1/" target="_blank" style="color: #E1306C; font-weight: 500; text-decoration: none;">📸 Instagram</a></p>
             </div>
         </div>
     </footer>

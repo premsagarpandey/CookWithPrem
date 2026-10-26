@@ -194,6 +194,14 @@ void handleClient(SOCKET clientSocket, const std::string& clientIP) {
             std::string filepath = "../frontend" + cleanPath;
             responseBody = readFile(filepath);
 
+            if (responseBody.empty() && filepath.find('.') == std::string::npos) {
+                filepath += ".html";
+                responseBody = readFile(filepath);
+                if (!responseBody.empty()) {
+                    cleanPath += ".html";
+                }
+            }
+
             if (responseBody.empty()) {
                 status = "404 Not Found";
                 contentType = "text/html";
